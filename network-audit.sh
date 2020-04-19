@@ -8,19 +8,27 @@ while read input
 
 do
 
-	echo "$input"
+	#!# echo "$input"
 
 	### PING TEST
 
 	PING_OUTPUT=`ping -c 2 $input | grep "packet loss" | rev | cut -f5 -d" " | rev`
-	echo "$PING_OUTPUT"
+	#!# echo "$PING_OUTPUT"
 
 	if [ $PING_OUTPUT = "0%" ]; then
-		echo "STRING are EQUAL"
-	"PING_STATUS=YES"
+		PING_STATUS="YES"
 	else
-		echo "STRING are NOT EQUAL"
+		PING_STATUS="NO"
 	fi
+
+	echo "$input,$PING_STATUS"
+
+	### SNMP TEST
+
+	### CLOGIN TEST
+
+	CLOGIN_OUTPUT=`./clogin -c "" $input`
+	echo "CLOGIN_OUTPUT"
 
 	sleep 1
 
