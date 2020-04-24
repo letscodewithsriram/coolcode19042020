@@ -1,0 +1,1 @@
+192.168.0.105,gimec-lab-1,YES,YES,YES,3

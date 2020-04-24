@@ -1,0 +1,4 @@
+show version
+show inv
+show run
+show ip int br
