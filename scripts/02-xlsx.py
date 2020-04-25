@@ -37,10 +37,27 @@ column_header_format = workbook.add_format({
 
 data_format = workbook.add_format({
     'bold': 2,
-    #'align': 'center',
+    'align': 'center',
     'font_name': 'Courier New',
     'valign': 'vcenter',
     'font_size': 10
+})
+
+configs_data_format = workbook.add_format({
+    'bold': 2,
+    # 'align': 'center',
+    'font_name': 'Courier New',
+    'valign': 'vcenter',
+    'font_size': 10
+})
+
+summary_icon_format = workbook.add_format({
+    'bold': 1,
+    'align': 'center',
+    'font_name': 'Courier New',
+    'valign': 'vcenter',
+    'font_size': 8,
+    'fg_color': '#008000'
 })
 
 
@@ -74,12 +91,18 @@ for line in fh.readlines():
 	for data in datapts:
 		# print (data) # data = 192.168.0.105
 		col = col + 1
-		worksheet.write(row, col, data, data_format)
+		worksheet.write_url(row, col,"internal:'" + str(datapts[0]) + "'!A3", string=data, cell_format=data_format)
 	row = row + 1
 
 	sheet_name = datapts[0]
 	router_sheet = workbook.add_worksheet(sheet_name)
 	router_sheet.set_tab_color('green')
+
+
+	router_sheet.set_column('J:J', 20)
+	router_sheet.write_url('J2', "internal:'Summary'!B" + str(sno + 4), string="SUMMARY", cell_format=summary_icon_format)
+	router_sheet.merge_range('A3:U3', "DEVICE CONFIGURATION - " + datapts[0] + "/" + datapts[1], page_header_format)
+
 	rs_row = 4
 
 	rcfh = open (dir + "m2-configs/" + sheet_name + ".txt", 'r')
@@ -88,7 +111,7 @@ for line in fh.readlines():
 
 	for config_line in rcfh.readlines():
 		config_line = config_line.strip()
-		router_sheet.write(rs_row, rs_col, config_line, data_format)
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
 		rs_row = rs_row + 1
 
 fh.close()
