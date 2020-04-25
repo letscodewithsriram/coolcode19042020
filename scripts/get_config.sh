@@ -14,7 +14,9 @@ do
 
 	### CLOGIN TEST
 
-	CLOGIN_OUTPUT=`./clogin -x ../input/commands.txt $IPADDR > /home/tools/network-assess/coolcode19042020/output/m2-configs/$input.txt`
+	CLOGIN_OUTPUT=`./clogin -x ../input/commands.txt $IPADDR > /home/tools/network-assess/coolcode19042020/output/m2-configs/$IPADDR.txt`
+	
+	`/usr/bin/dos2unix /home/tools/network-assess/coolcode19042020/output/m2-configs/$IPADDR.txt`
 
 	echo "$input"
 

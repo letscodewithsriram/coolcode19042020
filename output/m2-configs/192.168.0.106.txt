@@ -1,12 +1,46 @@
 192.168.0.106
-spawn ssh -c 3des-cbc,aes256-ctr,aes192-ctr,aes128-ctr,aes256-cbc -x -l sriram 192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+192.168.0.106
+spawn ssh -c 3des-cbc,aes256-ctr,aes192-ctr,aes128-ctr,aes256-cbc -x -l sriram 192.168.0.105
 Password: 
-gimec-lab-2>enable
+gimec-lab-1>enable
 Password: 
-gimec-lab-2#
-gimec-lab-2#terminal length 0
-gimec-lab-2#terminal width 0
-gimec-lab-2#show version
+gimec-lab-1#
+gimec-lab-1#terminal length 0
+gimec-lab-1#terminal width 0
+gimec-lab-1#show version
 Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M7, RELEASE SOFTWARE (fc2)
 Technical Support: http://www.cisco.com/techsupport
 Copyright (c) 1986-2014 by Cisco Systems, Inc.
@@ -15,11 +49,11 @@ Compiled Thu 25-Sep-14 10:36 by prod_rel_team
 ROM: ROMMON Emulation Microcode
 BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M7, RELEASE SOFTWARE (fc2)
 
-gimec-lab-2 uptime is 1 hour, 36 minutes
+gimec-lab-1 uptime is 45 minutes
 System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
 System image file is "tftp://255.255.255.255/unknown"
 Last reload type: Normal Reload
-Last reload reason: unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
+Last reload reason: Unknown reason
 
 
 
@@ -82,7 +116,7 @@ WARNING: PCI bus mb2 Exceeds 600 bandwidth points
 
 Configuration register is 0x2102
 
-gimec-lab-2#show inv
+gimec-lab-1#show inv
 NAME: "Chassis", DESCR: "Cisco 7206VXR, 6-slot chassis"
 PID: CISCO7206VXR      , VID:    , SN: 4279256517 
 
@@ -117,7 +151,7 @@ NAME: "Power Supply 2", DESCR: "Cisco 7200 AC Power Supply"
 PID: PWR-7200-AC       , VID:    , SN:            
 
 
-gimec-lab-2#show run
+gimec-lab-1#show run
 Building configuration...
 
 Current configuration : 2342 bytes
@@ -128,7 +162,7 @@ service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname gimec-lab-2
+hostname gimec-lab-1
 !
 boot-start-marker
 boot-end-marker
@@ -183,8 +217,8 @@ ip ssh pubkey-chain
 !
 !
 interface FastEthernet0/0
- ip address 192.168.0.106 255.255.255.0
- duplex full
+ ip address 192.168.0.105 255.255.255.0
+ duplex half
 !
 interface GigabitEthernet1/0
  no ip address
@@ -310,9 +344,9 @@ line vty 5 15
 !
 end
 
-gimec-lab-2#show ip int br
+gimec-lab-1#show ip int br
 Interface                  IP-Address      OK? Method Status                Protocol
-FastEthernet0/0            192.168.0.106   YES NVRAM  up                    up      
+FastEthernet0/0            192.168.0.105   YES NVRAM  up                    up      
 GigabitEthernet1/0         unassigned      YES NVRAM  administratively down down    
 Ethernet2/0                unassigned      YES NVRAM  administratively down down    
 Ethernet2/1                unassigned      YES NVRAM  administratively down down    
@@ -329,7 +363,7 @@ Ethernet3/7                unassigned      YES NVRAM  administratively down down
 GigabitEthernet4/0         unassigned      YES NVRAM  administratively down down    
 GigabitEthernet5/0         unassigned      YES NVRAM  administratively down down    
 GigabitEthernet6/0         unassigned      YES NVRAM  administratively down down    
-gimec-lab-2#
-gimec-lab-2#exit
-Connection to 192.168.0.106 closed by remote host.
-Connection to 192.168.0.106 closed.
+gimec-lab-1#
+gimec-lab-1#exit
+Connection to 192.168.0.105 closed by remote host.
+Connection to 192.168.0.105 closed.

@@ -1,2 +1,3 @@
-192.168.0.105,gimec-lab-1,YES,YES,YES,2
-192.168.0.107,gimec-lab-3,YES,YES,YES,0
+192.168.0.105,gimec-lab-1,YES,YES,YES,5
+192.168.0.106,gimec-lab-2,YES,YES,YES,8
+192.168.0.107,gimec-lab-3,YES,YES,YES,10
