@@ -1,5 +1,0 @@
-192.168.0.105,gimec-lab-1,yes,yes,yes,3
-spawn ssh -c 3des-cbc,aes256-ctr,aes192-ctr,aes128-ctr,aes256-cbc -x -l sriram 192.168.0.105,gimec-lab-1,yes,yes,yes,3
-ssh: Could not resolve hostname 192.168.0.105,gimec-lab-1,yes,yes,yes,3: Name or service not known
-
-Error: Couldn't login: 192.168.0.105,gimec-lab-1,yes,yes,yes,3

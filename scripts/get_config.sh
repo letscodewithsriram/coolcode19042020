@@ -10,9 +10,11 @@ while read input
 
 do
 
+	IPADDR=`echo "$input" | cut -f1 -d,`
+
 	### CLOGIN TEST
 
-	CLOGIN_OUTPUT=`./clogin -x ../input/commands.txt $input > /home/tools/network-assess/coolcode19042020/output/m2-configs/$input.txt`
+	CLOGIN_OUTPUT=`./clogin -x ../input/commands.txt $IPADDR > /home/tools/network-assess/coolcode19042020/output/m2-configs/$input.txt`
 
 	echo "$input"
 

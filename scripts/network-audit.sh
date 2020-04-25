@@ -4,6 +4,8 @@ STARTTIME=`date +%s`
 
 echo "SCRIPT-START-TIME: `date`"
 
+rm -f ../output/m1-audit/audit.txt
+
 while read input
 
 do
@@ -57,7 +59,7 @@ do
 		SSH_STATUS="NO"
 	fi
 	
-	echo "$input,$HOSTNAME,$PING_STATUS,$SNMP_STATUS,$SSH_STATUS,$CPU_UTILS"
+	echo "$input,$HOSTNAME,$PING_STATUS,$SNMP_STATUS,$SSH_STATUS,$CPU_UTILS" >> ../output/m1-audit/audit.txt
 
 	sleep 1
 

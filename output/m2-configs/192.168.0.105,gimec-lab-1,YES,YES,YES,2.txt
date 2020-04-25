@@ -15,7 +15,7 @@ Compiled Thu 25-Sep-14 10:36 by prod_rel_team
 ROM: ROMMON Emulation Microcode
 BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M7, RELEASE SOFTWARE (fc2)
 
-gimec-lab-1 uptime is 5 minutes
+gimec-lab-1 uptime is 9 minutes
 System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
 System image file is "tftp://255.255.255.255/unknown"
 Last reload type: Normal Reload
