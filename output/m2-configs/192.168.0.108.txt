@@ -1,22 +1,22 @@
-192.168.0.106
-spawn ssh -o KexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc,aes192-cbc,3des-cbc,aes256-ctr,aes192-ctr,aes128-ctr,aes256-cbc -x -l sriram 192.168.0.106
-Password: 
+192.168.0.108
+spawn ssh -o KexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc,aes192-cbc,3des-cbc,aes256-ctr,aes192-ctr,aes128-ctr,aes256-cbc -x -l sriram 192.168.0.108
+sriram@192.168.0.108's password: 
 
-lab-3725>enable
+lab-3640>enable
 Password: 
-lab-3725#
-lab-3725#terminal length 0
-lab-3725#terminal width 0
-lab-3725#show version
-Cisco IOS Software, 3700 Software (C3725-ADVENTERPRISEK9-M), Version 12.4(15)T7, RELEASE SOFTWARE (fc3)
+lab-3640#
+lab-3640#terminal length 0
+lab-3640#terminal width 0
+lab-3640#show version
+Cisco IOS Software, 3600 Software (C3640-IK9O3S-M), Version 12.4(13), RELEASE SOFTWARE (fc1)
 Technical Support: http://www.cisco.com/techsupport
-Copyright (c) 1986-2008 by Cisco Systems, Inc.
-Compiled Wed 13-Aug-08 21:36 by prod_rel_team
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Thu 22-Feb-07 19:29 by prod_rel_team
 
 ROM: ROMMON Emulation Microcode
-ROM: 3700 Software (C3725-ADVENTERPRISEK9-M), Version 12.4(15)T7, RELEASE SOFTWARE (fc3)
+ROM: 3600 Software (C3640-IK9O3S-M), Version 12.4(13), RELEASE SOFTWARE (fc1)
 
-lab-3725 uptime is 1 hour, 56 minutes
+lab-3640 uptime is 57 minutes
 System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
 System image file is "tftp://255.255.255.255/unknown"
 
@@ -36,31 +36,35 @@ http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
 If you require further assistance please contact us by sending email to
 export@cisco.com.
 
-Cisco 3725 (R7000) processor (revision 0.1) with 124928K/6144K bytes of memory.
-Processor board ID FTX0945W0MY
-R7000 CPU at 240MHz, Implementation 39, Rev 2.1, 256KB L2, 512KB L3 Cache
-2 FastEthernet interfaces
+Cisco 3640 (R4700) processor (revision 0xFF) with 187392K/9216K bytes of memory.
+Processor board ID FF1045C5
+R4700 CPU at 100MHz, Implementation 33, Rev 1.2
+1 FastEthernet interface
 DRAM configuration is 64 bits wide with parity enabled.
-55K bytes of NVRAM.
+253K bytes of NVRAM.
+8192K bytes of processor board System flash (Read/Write)
 
 Configuration register is 0x2102
 
-lab-3725#show inv
-NAME: "3725 chassis", DESCR: "3725 chassis"
-PID:                   , VID: 0.1, SN: FTX0945W0MY
+lab-3640#show inv
+NAME: "3640 chassis", DESCR: "3640 chassis"
+PID:                   , VID: 0xFF, SN: FF1045C5   
+
+NAME: "One port Fastethernet TX", DESCR: "One port Fastethernet TX"
+PID: NM-1FE-TX=        , VID: 1.0, SN: 7720321    
 
 
-lab-3725#show run
+lab-3640#show run
 Building configuration...
 
-Current configuration : 1071 bytes
+Current configuration : 881 bytes
 !
 version 12.4
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname lab-3725
+hostname lab-3640
 !
 boot-start-marker
 boot-end-marker
@@ -70,19 +74,11 @@ enable password enablesriram
 no aaa new-model
 memory-size iomem 5
 no ip icmp rate-limit unreachable
+!
+!
 ip cef
-!
-!
-!
-!
 no ip domain lookup
 ip domain name vsnl.co.in
-!
-multilink bundle-name authenticated
-!
-!
-!
-!
 !
 !
 !
@@ -101,40 +97,26 @@ multilink bundle-name authenticated
 !
 !
 username sriram password 0 sriram
-archive
- log config
-  hidekeys
-! 
-!
 !
 !
 ip tcp synwait-time 5
+! 
 !
 !
 !
 !
 interface FastEthernet0/0
- ip address 192.168.0.106 255.255.255.0
+ ip address 192.168.0.108 255.255.255.0
  duplex auto
  speed auto
-!
-interface FastEthernet0/1
- no ip address
- shutdown
- duplex auto
- speed auto
-!
-ip forward-protocol nd
-!
 !
 no ip http server
 no ip http secure-server
 !
+!
+!
 snmp-server community public RO
 no cdp log mismatch duplex
-!
-!
-!
 !
 !
 !
@@ -164,10 +146,9 @@ line vty 0 4
 !
 end
 
-lab-3725#show ip int br
+lab-3640#show ip int br
 Interface                  IP-Address      OK? Method Status                Protocol
-FastEthernet0/0            192.168.0.106   YES manual up                    up      
-FastEthernet0/1            unassigned      YES unset  administratively down down    
-lab-3725#
-lab-3725#exit
-Connection to 192.168.0.106 closed.
+FastEthernet0/0            192.168.0.108   YES NVRAM  up                    up      
+lab-3640#
+lab-3640#exit
+Connection to 192.168.0.108 closed.

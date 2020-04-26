@@ -1,0 +1,3 @@
+#!/bin/bash
+
+# curl -i -XPOST http://localhost:8086/write?db=na --data-binary "lab,kpi='cpu' value=100 1587885054"
