@@ -2,7 +2,7 @@
 CREATE DATABASE na
 # DML
 # CONTEXT-DATABASE: na
-lab,device=LAB2671,kpi=cpu value=1 1587889441000
-lab,device=LAB2671,kpi=mem value=12813344 1587889441000
-lab,device=LAB2671,kpi=temp value=1 1587889441000
-lab,device=LAB2671,kpi=pow value=1 1587889441000
+lab,device=LAB2671,kpi=cpu value= 1587978362
+lab,device=LAB2671,kpi=mem value= 1587978362
+lab,device=LAB2671,kpi=temp value= 1587978362
+lab,device=LAB2671,kpi=pow value= 1587978362

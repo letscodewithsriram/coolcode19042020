@@ -16,7 +16,7 @@ Compiled Tue 24-Apr-07 15:33 by prod_rel_team
 ROM: ROMMON Emulation Microcode
 ROM: 2600 Software (C2691-ENTSERVICESK9-M), Version 12.4(13b), RELEASE SOFTWARE (fc3)
 
-lab-2691 uptime is 34 minutes
+lab-2691 uptime is 6 hours, 41 minutes
 System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
 System image file is "tftp://255.255.255.255/unknown"
 
@@ -148,8 +148,8 @@ end
 
 lab-2691#show ip int br
 Interface                  IP-Address      OK? Method Status                Protocol
-FastEthernet0/0            192.168.0.110   YES manual up                    up      
-FastEthernet0/1            unassigned      YES unset  administratively down down    
+FastEthernet0/0            192.168.0.110   YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
 lab-2691#
 lab-2691#exit
 Connection to 192.168.0.110 closed.

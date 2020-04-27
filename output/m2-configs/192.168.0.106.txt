@@ -16,7 +16,7 @@ Compiled Wed 13-Aug-08 21:36 by prod_rel_team
 ROM: ROMMON Emulation Microcode
 ROM: 3700 Software (C3725-ADVENTERPRISEK9-M), Version 12.4(15)T7, RELEASE SOFTWARE (fc3)
 
-lab-3725 uptime is 1 hour, 56 minutes
+lab-3725 uptime is 5 minutes
 System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
 System image file is "tftp://255.255.255.255/unknown"
 
@@ -166,8 +166,8 @@ end
 
 lab-3725#show ip int br
 Interface                  IP-Address      OK? Method Status                Protocol
-FastEthernet0/0            192.168.0.106   YES manual up                    up      
-FastEthernet0/1            unassigned      YES unset  administratively down down    
+FastEthernet0/0            192.168.0.106   YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
 lab-3725#
 lab-3725#exit
 Connection to 192.168.0.106 closed.

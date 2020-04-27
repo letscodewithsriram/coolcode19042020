@@ -1,0 +1,7 @@
+# DDL
+CREATE DATABASE na
+# DML
+# CONTEXT-DATABASE: na
+model,device=gimec-lab-server,type=MODEL value=" 2600 Software (C2691-ENTSERVICESK9-M)" 
+model,device=gimec-lab-server,type=SOFTWARE value=" Version 12.4(13b)" 
+model,device=gimec-lab-server,type=RELEASE value=" RELEASE SOFTWARE (fc3)" 
