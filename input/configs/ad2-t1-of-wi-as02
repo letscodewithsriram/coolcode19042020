@@ -1,0 +1,921 @@
+!RANCID-CONTENT-TYPE: huawei
+!
+! 'display version':
+!
+! Huawei Versatile Routing Platform Software
+! VRP (R) software, Version 5.160 (S5300 V200R008C00SPC500)
+! Copyright (C) 2000-2015 HUAWEI TECH CO., LTD
+! Quidway S5300-28P-LI-DC Routing Switch  
+! 
+! LS52T28S 0(Master) :  
+! 256M bytes DDR Memory
+! 200M bytes FLASH
+! Pcb      Version :  VER.B
+! Basic  BootROM  Version : 0208.0001 Compiled at Jun  2 2015, 21:35:58
+! CPLD   Version : 0109 
+! Software Version : VRP (R) Software, Version 5.160 (V200R008C00SPC500)
+! 
+! 'dir /all-filesystems':
+!
+! Directory of flash:/
+! 
+!   Idx  Attr     Size(Byte)  Date        Time       FileName 
+!     0  -rw-            836  Nov 18 2018 01:13:36   rr.dat
+!     1  drw-              -  May 06 2015 06:23:58   user
+!     2  -rw-              4  Nov 18 2018 01:22:12   snmpnotilog.txt
+!     3  -rw-          1,043  Nov 18 2018 01:13:12   private-data.txt
+!     4  -rw-            836  Nov 18 2018 01:13:36   rr.bak
+!     5  drw-              -  May 06 2015 06:24:44   dhcp
+!     6  drw-              -  Mar 26 2020 08:43:24   logfile
+!     7  drw-              -  Apr 27 2020 00:00:14   resetinfo
+!     8  drw-              -  May 30 2019 18:38:04   localuser
+!     9  -rw-      2,156,027  Nov 18 2018 01:14:38   help.web
+!    10  -rw-          7,877  Apr 27 2020 12:56:56   vrpcfg.zip
+!    11  -rw-             36  Nov 18 2018 03:10:30   $_patchstate_reboot
+!    12  -rw-          3,684  Nov 18 2018 03:10:30   $_patch_history
+!    13  -rw-     23,762,052  Nov 18 2018 01:21:04   s5300-p-li-v200r008c00spc500.cc
+!    14  -rw-      1,876,568  Nov 18 2018 03:09:44   s5300li-v200r008sph018.pat
+! 
+! 204,556 KB total (138,572 KB free)
+! 
+! 
+! 'display device':
+!
+! S5300-28P-LI-DC's Device status:
+! Slot Sub  Type                Online    Power      Register     Status   Role
+! -------------------------------------------------------------------------------
+! 0    -    S5300-28P-LI        Present   PowerOn    Registered   Normal   Master
+! 
+! 'display fan':
+!
+! Info: There is no fan.
+! 
+! 'display power':
+!
+! Info: There is no power information.
+! 
+! 'display domain':
+!
+!   -------------------------------------------------------------------------
+!   index    DomainName 
+!   -------------------------------------------------------------------------
+!   0        default                                                         
+!   1        default_admin                                                   
+!   -------------------------------------------------------------------------
+!   Total: 2
+! 
+! 'display local-user':
+!
+!   ----------------------------------------------------------------------------
+!   User-name                      State  AuthMask  AdminLevel  
+!   ----------------------------------------------------------------------------
+!   tata                           A      FTMS      3          
+!   admin                          A      H         -          
+!   sambhav                        A      TMS       15         
+!   ----------------------------------------------------------------------------
+!   Total 3 user(s)
+! 
+! 'display ssh server status':
+!
+!  SSH version                         :1.99
+!  SSH connection timeout              :60 seconds
+!  SSH server key generating interval  :0 hours
+!  SSH authentication retries          :3 times
+!  SFTP server                         :Enable
+!  Stelnet server                      :Enable
+!  Scp server                          :Disable
+!  SSH server source                   :0.0.0.0
+!  ACL4 number                         :0
+!  ACL6 number                         :0
+! 
+! 'display fib':
+!
+! Route Flags: G - Gateway Route, H - Host Route,    U - Up Route
+!              S - Static Route,  D - Dynamic Route, B - Black Hole Route
+!              L - Vlink Route
+! --------------------------------------------------------------------------------
+!  FIB Table:
+!  Total number of Routes : 5 
+!  
+! Destination/Mask   Nexthop         Flag  Interface      TunnelID
+! 10.175.91.35/32    127.0.0.1       HU    InLoop0        0x0
+! 127.0.0.1/32       127.0.0.1       HU    InLoop0        0x0
+! 127.0.0.0/8        127.0.0.1       U     InLoop0        0x0
+! 10.175.91.32/28    10.175.91.35    U     Vlanif2305     0x0
+! 0.0.0.0/0          10.175.91.33    GSU   Vlanif2305     0x0
+! 
+! 'display ip routing-table':
+!
+! Route Flags: R - relay, D - download to fib
+! ------------------------------------------------------------------------------
+! Routing Tables: Public
+!          Destinations : 5        Routes : 5        
+! 
+! Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+! 
+!         0.0.0.0/0   Static  60   0          RD   10.175.91.33    Vlanif2305
+!    10.175.91.32/28  Direct  0    0           D   10.175.91.35    Vlanif2305
+!    10.175.91.35/32  Direct  0    0           D   127.0.0.1       Vlanif2305
+!       127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+!       127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+! 
+! 
+! 'display lacp statistics eth-trunk':
+!
+! 
+!Software Version V200R008C00SPC500
+#
+sysname ad2-t1-of-wi-as02
+#
+info-center channel 6 name syslog
+info-center loghost source Vlanif2305
+info-center loghost 172.31.6.102 channel 6
+info-center loghost 115.114.79.28 channel 6
+info-center loghost 115.114.79.46 channel 6
+info-center loghost 115.114.151.19 channel 6
+#
+vlan batch 2 to 102 104 to 108 110 to 182 184 to 208 210 to 218 220 to 230 232 to 233 235 to 238 240 to 262 265 to 266
+vlan batch 268 to 280 282 to 331 333 to 337 339 to 358 360 to 409 411 to 451 453 to 463 465 to 468 470 to 484 486 to 487
+vlan batch 489 to 495 497 to 499 501 to 510 512 to 515 517 to 557 559 561 to 576 578 to 582 584 to 601 603 to 929
+vlan batch 931 to 2353 2355 to 2396 2398 to 3550 3554 to 3570 3572 to 3595 3597 to 3607 3609 to 3619 3621 to 3641 3643 to 3915 3917 to 3940
+vlan batch 3942 to 3960 3962 to 3984 3986 to 4094
+#
+stp enable
+#
+igmp-snooping enable
+#
+telnet server enable
+#
+lldp enable
+#
+undo http server enable
+undo http secure-server enable
+#
+undo management-port isolate enable
+undo management-plane isolate enable
+#
+clock timezone IST add 05:30:00
+#
+dhcp enable
+#
+dhcp snooping enable ipv4
+#
+stp region-configuration
+ region-name HUAWEI-TATA
+ revision-level 20
+ instance 1 vlan 224 1100 to 1299 1500 to 1899 
+ instance 2 vlan 3100 to 3549 
+ instance 3 vlan 246 to 247 3000 to 3099 
+ instance 4 vlan 2400 to 2999 
+ instance 5 vlan 3550 to 4000 
+ instance 6 vlan 1300 to 1499 1900 to 2399 
+ instance 7 vlan 400 to 999 
+ instance 8 vlan 2 to 223 225 to 245 248 to 399 1000 to 1099 
+ active region-configuration
+#
+hwtacacs-server template tcl
+ hwtacacs-server authentication 115.114.151.7
+ hwtacacs-server authentication 115.114.151.67 secondary
+ hwtacacs-server authorization 115.114.151.7
+ hwtacacs-server authorization 115.114.151.67 secondary
+ hwtacacs-server accounting 115.114.151.7
+ hwtacacs-server accounting 115.114.151.67 secondary
+ hwtacacs-server source-ip 10.175.91.35
+ hwtacacs-server shared-key cipher %^%#'].L@.x'^X7%nC=sP0DS(qC>OP@vD4m*Al+^p_`"%^%#
+ undo hwtacacs-server user-name domain-included
+#
+rsa peer-public-key 115.114.79.59
+ public-key-code begin
+  30820109
+    02820100
+      DC11B927 7B156695 FCB40AF8 ACEECAFB 46CF0D72 23E251B8 490961BC 29D6E5B2
+      CA814135 645CF7F9 FC18378A 872B8723 D5472DE1 1AC3F419 E744C310 90DF9D3D
+      5A743A9B 0898D586 14295EEE 3B4F38DC 970A90FD 4103D0A0 78E53D3B 29AF5095
+      FFB911BD 3C14C282 85E0A207 3C94B649 3B48F998 E59981DC 339A86D9 BDCD409C
+      CF2CF50F 45FB9687 A062B5F1 87C28711 5FAD472D B6E441A6 3A970072 F36C592C
+      F9A11F1E 77A43E9C B9FB72B2 52667AFE 1C4C32CC 8DA54CD4 C1DB4BE4 AE961B0D
+      C52828B0 B76FDEE0 1C0413B0 552268E1 EA77117D 66FAD1DB AAB61B73 7A6E08AD
+      32020487 085EB931 CD9C8789 088FC01A E507689B 8999847E 131D4F0C 4859A7E9
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+acl number 2001  
+ description for SNMP
+ rule 5 permit source 172.31.5.87 0 
+ rule 10 permit source 172.31.5.230 0 
+ rule 15 permit source 172.31.6.80 0 
+ rule 20 permit source 172.31.6.89 0 
+ rule 25 permit source 172.31.6.90 0 
+ rule 30 permit source 172.31.6.100 0 
+ rule 35 permit source 172.31.6.113 0 
+ rule 40 permit source 172.31.6.123 0 
+ rule 45 permit source 172.31.6.190 0 
+ rule 50 permit source 202.54.29.78 0 
+ rule 55 permit source 202.54.29.81 0 
+ rule 60 permit source 172.31.5.250 0 
+ rule 65 permit source 10.209.19.162 0 
+ rule 70 permit source 10.209.19.166 0 
+ rule 75 permit source 10.209.19.168 0 
+ rule 80 permit source 115.114.85.108 0 
+ rule 85 permit source 115.114.79.60 0 
+ rule 90 permit source 115.114.79.59 0 
+ rule 95 permit source 172.31.5.252 0 
+ rule 100 permit source 172.31.5.84 0 
+ rule 120 permit source 115.114.79.26 0 
+ rule 246 permit source 172.31.183.66 0 
+ rule 247 permit source 172.31.183.67 0 
+ rule 310 permit source 115.114.79.37 0 
+ rule 315 permit source 115.114.79.38 0 
+ rule 320 permit source 115.114.79.39 0 
+ rule 325 permit source 115.114.79.40 0 
+ rule 330 permit source 115.114.79.41 0 
+ rule 350 permit source 115.114.85.187 0 
+ rule 360 permit source 115.114.79.46 0 
+ rule 600 permit source 115.114.79.23 0 
+ rule 605 permit source 115.114.79.29 0 
+ rule 607 permit source 115.114.79.52 0 
+ rule 608 permit source 115.114.79.53 0 
+ rule 609 permit source 115.114.79.56 0 
+ rule 610 permit source 115.114.79.24 0 
+ rule 611 permit source 115.114.79.51 0 
+ rule 903 permit source 115.110.121.225 0 
+ rule 904 permit source 115.110.121.226 0 
+ rule 905 permit source 115.110.121.227 0 
+ rule 996 permit source 115.114.79.27 0 
+ rule 997 permit source 115.114.79.28 0 
+ rule 998 permit source 202.81.192.5 0 
+ rule 999 permit source 202.81.192.11 0 
+#
+acl number 3002  
+ description for ssh
+ rule 5 permit tcp source 172.31.6.163 0 destination-port eq 22 
+ rule 10 permit tcp source 172.31.6.163 0 destination-port eq ftp-data 
+ rule 15 permit tcp source 172.31.6.163 0 destination-port eq ftp 
+ rule 20 permit tcp source 172.31.6.162 0 destination-port eq 22 
+ rule 25 permit tcp source 172.31.6.162 0 destination-port eq ftp-data 
+ rule 30 permit tcp source 172.31.6.162 0 destination-port eq ftp 
+ rule 35 permit tcp source 115.114.151.19 0 destination-port eq 22 
+ rule 40 permit tcp source 115.114.151.19 0 destination-port eq ftp-data 
+ rule 45 permit tcp source 115.114.151.19 0 destination-port eq ftp 
+ rule 50 permit tcp source 115.114.151.10 0 destination-port eq 22 
+ rule 55 permit tcp source 115.114.151.10 0 destination-port eq ftp-data 
+ rule 60 permit tcp source 115.114.151.10 0 destination-port eq ftp 
+ rule 65 permit tcp source 172.31.5.116 0 destination-port eq 22 
+ rule 70 permit tcp source 172.31.5.116 0 destination-port eq ftp-data 
+ rule 75 permit tcp source 172.31.5.116 0 destination-port eq ftp 
+ rule 80 permit tcp source 172.31.6.113 0 destination-port eq 22 
+ rule 85 permit tcp source 172.31.6.113 0 destination-port eq ftp-data 
+ rule 90 permit tcp source 172.31.6.113 0 destination-port eq ftp 
+ rule 95 permit tcp source 172.31.6.115 0 destination-port eq 22 
+ rule 100 permit tcp source 172.31.6.115 0 destination-port eq ftp-data 
+ rule 105 permit tcp source 172.31.6.115 0 destination-port eq ftp 
+ rule 110 permit tcp source 172.31.6.100 0 destination-port eq 22 
+ rule 115 permit tcp source 172.31.6.100 0 destination-port eq ftp-data 
+ rule 120 permit tcp source 172.31.6.100 0 destination-port eq ftp 
+ rule 125 permit tcp source 115.114.146.71 0 destination-port eq 22 
+ rule 130 permit tcp source 115.114.146.71 0 destination-port eq ftp-data 
+ rule 135 permit tcp source 115.114.146.71 0 destination-port eq ftp 
+ rule 140 permit tcp source 115.114.146.70 0 destination-port eq 22 
+ rule 145 permit tcp source 115.114.146.70 0 destination-port eq ftp-data 
+ rule 150 permit tcp source 115.114.146.70 0 destination-port eq ftp 
+ rule 155 permit tcp source 115.114.146.69 0 destination-port eq 22 
+ rule 160 permit tcp source 115.114.146.69 0 destination-port eq ftp-data 
+ rule 165 permit tcp source 115.114.146.69 0 destination-port eq ftp 
+ rule 170 permit tcp source 172.31.6.89 0 destination-port eq 22 
+ rule 175 permit tcp source 172.31.6.89 0 destination-port eq ftp-data 
+ rule 180 permit tcp source 172.31.6.89 0 destination-port eq ftp 
+ rule 185 permit tcp source 172.31.6.90 0 destination-port eq 22 
+ rule 190 permit tcp source 172.31.6.90 0 destination-port eq ftp-data 
+ rule 195 permit tcp source 172.31.6.90 0 destination-port eq ftp 
+ rule 200 permit tcp source 172.31.6.73 0 destination-port eq 22 
+ rule 205 permit tcp source 172.31.6.73 0 destination-port eq ftp-data 
+ rule 210 permit tcp source 172.31.6.73 0 destination-port eq ftp 
+ rule 215 permit tcp source 115.114.79.59 0 destination-port eq 22 
+ rule 220 permit tcp source 115.114.79.60 0 destination-port eq ftp-data 
+ rule 225 permit tcp source 115.114.79.60 0 destination-port eq ftp 
+ rule 230 permit tcp source 115.114.79.60 0 destination-port eq 22 
+ rule 235 permit tcp source 115.114.79.59 0 destination-port eq ftp-data 
+ rule 240 permit tcp source 115.114.79.59 0 destination-port eq ftp 
+ rule 246 permit tcp source 172.31.183.66 0 destination-port eq 22 
+ rule 247 permit tcp source 172.31.183.67 0 destination-port eq 22 
+ rule 450 permit tcp source 115.114.79.25 0 destination-port eq 22 
+ rule 455 permit tcp source 115.114.79.25 0 destination-port eq ftp-data 
+ rule 460 permit tcp source 115.114.79.25 0 destination-port eq ftp 
+ rule 465 permit tcp source 115.114.79.26 0 destination-port eq 22 
+ rule 470 permit tcp source 115.114.79.26 0 destination-port eq ftp-data 
+ rule 475 permit tcp source 115.114.79.26 0 destination-port eq ftp 
+ rule 480 permit tcp source 115.114.85.187 0 destination-port eq 22 
+ rule 485 permit tcp source 115.114.85.187 0 destination-port eq ftp-data 
+ rule 490 permit tcp source 115.114.85.187 0 destination-port eq ftp 
+ rule 500 permit tcp source 115.110.121.226 0 destination-port eq ftp-data 
+ rule 505 permit tcp source 115.110.121.226 0 destination-port eq ftp 
+ rule 515 permit tcp source 115.110.121.227 0 destination-port eq ftp-data 
+ rule 520 permit tcp source 115.110.121.227 0 destination-port eq ftp 
+ rule 560 permit tcp source 115.110.121.225 0 destination-port eq ftp-data 
+ rule 565 permit tcp source 115.110.121.225 0 destination-port eq ftp 
+ rule 600 permit tcp source 115.114.85.165 0 destination-port eq 22 
+ rule 605 permit tcp source 115.114.79.29 0 destination-port eq 22 
+ rule 606 permit tcp source 115.114.79.51 0 destination-port eq 22 
+ rule 607 permit tcp source 115.114.79.52 0 destination-port eq 22 
+ rule 608 permit tcp source 115.114.79.53 0 destination-port eq 22 
+ rule 609 permit tcp source 115.114.79.56 0 destination-port eq 22 
+ rule 610 permit tcp source 115.114.85.168 0 destination-port eq 22 
+ rule 700 permit tcp source 115.114.79.46 0 destination-port eq 22 
+ rule 786 permit tcp source 172.31.6.99 0 destination-port eq 22 
+ rule 901 permit tcp source 172.31.6.79 0 destination-port eq 22 
+ rule 903 permit tcp source 115.110.121.225 0 destination-port eq 22 
+ rule 904 permit tcp source 115.110.121.226 0 destination-port eq 22 
+ rule 905 permit tcp source 115.110.121.227 0 destination-port eq 22 
+ rule 908 permit tcp source 115.114.79.48 0 destination-port eq 22 
+ rule 996 permit tcp source 115.114.79.27 0 destination-port eq 22 
+ rule 997 permit tcp source 115.114.79.28 0 destination-port eq 22 
+ rule 998 permit tcp source 202.81.192.5 0 destination-port eq 22 
+ rule 999 permit tcp source 202.81.192.11 0 destination-port eq 22 
+ rule 1000 deny ip 
+#
+acl name Block-Invalid-EWS-Frames 4000  
+ rule 5 permit destination-mac 0180-c200-0000
+ rule 10 permit destination-mac 0180-c200-0002
+ rule 15 permit destination-mac 0100-0ccc-cccd
+ rule 20 permit destination-mac 0100-0ccc-cccc
+ rule 25 permit destination-mac 0100-0ccd-cdcd
+ rule 30 deny destination-mac 0100-0c00-0000
+ rule 35 deny destination-mac 0100-0ccd-cdce
+ rule 40 deny destination-mac 0100-0ccd-cdd0
+ rule 45 deny destination-mac 0180-c200-0001
+ rule 50 deny destination-mac 0180-c200-0010
+ rule 1000 permit
+acl name Block-Invalid-Frames 4001  
+ rule 5 deny destination-mac 0100-0c00-0000
+ rule 10 deny destination-mac 0100-0ccc-cccc
+ rule 15 deny destination-mac 0100-0ccd-cdd0
+ rule 20 deny destination-mac 0100-0ccc-cccd
+ rule 25 deny destination-mac 0100-0ccd-cdce
+ rule 30 deny destination-mac 0180-c200-0000
+ rule 35 deny destination-mac 0180-c200-0001
+ rule 40 deny destination-mac 0180-c200-0002
+ rule 45 deny destination-mac 0180-c200-0003
+ rule 1000 permit
+#
+vlan 117
+ name VLAN-117
+vlan 121
+ name VLAN-121
+vlan 127
+ name VLAN-127
+vlan 163
+ name VLAN-163
+vlan 165
+ name VLAN-165
+vlan 166
+ name VLAN-166
+vlan 172
+ name VLAN-172
+vlan 178
+ name VLAN178
+vlan 181
+ name VLAN-181
+vlan 182
+ name VLAN-182
+vlan 194
+ name VLAN-194
+vlan 196
+ name VLAN-196
+vlan 197
+ name VLAN-197
+vlan 204
+ name VLAN-204
+vlan 208
+ name VLAN-208
+vlan 210
+ name VLAN-210
+vlan 216
+ name VLAN-216
+vlan 221
+ name VLAN-221
+vlan 225
+ name VLAN-225
+vlan 226
+ name VLAN-226
+vlan 227
+ name VLAN-227
+vlan 228
+ name VLAN-228
+vlan 238
+ name VLAN-238
+vlan 242
+ name VLAN-242
+vlan 243
+ name VLAN-243
+vlan 249
+ name VLAN-249
+vlan 265
+ name VLAN-265
+vlan 268
+ name VLAN-268
+vlan 270
+ name VLAN-270
+vlan 271
+ name VLAN-271
+vlan 285
+ name VLAN-285
+vlan 286
+ name VLAN-286
+vlan 291
+ name VLAN-291
+vlan 293
+ name VLAN-293
+vlan 299
+ name VLAN-299
+vlan 3555
+ name VLAN-3555
+vlan 3556
+ name VLAN-3556
+vlan 3557
+ name VLAN-3557
+vlan 3562
+ name VLAN3562
+vlan 3567
+ name VLAN-3567
+vlan 3568
+ name VLAN3568
+vlan 3573
+ name VLAN-3573
+vlan 3576
+ name VLAN-3576
+vlan 3577
+ name VLAN-3577
+vlan 3581
+ name VLAN-3581
+vlan 3582
+ name VLAN-3582
+vlan 3584
+ name VLAN-3584
+vlan 3588
+ name VLAN-3588
+vlan 3589
+ name VLAN-3589
+vlan 3599
+ name VLAN-3599
+vlan 3600
+ name VLAN-3600
+vlan 3601
+ name VLAN-3601
+vlan 3606
+ name VLAN-3606
+vlan 3612
+ name VLAN-3612
+vlan 3613
+ name VLAN-3613
+vlan 3616
+ name VLAN-3616
+vlan 3618
+ name VLAN-3618
+vlan 3622
+ name VLAN-3622
+vlan 3624
+ name VLAN-3624
+vlan 3628
+ name VLAN-3628
+vlan 3629
+ name VLAN-3629
+vlan 3631
+ name VLAN-3631
+vlan 3633
+ name VLAN-3633
+vlan 3635
+ name VLAN-3635
+vlan 3638
+ name VLAN3638
+vlan 3640
+ name VLAN-3640
+vlan 3641
+ name VLAN-3641
+vlan 3643
+ name VLAN-3643
+vlan 3645
+ name VLAN-3645
+vlan 3648
+ name VLAN-3648
+vlan 3649
+ name VLAN-3649
+vlan 3667
+ name VLAN-3667
+vlan 3855
+ name VLAN-3855
+vlan 3858
+ name VLAN-3858
+vlan 3860
+ name VLAN-3860
+vlan 3863
+ name VLAN-3863
+vlan 3864
+ name VLAN-3864
+vlan 3868
+ name VLAN-3868
+vlan 3869
+ name VLAN-3869
+vlan 3877
+ name VLAN-3877
+vlan 3881
+ name VLAN-3881
+vlan 3885
+ name VLAN-3885
+vlan 3886
+ name VLAN-3886
+vlan 3923
+ name VLAN-3923
+vlan 3938
+ name VLAN-3938
+vlan 3948
+ name VLAN3948
+vlan 3954
+ name VLAN-3954
+vlan 3956
+ name VLAN-3956
+vlan 3958
+ name VLAN-3958
+vlan 3962
+ name VLAN-3962
+vlan 3965
+ name VLAN-3965
+vlan 3966
+ name VLAN-3966
+vlan 3970
+ name VLAN3970
+vlan 3971
+ name VLAN-3971
+vlan 3974
+ name VLAN-3974
+vlan 3978
+ name VLAN3978
+vlan 3979
+ name VLAN-3979
+vlan 3982
+ name VLAN-3982
+vlan 3986
+ name VLAN-3986
+vlan 3988
+ name VLAN3988
+vlan 3989
+ name VLAN3989
+vlan 3991
+ name VLAN-3991
+vlan 3994
+ name VLAN-3994
+vlan 3996
+ name VLAN3996
+vlan 3997
+ name VLAN-3997
+vlan 3999
+ name VLAN-3999
+vlan 4000
+ name VLAN-4000
+#
+aaa
+ authentication-scheme default
+ authentication-scheme tcl
+  authentication-mode hwtacacs local
+ authorization-scheme default
+ authorization-scheme tcl
+  authorization-mode  hwtacacs local
+  authorization-cmd 15 hwtacacs local
+ accounting-scheme default
+ accounting-scheme tcl
+  accounting-mode hwtacacs
+  accounting realtime 3
+  accounting start-fail online
+  accounting interim-fail max-times 5 online
+ domain default
+  authentication-scheme tcl
+  accounting-scheme tcl
+  authorization-scheme tcl
+  hwtacacs-server tcl
+ domain default_admin
+  authentication-scheme tcl
+  accounting-scheme tcl
+  authorization-scheme tcl
+  hwtacacs-server tcl
+ local-user tata password irreversible-cipher %^%#+D$#(z7v,Z4:f2=Vom)"6G*K:j(^iCqbfW9KGeTMElQ~9dJ"m')~0;#Qb_W,%^%#
+ local-user tata privilege level 3
+ local-user tata ftp-directory flash:/
+ local-user tata service-type telnet terminal ssh ftp
+ local-user admin password irreversible-cipher %^%#APmdOpMO<E_]hE$-=*CW.pLFZjSHk&,dl@17!2dCfP~Z<Sr]s<xUCa8@l!8=%^%#
+ local-user admin service-type http
+ local-user sambhav password irreversible-cipher %^%#!eP'Sc*||Q}xt8=&%D'E]Yn1#BAdz~[aspAZ*6>#UdAJ5K~6T0nMnB=]d^00%^%#
+ local-user sambhav privilege level 15
+ local-user sambhav service-type telnet terminal ssh
+#
+ntp-service authentication enable
+ntp-service source-interface Vlanif2305
+ntp-service authentication-keyid 1 authentication-mode md5 cipher %^%#IG6APRr'UR>8LO,SlvYXC).@We|m@L^uP#1G),k@%^%#
+ntp-service reliable authentication-keyid 1
+ntp-service unicast-server 192.168.244.5 authentication-keyid 1
+#
+interface Vlanif2305
+ description **** Management VLAN ****
+ ip address 10.175.91.35 255.255.255.240
+#
+interface GigabitEthernet0/0/1
+ undo negotiation auto
+ speed 100
+ description *** Connected to Mahagujarat WIMAX IDU1 ***
+ port hybrid tagged vlan 3 10 20 30 197 246 253 257 275 306
+ port hybrid tagged vlan 309 to 310 328 358 409 426 449 462 470 515 540
+ port hybrid tagged vlan 581 583 905 907 1250 1253 1258 to 1259 1301 1850 1853
+ port hybrid tagged vlan 1858 to 1859 2305 to 2308 2599 2855 3550 to 3556 3562 to 3563 3568 3581 to 3582 3584 3599
+ port hybrid tagged vlan 3606 3610 3623 3643 3658 3792 3877 3880 3915 3917
+ port hybrid tagged vlan 3925 3956 3964 3971 to 3973 3981 to 3982 3987 3994
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ lldp compliance cdp receive
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/2
+ undo negotiation auto
+ speed 100
+ description *** Connected to Mahagujarat WIMAX IDU2 ***
+ undo port hybrid vlan 1
+ port hybrid tagged vlan 10 20 30 242 246 248 253 275 306 309 to 310
+ port hybrid tagged vlan 328 358 409 426 445 449 462 478 515 540
+ port hybrid tagged vlan 581 583 601 857 905 907 1250 1253 1258 to 1259 1301
+ port hybrid tagged vlan 1850 1853 1858 to 1859 2273 2305 to 2307 2599 2855 3550 to 3551 3554 3556
+ port hybrid tagged vlan 3562 to 3563 3573 3575 3580 to 3582 3584 3599 3606 3610 3623 3631
+ port hybrid tagged vlan 3634 3658 3915 3917 3925 3939 3942 3956 3971 to 3973 3981
+ port hybrid tagged vlan 3987 3994
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ lldp compliance cdp receive
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/3
+ undo negotiation auto
+ speed 100
+ description *** Connected to Mahagujarat WIMAX IDU3 - EOR_149070 ***
+ port hybrid tagged vlan 197 248 253 257 275 306 309 to 310 358 449 462
+ port hybrid tagged vlan 478 515 907 1250 1850 2305 2307 2599 2855 3550
+ port hybrid tagged vlan 3553 3562 to 3563 3584 3631 3792 3939 3964 3972
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ lldp compliance cdp receive
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/4
+ description NP:17340818(091AHME030016449552/Oriflame_India_Pvt_Ltd/Ahmedabad/STDILL)
+ port link-type access
+ port default vlan 135
+ mac-limit maximum 5
+ bpdu disable
+ jumboframe enable 10000
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/5
+ undo negotiation auto
+ speed 100
+ description *** Free Port ***
+ port link-type access
+ mac-limit maximum 5
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ lldp compliance cdp receive
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/6
+ shutdown
+#
+interface GigabitEthernet0/0/7
+#
+interface GigabitEthernet0/0/8
+ shutdown
+#
+interface GigabitEthernet0/0/9
+#
+interface GigabitEthernet0/0/10
+#
+interface GigabitEthernet0/0/11
+#
+interface GigabitEthernet0/0/12
+ description ***RESERVED FOR SA***
+#
+interface GigabitEthernet0/0/13
+ description ***RESERVED FOR SA***
+ shutdown
+#
+interface GigabitEthernet0/0/14
+ shutdown
+#
+interface GigabitEthernet0/0/15
+#
+interface GigabitEthernet0/0/16
+#
+interface GigabitEthernet0/0/17
+ undo negotiation auto
+ speed 100
+ port link-type access
+ port default vlan 394
+ mac-limit maximum 5
+ stp root-protection
+ bpdu disable
+ lldp compliance cdp receive
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/18
+ undo negotiation auto
+ port link-type access
+#
+interface GigabitEthernet0/0/19
+#
+interface GigabitEthernet0/0/20
+ shutdown
+#
+interface GigabitEthernet0/0/21
+ undo negotiation auto
+ speed 10
+ description *** FREE PORT***
+ port link-type access
+ bpdu disable
+ lldp compliance cdp receive
+ jumboframe enable 10240
+#
+interface GigabitEthernet0/0/22
+ description ***RFNOC_Infra-Monitoring_MFD-Connected***
+#
+interface GigabitEthernet0/0/23
+ undo negotiation auto
+ speed 100
+ description *** IOR_XXXX-Xtn to City Gold (ad2-t1-on-wi6-agg-as01 /10.175.102.3/ge-0/0/1)-WILE1-Offnet ***
+ undo port hybrid vlan 1
+ port hybrid tagged vlan 10 20 30 54 108 113 117 119 127 135
+ port hybrid tagged vlan 149 152 154 163 165 to 168 172 to 173 179 to 182 185 to 186 194 to 197 206
+ port hybrid tagged vlan 208 212 219 222 225 232 234 to 235 238 to 239 244 246
+ port hybrid tagged vlan 248 252 to 253 257 260 262 264 to 265 267 269 to 271 273 275
+ port hybrid tagged vlan 285 to 286 289 291 293 to 294 300 to 301 305 to 306 308 to 310 314 to 315 325 328
+ port hybrid tagged vlan 338 358 to 359 361 371 374 394 399 405 409 to 410 412
+ port hybrid tagged vlan 425 to 426 430 434 437 444 to 445 448 to 449 452 457 459 462
+ port hybrid tagged vlan 465 to 468 472 to 475 477 to 478 482 485 to 486 489 to 491 495 to 497 500 to 501 503 505
+ port hybrid tagged vlan 507 512 515 to 518 520 to 521 523 to 525 527 531 533 538 to 540 548
+ port hybrid tagged vlan 550 552 554 556 559 to 560 565 to 566 576 581 583 to 585 587
+ port hybrid tagged vlan 600 to 601 655 680 685 693 857 905 to 907 909 931 1008
+ port hybrid tagged vlan 1250 1300 1620 1850 2186 2273 2297 2305 to 2310 2326 2345
+ port hybrid tagged vlan 2349 2370 2372 2376 2386 to 2387 2390 2498 2532 to 2533 2536 2546
+ port hybrid tagged vlan 2599 2653 2696 2699 2717 2724 2734 to 2735 2755 2855 3232
+ port hybrid tagged vlan 3550 3552 3554 to 3560 3562 to 3563 3565 3567 to 3570 3572 3575 to 3578 3580 to 3582 3584 to 3585
+ port hybrid tagged vlan 3587 to 3588 3591 3594 3596 to 3597 3599 to 3601 3605 to 3607 3610 to 3614 3616 to 3633 3635 3638 to 3641
+ port hybrid tagged vlan 3643 3645 3647 3649 3651 3655 3657 to 3658 3670 3679 3682
+ port hybrid tagged vlan 3687 3689 3792 3851 3853 3857 to 3858 3860 to 3866 3868 to 3871 3873 3876 to 3878
+ port hybrid tagged vlan 3880 to 3883 3885 to 3887 3890 to 3891 3893 3895 to 3896 3898 to 3901 3905 to 3906 3909 to 3910 3912 to 3914 3917 to 3918
+ port hybrid tagged vlan 3921 3923 to 3926 3931 3934 to 3935 3939 3941 to 3942 3945 3947 to 3948 3954 to 3958 3960
+ port hybrid tagged vlan 3963 to 3967 3969 to 3972 3975 3978 to 3980 3982 to 3984 3986 to 3987 3989 to 3994 3999 to 4000
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ dhcp snooping trusted
+#
+interface GigabitEthernet0/0/24
+ undo negotiation auto
+ speed 100
+ description *** IOR_XXXX-Xtn to City Gold (ad2-t1-on-wi6-agg-as01 /10.175.102.3/ge-0/0/1)-WILE1-Offnet ***
+ undo port hybrid vlan 1
+ port hybrid tagged vlan 10 20 30 54 100 108 110 113 117 119
+ port hybrid tagged vlan 121 127 135 149 152 154 163 165 to 168 172 to 173 178 to 182
+ port hybrid tagged vlan 185 to 186 192 194 to 197 204 206 208 210 212 216 221 to 222
+ port hybrid tagged vlan 225 to 228 232 235 238 242 to 244 248 to 249 252 to 253 255 257 259 to 260
+ port hybrid tagged vlan 262 265 269 to 271 273 275 285 to 286 289 291 293 to 294 298 to 301
+ port hybrid tagged vlan 305 to 306 308 to 310 314 to 315 325 328 358 361 371 374 394
+ port hybrid tagged vlan 399 405 409 425 to 426 437 444 to 445 448 to 449 457 459 462 to 463
+ port hybrid tagged vlan 465 to 468 472 to 473 475 477 to 478 482 489 to 490 495 497 503 505
+ port hybrid tagged vlan 507 512 515 517 to 518 520 to 521 523 to 525 527 to 528 531 533 538 to 540
+ port hybrid tagged vlan 548 550 554 556 565 to 566 576 581 to 582 584 to 586 600 to 601 606
+ port hybrid tagged vlan 655 685 765 857 905 to 907 909 931 1008 1250 1300
+ port hybrid tagged vlan 1620 1850 2273 2297 2305 to 2310 2326 2345 2349 2370 2372
+ port hybrid tagged vlan 2376 2387 2390 2498 2532 to 2533 2536 2546 2599 2653 2696
+ port hybrid tagged vlan 2699 2734 to 2735 2755 2855 3232 3550 3554 to 3560 3562 to 3563 3565 to 3570 3572 to 3573
+ port hybrid tagged vlan 3575 to 3578 3581 to 3582 3584 to 3585 3587 to 3591 3594 3597 3599 to 3601 3603 3605 to 3607 3610 to 3619
+ port hybrid tagged vlan 3621 to 3633 3635 3638 to 3641 3643 3645 3647 to 3649 3651 3655 3657 to 3658 3667
+ port hybrid tagged vlan 3670 3679 3682 3687 3689 3763 3792 3851 3853 3855
+ port hybrid tagged vlan 3858 3860 to 3866 3868 to 3871 3873 3876 to 3878 3880 to 3883 3885 to 3887 3891 3893 3895 to 3896
+ port hybrid tagged vlan 3898 to 3901 3905 to 3906 3909 to 3910 3912 to 3914 3917 to 3918 3921 3923 to 3926 3931 3934 to 3935 3938 to 3939
+ port hybrid tagged vlan 3942 3945 3947 to 3948 3954 3956 to 3958 3960 3962 to 3972 3974 3976 3978 to 3980
+ port hybrid tagged vlan 3982 to 3984 3986 to 4000
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ dhcp snooping trusted
+#
+interface GigabitEthernet0/0/25
+#
+interface GigabitEthernet0/0/26
+#
+interface GigabitEthernet0/0/27
+#
+interface GigabitEthernet0/0/28
+#
+interface NULL0
+#
+qos schedule-profile TCL
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+ip route-static 0.0.0.0 0.0.0.0 10.175.91.33
+#
+snmp-agent
+snmp-agent local-engineid 800007DB037CA23EE46EE4
+!snmp-agent community read <removed> %^%#.Z#rHTdU,3eq9R1"Y%!VdxX=:UFC+C=|\aTMwNt"d3QqS{:-(*YBWMNj-i!G;mF$Of*+(Fu-f[KW6S8/%^%# acl 2001
+snmp-agent sys-info contact call Operator at +91-20-66357159/60
+snmp-agent sys-info location Ahmedabad
+snmp-agent sys-info version v2c v3
+snmp-agent group v3 secure privacy write-view ViewDefault acl 2001
+snmp-agent target-host trap address udp-domain 115.114.79.28 params securityname cipher %^%#-;&b=u8JDMaXa,Rq!SlU;)3*.9gYjIM<9*-L+#vK%^%# v2c
+snmp-agent target-host trap address udp-domain 115.114.79.26 params securityname cipher %^%#UD{'$0TgJ50ORl<J%Cw-c[&|YWWgX'].cX.=M!9'%^%# v2c
+snmp-agent target-host trap address udp-domain 115.114.79.46 params securityname cipher %^%#;<+i5VW@Z'N3.73Ps9*8gNO7&q*E2JINk+8Q2rr<%^%# v2c
+snmp-agent target-host trap address udp-domain 115.114.79.59 source Vlanif2305 params securityname ipnmc v3 privacy private-netmanager
+snmp-agent target-host trap address udp-domain 115.114.79.60 source Vlanif2305 params securityname ipnmc v3 privacy private-netmanager
+snmp-agent usm-user v3 ipnmc
+snmp-agent usm-user v3 ipnmc group secure
+snmp-agent usm-user v3 ipnmc authentication-mode md5 cipher %^%#=+^IHivy,DW_z\D;3,.H`h#CC=nzh#pQ7kGX+Cl;%^%#
+snmp-agent usm-user v3 ipnmc privacy-mode des56 cipher %^%#Ocl0#{b3p/@55k$kd:*%B7sJ#(}"pTdr<';E--F;%^%#
+snmp-agent usm-user v3 ipnmc acl 2001
+snmp-agent trap enable
+#
+ssh server compatible-ssh1x enable
+sftp server enable
+stelnet server enable
+ssh authentication-type default password
+ssh client first-time enable
+ssh client 115.114.79.59 assign rsa-key 115.114.79.59
+#
+header shell information "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!        ****  WARNING: UNAUTHORISED ACCESS PROHIBITED  ****          !!  You are now into Tata Communications Network System. Anyone who    !!  access this system without authorization or in access of their     !!  authorization could be subject to civil and/or criminal liability. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+header login information "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                Authorized access only                        !!       This system is the property of TATA COMMUNICATIONS LTD !! Disconnect IMMEDIATELY if you are not an authorized user     !!            Contact [ip.noc@tatacommunications.com]           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+#
+user-interface con 0
+ authentication-mode aaa
+user-interface vty 0 4
+ acl 3002 inbound
+ authentication-mode aaa
+ user privilege level 15
+ idle-timeout 5 0
+user-interface vty 16 20
+ acl 3002 inbound
+ authentication-mode aaa
+ user privilege level 15
+ idle-timeout 5 0
+#
+return

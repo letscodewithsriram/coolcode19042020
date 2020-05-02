@@ -1,0 +1,1177 @@
+!RANCID-CONTENT-TYPE: huawei
+!
+! 'display version':
+!
+! Huawei Versatile Routing Platform Software
+! VRP (R) software, Version 5.160 (S5320 V200R008C00SPC500)
+! Copyright (C) 2000-2015 HUAWEI TECH CO., LTD
+! HUAWEI S5320-36C-EI-DC Routing Switch  
+! 
+! ES5D2T32C002 0(Master) :  
+! 2048M bytes DDR Memory
+! 344M bytes FLASH
+! Pcb      Version :  VER.B
+! Basic  BootROM  Version : 0208.0001 Compiled at Aug 28 2015, 13:46:41
+! BootLoad  Version : 0208.0001 Compiled at Oct 30 2015, 11:38:42
+! CPLD   Version : 010e 
+! Software Version : VRP (R) Software, Version 5.160 (V200R008C00SPC500)
+! PWR1 information
+! Pcb      Version : PWR VER.A
+! PWR2 information
+! Pcb      Version : PWR VER.A
+! FAN1 information
+! Pcb      Version : NA
+! 
+! 'dir /all-filesystems':
+!
+! Directory of flash:/
+! 
+!   Idx  Attr     Size(Byte)  Date        Time       FileName 
+!     0  drw-              -  Aug 13 2018 06:21:46   dhcp
+!     1  drw-              -  Aug 13 2018 06:21:19   user
+!     2  -rw-             36  Dec 08 2018 21:32:23   $_patchstate_reboot
+!     3  -rw-          3,684  Dec 08 2018 21:32:23   $_patch_history
+!     4  drw-              -  Apr 25 2020 15:57:36   logfile
+!     5  -rw-          6,825  Apr 26 2020 21:09:16   vrpcfg.zip
+!     6  -rw-     74,110,532  Dec 03 2018 21:31:48   s5320ei-v200r008c00spc500.cc
+!     7  -rw-     73,740,348  Sep 13 2017 11:17:03   s5320ei-v200r010c00spc600.cc
+!     8  drw-              -  Aug 13 2018 06:21:19   pmdata
+!     9  drw-              -  Aug 13 2018 06:21:10   $_install_mod
+!    10  -rw-          1,029  Dec 03 2018 21:37:01   vrpcfg20181203213701.zip
+!    11  -rw-            836  Dec 05 2018 18:16:49   rr.bak
+!    12  -rw-            836  Dec 05 2018 18:16:49   rr.dat
+!    13  -rw-          1,171  Dec 05 2018 18:16:37   private-data.txt
+!    14  drw-              -  Dec 11 2018 16:57:18   localuser
+!    15  -rw-        293,112  Dec 02 2013 18:25:20   s5320ei-v200r010sph008.pat
+!    16  -rw-              4  Dec 03 2018 21:36:22   snmpnotilog.txt
+!    17  -rw-      2,156,027  Dec 05 2018 18:17:05   help.web
+!    18  -rw-        371,093  Dec 03 2018 21:32:05   s5320ei-v200r008sph015.pat
+!    19  -rw-        394,590  Dec 08 2018 21:29:06   s5320ei-v200r008sph018.pat
+! 
+! 353,116 KB total (201,696 KB free)
+! 
+! 
+! 'display device':
+!
+! S5320-36C-EI-DC's Device status:
+! Slot Sub  Type                Online    Power      Register     Status   Role
+! -------------------------------------------------------------------------------
+! 0    -    S5320-36C-EI        Present   PowerOn    Registered   Normal   Master
+!      PWR1 POWER               Present   PowerOn    Registered   Normal   NA    
+!      PWR2 POWER               Present   PowerOn    Registered   Normal   NA    
+!      FAN1 FAN                 Present   PowerOn    Registered   Normal   NA    
+! 
+! 'display fan':
+!
+! -------------------------------------------------------------------------
+!  Slot  FanID   Online    Status    Speed     Mode     Airflow            
+! -------------------------------------------------------------------------
+!  0     1       Present   Normal    30%       Auto     Side-to-Back
+! 
+! 'display power':
+!
+! ------------------------------------------------------------
+!  Slot    PowerID  Online   Mode   State      Power(W)
+! ------------------------------------------------------------
+!  0       PWR1     Present  DC     Supply     150.00     
+!  0       PWR2     Present  DC     Supply     150.00     
+! 
+! 'display domain':
+!
+!   -------------------------------------------------------------------------
+!   index    DomainName 
+!   -------------------------------------------------------------------------
+!   0        default                                                         
+!   1        default_admin                                                   
+!   -------------------------------------------------------------------------
+!   Total: 2
+! 
+! 'display local-user':
+!
+!   ----------------------------------------------------------------------------
+!   User-name                      State  AuthMask  AdminLevel  
+!   ----------------------------------------------------------------------------
+!   tata                           A      FMS       15         
+!   admin                          A      MH        15         
+!   sambhav                        A      -         15         
+!   ----------------------------------------------------------------------------
+!   Total 3 user(s)
+! 
+! 'display ssh server status':
+!
+!  SSH version                         :2.0
+!  SSH connection timeout              :60 seconds
+!  SSH server key generating interval  :0 hours
+!  SSH authentication retries          :3 times
+!  SFTP server                         :Enable
+!  Stelnet server                      :Enable
+!  Scp server                          :Disable
+!  SSH server source                   :0.0.0.0
+!  ACL4 number                         :0
+!  ACL6 number                         :0
+! 
+! 'display fib':
+!
+! Route Flags: G - Gateway Route, H - Host Route,    U - Up Route
+!              S - Static Route,  D - Dynamic Route, B - Black Hole Route
+!              L - Vlink Route
+! --------------------------------------------------------------------------------
+!  FIB Table:
+!  Total number of Routes : 5 
+!  
+! Destination/Mask   Nexthop         Flag  Interface      TunnelID
+! 172.25.59.173/32   127.0.0.1       HU    InLoop0        0x0
+! 127.0.0.1/32       127.0.0.1       HU    InLoop0        0x0
+! 127.0.0.0/8        127.0.0.1       U     InLoop0        0x0
+! 172.25.59.168/29   172.25.59.173   U     Vlanif3040     0x0
+! 0.0.0.0/0          172.25.59.169   GSU   Vlanif3040     0x0
+! 
+! 'display ip routing-table':
+!
+! Route Flags: R - relay, D - download to fib
+! ------------------------------------------------------------------------------
+! Routing Tables: Public
+!          Destinations : 5        Routes : 5        
+! 
+! Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+! 
+!         0.0.0.0/0   Static  60   0          RD   172.25.59.169   Vlanif3040
+!       127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+!       127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+!   172.25.59.168/29  Direct  0    0           D   172.25.59.173   Vlanif3040
+!   172.25.59.173/32  Direct  0    0           D   127.0.0.1       Vlanif3040
+! 
+! 
+! 'display lacp statistics eth-trunk':
+!
+! 
+!Software Version V200R008C00SPC500
+#
+sysname ad2-t1-b1-as04
+#
+info-center channel 6 name syslog
+info-center loghost source Vlanif3040
+info-center loghost 172.31.6.90 channel 6
+info-center loghost 115.114.79.25 channel 6
+info-center loghost 115.114.79.26 channel 6
+info-center loghost 115.114.151.19 channel 6
+#
+vlan batch 2 to 248 250 to 2000 2002 to 4094
+#
+stp bpdu-protection
+stp enable
+#
+igmp-snooping enable
+#
+telnet server enable
+#
+clock timezone IST add 05:30:00
+#
+dhcp enable
+#
+dhcp snooping enable ipv4
+#
+diffserv domain default
+#
+stp region-configuration
+ region-name TATA
+ revision-level 20
+ instance 1 vlan 224 1100 to 1299 1500 to 1899 
+ instance 2 vlan 3100 to 3549 
+ instance 3 vlan 246 to 247 3000 to 3099 
+ instance 4 vlan 2400 to 2999 
+ instance 5 vlan 3550 to 4000 
+ instance 6 vlan 1300 to 1499 1900 to 2399 
+ instance 7 vlan 400 to 999 
+ instance 8 vlan 2 to 223 225 to 245 248 to 399 1000 to 1099 
+ active region-configuration
+#
+radius-server template default
+#
+hwtacacs-server template tcl
+ hwtacacs-server authentication 115.114.151.7
+ hwtacacs-server authentication 115.114.151.67 secondary
+ hwtacacs-server authorization 115.114.151.7
+ hwtacacs-server authorization 115.114.151.67 secondary
+ hwtacacs-server accounting 115.114.151.7
+ hwtacacs-server accounting 115.114.151.67 secondary
+ hwtacacs-server source-ip 172.25.59.173
+ hwtacacs-server shared-key cipher %^%#*Ogx,:@MzKC(Z`KRo0COBlFw)@MuYK^Ryv4HCR]=%^%#
+ undo hwtacacs-server user-name domain-included
+#
+rsa peer-public-key 115.114.79.59
+ public-key-code begin
+  30820109
+    02820100
+      DC11B927 7B156695 FCB40AF8 ACEECAFB 46CF0D72 23E251B8 490961BC 29D6E5B2
+      CA814135 645CF7F9 FC18378A 872B8723 D5472DE1 1AC3F419 E744C310 90DF9D3D
+      5A743A9B 0898D586 14295EEE 3B4F38DC 970A90FD 4103D0A0 78E53D3B 29AF5095
+      FFB911BD 3C14C282 85E0A207 3C94B649 3B48F998 E59981DC 339A86D9 BDCD409C
+      CF2CF50F 45FB9687 A062B5F1 87C28711 5FAD472D B6E441A6 3A970072 F36C592C
+      F9A11F1E 77A43E9C B9FB72B2 52667AFE 1C4C32CC 8DA54CD4 C1DB4BE4 AE961B0D
+      C52828B0 B76FDEE0 1C0413B0 552268E1 EA77117D 66FAD1DB AAB61B73 7A6E08AD
+      32020487 085EB931 CD9C8789 088FC01A E507689B 8999847E 131D4F0C 4859A7E9
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+acl number 2001  
+ description for SNMP
+ rule 5 permit source 172.31.5.87 0 
+ rule 10 permit source 172.31.5.230 0 
+ rule 15 permit source 172.31.6.80 0 
+ rule 20 permit source 172.31.6.89 0 
+ rule 25 permit source 172.31.6.90 0 
+ rule 30 permit source 172.31.6.100 0 
+ rule 35 permit source 172.31.6.113 0 
+ rule 40 permit source 172.31.6.123 0 
+ rule 45 permit source 172.31.6.190 0 
+ rule 50 permit source 202.54.29.78 0 
+ rule 55 permit source 202.54.29.81 0 
+ rule 60 permit source 172.31.5.250 0 
+ rule 65 permit source 10.209.19.162 0 
+ rule 70 permit source 10.209.19.166 0 
+ rule 75 permit source 10.209.19.168 0 
+ rule 80 permit source 115.114.85.108 0 
+ rule 85 permit source 115.114.79.60 0 
+ rule 90 permit source 115.114.79.59 0 
+ rule 95 permit source 172.31.5.252 0 
+ rule 100 permit source 202.81.192.5 0 
+ rule 105 permit source 202.81.192.11 0 
+ rule 110 permit source 115.114.79.28 0 
+ rule 115 permit source 115.114.79.46 0 
+ rule 605 permit source 115.114.79.29 0 
+ rule 610 permit source 115.110.121.226 0 
+ rule 1000 deny 
+#
+acl number 3002  
+ description for ssh
+ rule 5 permit tcp source 172.31.6.163 0 destination-port eq 22 
+ rule 10 permit tcp source 172.31.6.163 0 destination-port eq ftp-data 
+ rule 15 permit tcp source 172.31.6.163 0 destination-port eq ftp 
+ rule 20 permit tcp source 172.31.6.162 0 destination-port eq 22 
+ rule 25 permit tcp source 172.31.6.162 0 destination-port eq ftp-data 
+ rule 30 permit tcp source 172.31.6.162 0 destination-port eq ftp 
+ rule 35 permit tcp source 115.114.151.19 0 destination-port eq 22 
+ rule 40 permit tcp source 115.114.151.19 0 destination-port eq ftp-data 
+ rule 45 permit tcp source 115.114.151.19 0 destination-port eq ftp 
+ rule 50 permit tcp source 115.114.151.10 0 destination-port eq 22 
+ rule 55 permit tcp source 115.114.151.10 0 destination-port eq ftp-data 
+ rule 60 permit tcp source 115.114.151.10 0 destination-port eq ftp 
+ rule 65 permit tcp source 172.31.5.116 0 destination-port eq 22 
+ rule 70 permit tcp source 172.31.5.116 0 destination-port eq ftp-data 
+ rule 75 permit tcp source 172.31.5.116 0 destination-port eq ftp 
+ rule 80 permit tcp source 172.31.6.113 0 destination-port eq 22 
+ rule 85 permit tcp source 172.31.6.113 0 destination-port eq ftp-data 
+ rule 90 permit tcp source 172.31.6.113 0 destination-port eq ftp 
+ rule 95 permit tcp source 172.31.6.115 0 destination-port eq 22 
+ rule 100 permit tcp source 172.31.6.115 0 destination-port eq ftp-data 
+ rule 105 permit tcp source 172.31.6.115 0 destination-port eq ftp 
+ rule 110 permit tcp source 172.31.6.100 0 destination-port eq 22 
+ rule 115 permit tcp source 172.31.6.100 0 destination-port eq ftp-data 
+ rule 120 permit tcp source 172.31.6.100 0 destination-port eq ftp 
+ rule 125 permit tcp source 115.114.146.71 0 destination-port eq 22 
+ rule 130 permit tcp source 115.114.146.71 0 destination-port eq ftp-data 
+ rule 135 permit tcp source 115.114.146.71 0 destination-port eq ftp 
+ rule 140 permit tcp source 115.114.146.70 0 destination-port eq 22 
+ rule 145 permit tcp source 115.114.146.70 0 destination-port eq ftp-data 
+ rule 150 permit tcp source 115.114.146.70 0 destination-port eq ftp 
+ rule 155 permit tcp source 115.114.146.69 0 destination-port eq 22 
+ rule 160 permit tcp source 115.114.146.69 0 destination-port eq ftp-data 
+ rule 165 permit tcp source 115.114.146.69 0 destination-port eq ftp 
+ rule 170 permit tcp source 172.31.6.89 0 destination-port eq 22 
+ rule 175 permit tcp source 172.31.6.89 0 destination-port eq ftp-data 
+ rule 180 permit tcp source 172.31.6.89 0 destination-port eq ftp 
+ rule 185 permit tcp source 172.31.6.90 0 destination-port eq 22 
+ rule 190 permit tcp source 172.31.6.90 0 destination-port eq ftp-data 
+ rule 195 permit tcp source 172.31.6.90 0 destination-port eq ftp 
+ rule 200 permit tcp source 172.31.6.73 0 destination-port eq 22 
+ rule 205 permit tcp source 172.31.6.73 0 destination-port eq ftp-data 
+ rule 210 permit tcp source 172.31.6.73 0 destination-port eq ftp 
+ rule 215 permit tcp source 115.114.79.59 0 destination-port eq 22 
+ rule 220 permit tcp source 115.114.79.59 0 destination-port eq ftp-data 
+ rule 225 permit tcp source 115.114.79.59 0 destination-port eq ftp 
+ rule 230 permit tcp source 115.114.79.60 0 destination-port eq 22 
+ rule 245 permit tcp source 115.114.79.28 0 destination-port eq 22 
+ rule 250 permit tcp source 115.114.79.28 0 destination-port eq ftp-data 
+ rule 255 permit tcp source 115.114.79.28 0 destination-port eq ftp 
+ rule 260 permit tcp source 115.114.79.46 0 destination-port eq 22 
+ rule 265 permit tcp source 115.114.79.46 0 destination-port eq ftp-data 
+ rule 270 permit tcp source 115.114.79.46 0 destination-port eq ftp 
+ rule 275 permit tcp source 115.110.121.225 0 destination-port eq 22 
+ rule 280 permit tcp source 115.110.121.225 0 destination-port eq ftp-data 
+ rule 285 permit tcp source 115.110.121.225 0 destination-port eq ftp 
+ rule 605 permit tcp source 115.114.79.29 0 destination-port eq 22 
+ rule 610 permit tcp source 115.110.121.226 0 destination-port eq 22 
+ rule 908 permit tcp source 115.114.79.48 0 destination-port eq 22 
+ rule 1000 deny ip 
+#
+acl name Block-Invalid-EWS-Frames 4003  
+ description Block-Invalid-EWS-Frames
+ rule 25 deny source-mac e8e7-3200-0000 ffff-ff00-0000
+ rule 26 deny source-mac f4c6-1300-0000 ffff-ff00-0000
+ rule 27 deny source-mac e481-8400-0000 ffff-ff00-0000
+ rule 28 deny source-mac e030-0500-0000 ffff-ff00-0000
+ rule 29 deny source-mac d4e3-3f00-0000 ffff-ff00-0000
+ rule 30 deny source-mac d422-4e00-0000 ffff-ff00-0000
+ rule 31 deny source-mac c408-4a00-0000 ffff-ff00-0000
+ rule 32 deny source-mac bc8d-0e00-0000 ffff-ff00-0000
+ rule 33 deny source-mac bc6b-4d00-0000 ffff-ff00-0000
+ rule 34 deny source-mac bc52-b400-0000 ffff-ff00-0000
+ rule 35 deny source-mac b075-4d00-0000 ffff-ff00-0000
+ rule 36 deny source-mac ac9c-e400-0000 ffff-ff00-0000
+ rule 37 deny source-mac a8ad-3d00-0000 ffff-ff00-0000
+ rule 38 deny source-mac a47b-2c00-0000 ffff-ff00-0000
+ rule 39 deny source-mac a0f3-e400-0000 ffff-ff00-0000
+ rule 40 deny source-mac 98b0-3900-0000 ffff-ff00-0000
+ rule 41 deny source-mac 94e9-8c00-0000 ffff-ff00-0000
+ rule 42 deny source-mac 94ae-6100-0000 ffff-ff00-0000
+ rule 43 deny source-mac 9067-f300-0000 ffff-ff00-0000
+ rule 44 deny source-mac 9067-b500-0000 ffff-ff00-0000
+ rule 45 deny source-mac 903a-a000-0000 ffff-ff00-0000
+ rule 46 deny source-mac 8c90-d300-0000 ffff-ff00-0000
+ rule 47 deny source-mac 885c-4700-0000 ffff-ff00-0000
+ rule 48 deny source-mac 84db-fc00-0000 ffff-ff00-0000
+ rule 49 deny source-mac 84a7-8300-0000 ffff-ff00-0000
+ rule 50 deny source-mac 8426-2b00-0000 ffff-ff00-0000
+ rule 51 deny source-mac 7c20-6400-0000 ffff-ff00-0000
+ rule 52 deny source-mac 7025-2600-0000 ffff-ff00-0000
+ rule 53 deny source-mac 6cbe-e900-0000 ffff-ff00-0000
+ rule 54 deny source-mac 6859-7f00-0000 ffff-ff00-0000
+ rule 55 deny source-mac 6854-ed00-0000 ffff-ff00-0000
+ rule 56 deny source-mac 54a6-1900-0000 ffff-ff00-0000
+ rule 57 deny source-mac 5405-5f00-0000 ffff-ff00-0000
+ rule 58 deny source-mac 4cc9-4f00-0000 ffff-ff00-0000
+ rule 59 deny source-mac 4ca7-4b00-0000 ffff-ff00-0000
+ rule 60 deny source-mac 4c5f-d200-0000 ffff-ff00-0000
+ rule 61 deny source-mac 48f8-e100-0000 ffff-ff00-0000
+ rule 62 deny source-mac 48f7-f100-0000 ffff-ff00-0000
+ rule 63 deny source-mac 3852-1a00-0000 ffff-ff00-0000
+ rule 64 deny source-mac 34aa-9900-0000 ffff-ff00-0000
+ rule 65 deny source-mac 2cfa-a200-0000 ffff-ff00-0000
+ rule 66 deny source-mac 24af-4a00-0000 ffff-ff00-0000
+ rule 67 deny source-mac 1880-f500-0000 ffff-ff00-0000
+ rule 68 deny source-mac 184a-6f00-0000 ffff-ff00-0000
+ rule 69 deny source-mac 1842-2f00-0000 ffff-ff00-0000
+ rule 70 deny source-mac 143e-6000-0000 ffff-ff00-0000
+ rule 71 deny source-mac 10e8-7800-0000 ffff-ff00-0000
+ rule 72 deny source-mac 0cb5-de00-0000 ffff-ff00-0000
+ rule 73 deny source-mac 0ca4-0200-0000 ffff-ff00-0000
+ rule 74 deny source-mac 0c54-b900-0000 ffff-ff00-0000
+ rule 75 deny source-mac 040a-8300-0000 ffff-ff00-0000
+ rule 76 deny source-mac 00e0-da00-0000 ffff-ff00-0000
+ rule 77 deny source-mac 00e0-b100-0000 ffff-ff00-0000
+ rule 78 deny source-mac 00d0-f600-0000 ffff-ff00-0000
+ rule 79 deny source-mac 00d0-9500-0000 ffff-ff00-0000
+ rule 80 deny source-mac 00c0-be00-0000 ffff-ff00-0000
+ rule 81 deny source-mac 00a0-8100-0000 ffff-ff00-0000
+ rule 82 deny source-mac 0080-3900-0000 ffff-ff00-0000
+ rule 83 deny source-mac 0080-2100-0000 ffff-ff00-0000
+ rule 84 deny source-mac 0025-ba00-0000 ffff-ff00-0000
+ rule 85 deny source-mac 0023-3e00-0000 ffff-ff00-0000
+ rule 86 deny source-mac 0021-ae00-0000 ffff-ff00-0000
+ rule 87 deny source-mac 0021-3500-0000 ffff-ff00-0000
+ rule 88 deny source-mac 0021-0500-0000 ffff-ff00-0000
+ rule 89 deny source-mac 0020-da00-0000 ffff-ff00-0000
+ rule 90 deny source-mac 0020-6000-0000 ffff-ff00-0000
+ rule 91 deny source-mac 0020-3200-0000 ffff-ff00-0000
+ rule 92 deny source-mac 001d-4c00-0000 ffff-ff00-0000
+ rule 93 deny source-mac 001c-8e00-0000 ffff-ff00-0000
+ rule 94 deny source-mac 001a-f000-0000 ffff-ff00-0000
+ rule 95 deny source-mac 0019-8f00-0000 ffff-ff00-0000
+ rule 96 deny source-mac 0017-cc00-0000 ffff-ff00-0000
+ rule 97 deny source-mac 0016-4d00-0000 ffff-ff00-0000
+ rule 98 deny source-mac 0015-3f00-0000 ffff-ff00-0000
+ rule 99 deny source-mac 0011-8b00-0000 ffff-ff00-0000
+ rule 100 deny source-mac 0011-3f00-0000 ffff-ff00-0000
+ rule 101 deny source-mac 000f-6200-0000 ffff-ff00-0000
+ rule 102 deny source-mac 000e-8600-0000 ffff-ff00-0000
+ rule 103 deny source-mac 0008-9a00-0000 ffff-ff00-0000
+ rule 104 deny source-mac 0077-2000-0000 ffff-ff00-0000
+ rule 105 deny source-mac 0003-fa00-0000 ffff-ff00-0000
+ rule 106 deny source-mac 407c-7d00-0000 ffff-ff00-0000
+ rule 120 permit destination-mac 0180-c200-0000
+ rule 125 permit destination-mac 0180-c200-0002
+ rule 130 permit destination-mac 0100-0ccc-cccd
+ rule 135 permit destination-mac 0100-0ccc-cccc
+ rule 140 permit destination-mac 0100-0ccd-cdcd
+ rule 150 deny destination-mac 0100-0c00-0000
+ rule 155 deny destination-mac 0100-0ccd-cdce
+ rule 160 deny destination-mac 0100-0ccd-cdd0
+ rule 165 deny destination-mac 0180-c200-0001
+ rule 170 deny destination-mac 0180-c200-0000 ffff-ffff-fff0
+ rule 175 deny destination-mac 0180-c200-0010
+ rule 1000 permit
+acl name Block-Invalid-Frames 4004  
+ description Block-Invalid-Frames
+ rule 25 deny source-mac e8e7-3200-0000 ffff-ff00-0000
+ rule 26 deny source-mac f4c6-1300-0000 ffff-ff00-0000
+ rule 27 deny source-mac e481-8400-0000 ffff-ff00-0000
+ rule 28 deny source-mac e030-0500-0000 ffff-ff00-0000
+ rule 29 deny source-mac d4e3-3f00-0000 ffff-ff00-0000
+ rule 30 deny source-mac d422-4e00-0000 ffff-ff00-0000
+ rule 31 deny source-mac c408-4a00-0000 ffff-ff00-0000
+ rule 32 deny source-mac bc8d-0e00-0000 ffff-ff00-0000
+ rule 33 deny source-mac bc6b-4d00-0000 ffff-ff00-0000
+ rule 34 deny source-mac bc52-b400-0000 ffff-ff00-0000
+ rule 35 deny source-mac b075-4d00-0000 ffff-ff00-0000
+ rule 36 deny source-mac ac9c-e400-0000 ffff-ff00-0000
+ rule 37 deny source-mac a8ad-3d00-0000 ffff-ff00-0000
+ rule 38 deny source-mac a47b-2c00-0000 ffff-ff00-0000
+ rule 39 deny source-mac a0f3-e400-0000 ffff-ff00-0000
+ rule 40 deny source-mac 98b0-3900-0000 ffff-ff00-0000
+ rule 41 deny source-mac 94e9-8c00-0000 ffff-ff00-0000
+ rule 42 deny source-mac 94ae-6100-0000 ffff-ff00-0000
+ rule 43 deny source-mac 9067-f300-0000 ffff-ff00-0000
+ rule 44 deny source-mac 9067-b500-0000 ffff-ff00-0000
+ rule 45 deny source-mac 903a-a000-0000 ffff-ff00-0000
+ rule 46 deny source-mac 8c90-d300-0000 ffff-ff00-0000
+ rule 47 deny source-mac 885c-4700-0000 ffff-ff00-0000
+ rule 48 deny source-mac 84db-fc00-0000 ffff-ff00-0000
+ rule 49 deny source-mac 84a7-8300-0000 ffff-ff00-0000
+ rule 50 deny source-mac 8426-2b00-0000 ffff-ff00-0000
+ rule 51 deny source-mac 7c20-6400-0000 ffff-ff00-0000
+ rule 52 deny source-mac 7025-2600-0000 ffff-ff00-0000
+ rule 53 deny source-mac 6cbe-e900-0000 ffff-ff00-0000
+ rule 54 deny source-mac 6859-7f00-0000 ffff-ff00-0000
+ rule 55 deny source-mac 6854-ed00-0000 ffff-ff00-0000
+ rule 56 deny source-mac 54a6-1900-0000 ffff-ff00-0000
+ rule 57 deny source-mac 5405-5f00-0000 ffff-ff00-0000
+ rule 58 deny source-mac 4cc9-4f00-0000 ffff-ff00-0000
+ rule 59 deny source-mac 4ca7-4b00-0000 ffff-ff00-0000
+ rule 60 deny source-mac 4c5f-d200-0000 ffff-ff00-0000
+ rule 61 deny source-mac 48f8-e100-0000 ffff-ff00-0000
+ rule 62 deny source-mac 48f7-f100-0000 ffff-ff00-0000
+ rule 63 deny source-mac 3852-1a00-0000 ffff-ff00-0000
+ rule 64 deny source-mac 34aa-9900-0000 ffff-ff00-0000
+ rule 65 deny source-mac 2cfa-a200-0000 ffff-ff00-0000
+ rule 66 deny source-mac 24af-4a00-0000 ffff-ff00-0000
+ rule 67 deny source-mac 1880-f500-0000 ffff-ff00-0000
+ rule 68 deny source-mac 184a-6f00-0000 ffff-ff00-0000
+ rule 69 deny source-mac 1842-2f00-0000 ffff-ff00-0000
+ rule 70 deny source-mac 143e-6000-0000 ffff-ff00-0000
+ rule 71 deny source-mac 10e8-7800-0000 ffff-ff00-0000
+ rule 72 deny source-mac 0cb5-de00-0000 ffff-ff00-0000
+ rule 73 deny source-mac 0ca4-0200-0000 ffff-ff00-0000
+ rule 74 deny source-mac 0c54-b900-0000 ffff-ff00-0000
+ rule 75 deny source-mac 040a-8300-0000 ffff-ff00-0000
+ rule 76 deny source-mac 00e0-da00-0000 ffff-ff00-0000
+ rule 77 deny source-mac 00e0-b100-0000 ffff-ff00-0000
+ rule 78 deny source-mac 00d0-f600-0000 ffff-ff00-0000
+ rule 79 deny source-mac 00d0-9500-0000 ffff-ff00-0000
+ rule 80 deny source-mac 00c0-be00-0000 ffff-ff00-0000
+ rule 81 deny source-mac 00a0-8100-0000 ffff-ff00-0000
+ rule 82 deny source-mac 0080-3900-0000 ffff-ff00-0000
+ rule 83 deny source-mac 0080-2100-0000 ffff-ff00-0000
+ rule 84 deny source-mac 0025-ba00-0000 ffff-ff00-0000
+ rule 85 deny source-mac 0023-3e00-0000 ffff-ff00-0000
+ rule 86 deny source-mac 0021-ae00-0000 ffff-ff00-0000
+ rule 87 deny source-mac 0021-3500-0000 ffff-ff00-0000
+ rule 88 deny source-mac 0021-0500-0000 ffff-ff00-0000
+ rule 89 deny source-mac 0020-da00-0000 ffff-ff00-0000
+ rule 90 deny source-mac 0020-6000-0000 ffff-ff00-0000
+ rule 91 deny source-mac 0020-3200-0000 ffff-ff00-0000
+ rule 92 deny source-mac 001d-4c00-0000 ffff-ff00-0000
+ rule 93 deny source-mac 001c-8e00-0000 ffff-ff00-0000
+ rule 94 deny source-mac 001a-f000-0000 ffff-ff00-0000
+ rule 95 deny source-mac 0019-8f00-0000 ffff-ff00-0000
+ rule 96 deny source-mac 0017-cc00-0000 ffff-ff00-0000
+ rule 97 deny source-mac 0016-4d00-0000 ffff-ff00-0000
+ rule 98 deny source-mac 0015-3f00-0000 ffff-ff00-0000
+ rule 99 deny source-mac 0011-8b00-0000 ffff-ff00-0000
+ rule 100 deny source-mac 0011-3f00-0000 ffff-ff00-0000
+ rule 101 deny source-mac 000f-6200-0000 ffff-ff00-0000
+ rule 102 deny source-mac 000e-8600-0000 ffff-ff00-0000
+ rule 103 deny source-mac 0008-9a00-0000 ffff-ff00-0000
+ rule 104 deny source-mac 0077-2000-0000 ffff-ff00-0000
+ rule 105 deny source-mac 0003-fa00-0000 ffff-ff00-0000
+ rule 106 deny source-mac 407c-7d00-0000 ffff-ff00-0000
+ rule 120 deny destination-mac 0180-c200-0000 ffff-ffff-fff0
+ rule 125 deny destination-mac 0100-0c00-0000
+ rule 130 deny destination-mac 0100-0ccc-cccc
+ rule 135 deny destination-mac 0100-0ccd-cdd0
+ rule 140 deny destination-mac 0100-0ccc-cccd
+ rule 145 deny destination-mac 0100-0ccd-cdce
+acl name Block-PVST-CDP 4005  
+ description Block-PVST-CDP
+ rule 10 deny destination-mac 0100-0ccc-cccc
+ rule 20 deny destination-mac 0100-0ccc-cccd
+ rule 100 permit
+acl name Block-Rough-Traffic 4006  
+ description Block-Rough-traffic to CPU
+ rule 10 deny destination-mac 0100-0ccc-cccd
+#
+drop-profile default
+#
+vlan 114
+ name VLAN-114
+#
+aaa
+ authentication-scheme default
+ authentication-scheme radius
+  authentication-mode radius
+ authentication-scheme tcl
+  authentication-mode hwtacacs local
+ authorization-scheme default
+ authorization-scheme tcl
+  authorization-mode  hwtacacs local
+  authorization-cmd 15 hwtacacs local
+ accounting-scheme default
+ accounting-scheme tcl
+  accounting-mode hwtacacs
+  accounting realtime 3
+  accounting start-fail online
+  accounting interim-fail max-times 5 online
+ local-aaa-user password policy administrator 
+  password expire 0
+ domain default
+  authentication-scheme tcl
+  accounting-scheme tcl
+  authorization-scheme tcl
+  radius-server default
+  hwtacacs-server tcl
+ domain default_admin
+  authentication-scheme tcl
+  accounting-scheme tcl
+  authorization-scheme tcl
+  hwtacacs-server tcl
+ local-user tata password irreversible-cipher %^%#q3,)3X4+V(4brG'Q&N>9(1pn7\{ybDgx\=HMtkW>(,3C>HO\]Dn;<NI1)|;O%^%# access-limit 5
+ local-user tata privilege level 15
+ local-user tata ftp-directory flash:/
+ local-user tata service-type terminal ssh ftp
+ local-user admin password irreversible-cipher %^%#za!]2g5J%RQT,!AW&Ok3*yOfVL2{|FKS.D<N.0qS\w3|<paE//]zP;L1!FQ$%^%#
+ local-user admin privilege level 15
+ local-user admin service-type terminal http
+ local-user sambhav password cipher %^%#%c=i&8%m3.ao<rK57dU<goHYH6^:GM#hI>%r,&:9%^%#
+ local-user sambhav privilege level 15
+#
+ntp-service authentication enable
+ntp-service source-interface Vlanif3040
+ntp-service authentication-keyid 1 authentication-mode md5 cipher %^%#sIWHMzutq&t%_2%>dFOM:Mb:Z_1'*>]G|HG3i0$F%^%#
+ntp-service reliable authentication-keyid 1
+ntp-service unicast-server 172.25.59.169 authentication-keyid 1
+#
+interface Vlanif1
+#
+interface Vlanif3040
+ description EOR_715665/managment
+ ip address 172.25.59.173 255.255.255.248
+#
+interface MEth0/0/1
+#
+interface GigabitEthernet0/0/1
+ undo negotiation auto
+ speed 100
+ description "NP:16447030(091DAMA623006923619/Johnson_&_Johnson_Private_Limited/Daman/GVPN)"
+ port link-type access
+ port default vlan 416
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ trust dscp 
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/2
+ undo negotiation auto
+ speed 100
+ description "(079103251697/CUST/Mednautix Outsourcing Pvt Ltd/Highway, Thaltej Cross Road/Ahmedabad/MVOIP-U/3Mb/VSNL-MAN/Single)"
+ port link-type access
+ port default vlan 117
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ trust dscp 
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/3
+ undo negotiation auto
+ speed 100
+ port link-type access
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ trust dscp 
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/4
+ undo negotiation auto
+ speed 100
+ description "(07931244683/CUST/Torrent Power Ltd/Shahpur/Ahmedabad/L3VPN-M/12Mb/MAN/Single)"
+ port link-type access
+ port default vlan 2012
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ trust dscp 
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/5
+ undo negotiation auto
+ speed 100
+ description " (091AHME623010769426/CUST/BAJAJ ELECTRICALS LTD/ Ashram Road/Ahmedabad/L3VPN-M/8Mb/MAN/Single)"
+ port link-type access
+ port default vlan 419
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ trust dscp 
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/6
+ undo negotiation auto
+ speed 100
+ description "NP:15855357(091AHME623029447856/Brakes_India_Private_Limited/Ahmedabad/GVPN)"
+ port link-type access
+ port default vlan 175
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ trust dscp 
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/7
+ undo negotiation auto
+ speed 100
+ description NP:21732598(091AHME030011562304/The_Kalupur_Commercial_Co-Operative_Bank_Ltd/Ahmedabad/STDILL)
+ port link-type access
+ port default vlan 187
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ trust dscp 
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/8
+ undo negotiation auto
+ speed 100
+ description NP:19667392(091AHME623016059647/Emcure_Pharmaceuticals_Ltd./Ahmedabad/GVPN)
+ port link-type access
+ port default vlan 144
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10000
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ trust dscp 
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/9
+ undo negotiation auto
+ speed 100
+ description (091AHME623033828346/Bosch_Ltd./Ahmedabad/GVPN)
+ port link-type access
+ port default vlan 120
+ mac-limit maximum 5
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10000
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/10
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/11
+ description " free port "
+ port link-type access
+ port default vlan 105
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/12
+ undo negotiation auto
+ description " free port "
+ port link-type access
+ port default vlan 105
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/13
+ undo negotiation auto
+ description " free port "
+ port link-type access
+ port default vlan 105
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/14
+ undo negotiation auto
+ speed 100
+ description "NP:20641016(091AHME623033529837/Bosch_Rexroth_(India)_Private_Limited/Ahmedabad/"
+ port link-type access
+ port default vlan 114
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/15
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/16
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/17
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/18
+ undo negotiation auto
+ speed 100
+ description " free port "
+ shutdown
+ port link-type access
+ port default vlan 110
+ traffic-filter inbound acl name Block-Invalid-Frames
+#
+interface GigabitEthernet0/0/19
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/20
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/21
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/22
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/23
+ undo negotiation auto
+ speed 100
+ description "(07931248560/CUST/SBI life insurance co ltd/Opp. Memnagar Fire Station, Memnagar/Ahmedabad/L3VPN-M/1Mb/VSNL-MAN/Single)"
+ port link-type access
+ port default vlan 110
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/24
+ undo negotiation auto
+ speed 100
+ description (IOR_243205 INT Tejas DCN 2Mb )
+ port link-type access
+ port default vlan 3500
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/25
+ port media type fiber
+  undo negotiation auto
+ description " free port "
+ port link-type access
+ port default vlan 105
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ jumboframe enable 10240
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+ multicast-suppression 1
+ broadcast-suppression 1
+#
+interface GigabitEthernet0/0/26
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/27
+ description " free port "
+ shutdown
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface GigabitEthernet0/0/28
+ port media type copper
+  undo negotiation auto
+  speed 100
+ description " free port "
+ shutdown
+ port link-type access
+ port default vlan 3040
+ mac-limit maximum 5
+ stp disable
+ stp bpdu-filter enable
+ traffic-filter inbound acl name Block-Invalid-Frames
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+interface XGigabitEthernet0/0/1
+ undo negotiation auto
+ description IOR_715685//XC/connected to ad-me01-aggr-hsw01(ge-1/0/8)/1G
+ port hybrid tagged vlan 100 to 104 106 108 to 121 123 to 126 130 to 132 134 142 to 151 155 161 to 164 167
+ port hybrid tagged vlan 175 to 176 178 181 184 187 190 196 199 253 255 to 256
+ port hybrid tagged vlan 266 280 to 284 288 302 311 416 419 460 481 483
+ port hybrid tagged vlan 510 1901 2002 to 2006 2008 to 2012 2014 to 2015 2454 2835 2841 to 2842 2848 to 2850 2858
+ port hybrid tagged vlan 2869 to 2872 2884 2887 to 2888 2966 3040 3500 3750 to 3849
+ jumboframe enable 10240
+ trust dscp 
+ unicast-suppression 5
+ multicast-suppression 5
+ broadcast-suppression 5
+#
+interface XGigabitEthernet0/0/2
+ undo negotiation auto
+ description IOR_715686/connected to ad2-t1-b1-as01 Gi0/1/2 /1G//Single
+ port hybrid tagged vlan 100 to 104 106 108 to 121 123 to 126 130 to 132 134 142 to 151 155 161 to 164 167
+ port hybrid tagged vlan 175 to 176 178 181 184 187 190 255 to 256 266 280 to 284 288
+ port hybrid tagged vlan 302 311 416 419 460 481 483 510 1901 2002 to 2006
+ port hybrid tagged vlan 2008 to 2012 2014 to 2015 2454 2835 2841 to 2842 2848 to 2850 2858 2869 to 2872 2884 2887 to 2888
+ port hybrid tagged vlan 2966 3040 3500 3750 to 3849
+ jumboframe enable 10240
+ trust dscp 
+ unicast-suppression 5
+ multicast-suppression 5
+ broadcast-suppression 5
+#
+interface XGigabitEthernet0/0/3
+ port hybrid tagged vlan 249
+#
+interface XGigabitEthernet0/0/4
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 172.25.59.169
+#
+snmp-agent
+snmp-agent local-engineid 800007DB0340EEDD946F30
+!snmp-agent community read <removed> %^%#,a|$4zFAf5C/wo@`]iw<EV0@0MI:R9jJzCM#H(WLJ<~`3mD>o4-z{-U7<~J7pee(",/rUX\YY#.W`33W%^%# acl 2001
+snmp-agent sys-info version v2c v3
+snmp-agent group v3 secure privacy read-view iso-view write-view iso-view notify-view iso-view acl 2001
+snmp-agent target-host trap address udp-domain 115.114.79.28 params securityname cipher %^%#78l'<.W9<KS3.oB/=6M,Jk!@U$0SrKlzuAW(=.|E%^%# v2c
+snmp-agent target-host trap address udp-domain 115.114.79.26 params securityname cipher %^%#$Ya$'u5;{6'}p-XvTzW;I/b<1WnhGKbTNyX67b&)%^%# v2c
+snmp-agent target-host trap address udp-domain 115.114.79.46 params securityname cipher %^%#E|xRPPxa]"uL=gN7]nS<BYXk*&w0\4PQvb.P-Y<&%^%# v2c
+snmp-agent target-host trap address udp-domain 115.114.79.59 source Vlanif3040 params securityname ipnmc v3 privacy private-netmanager
+snmp-agent target-host trap address udp-domain 115.114.79.60 source Vlanif3040 params securityname ipnmc v3 privacy private-netmanager
+snmp-agent mib-view included iso-view iso
+snmp-agent usm-user v3 ipnmc
+snmp-agent usm-user v3 ipnmc group secure
+snmp-agent usm-user v3 ipnmc authentication-mode md5 cipher %^%#=`yhA_~r5T\<t(W;L:<!_MEE0)qV6P>jvGM=O9@%%^%#
+snmp-agent usm-user v3 ipnmc privacy-mode des56 cipher %^%#aig*Vw==!8R=RNOdAp84U@@8W:g&#".ep.)BU[<-%^%#
+snmp-agent usm-user v3 ipnmc acl 2001
+snmp-agent trap source Vlanif3040
+snmp-agent trap enable
+#
+sftp server enable
+stelnet server enable
+ssh authentication-type default password
+ssh client first-time enable
+ssh client 115.114.79.59 assign rsa-key 115.114.79.59
+#
+header shell information "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!        ****  WARNING: UNAUTHORISED ACCESS PROHIBITED  ****          !!  You are now into Tata Communications Network System. Anyone who    !!  access this system without authorization or in access of their     !!  authorization could be subject to civil and/or criminal liability. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+header login information "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                Authorized access only                        !!       This system is the property of TATA COMMUNICATIONS LTD !! Disconnect IMMEDIATELY if you are not an authorized user     !!            Contact [ip.noc@tatacommunications.com]           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+#
+user-interface con 0
+ authentication-mode aaa
+user-interface vty 0 4
+ acl 3002 inbound
+ authentication-mode aaa
+ user privilege level 15
+ idle-timeout 5 0
+ protocol inbound all
+user-interface vty 16 20
+ acl 3002 inbound
+ authentication-mode aaa
+ idle-timeout 5 0
+ protocol inbound all
+#
+return

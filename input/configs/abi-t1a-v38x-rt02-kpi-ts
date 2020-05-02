@@ -1,0 +1,1675 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: CISCO2911/K9 - a CISCO2911/K9 router
+!
+!Memory: main 483328K/40960K
+!Memory: nvram 255K
+!
+!Processor ID: FGL194111ZN
+!
+!
+!Image: Software: C2900-UNIVERSALK9-M, 15.1(4)M4, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Tue 20-Mar-12 18:57 by prod_rel_team
+!Image: flash0:c2900-universalk9-mz.SPA.151-4.M4.bin
+!
+!ROM Bootstrap: Version 15.0(1r)M16, RELEASE SOFTWARE (fc1)
+!
+!Flash: -#- --length-- -----date/time------ path
+!Flash: 1    104193476 Oct 10 2015 08:53:46 +05:30 c2900-universalk9-mz.SPA.154-3.M3.bin
+!Flash: 2         3064 Oct 10 2015 09:03:52 +05:30 cpconfig-29xx.cfg
+!Flash: 3            0 Oct 10 2015 09:04:10 +05:30 ccpexp
+!Flash: 4            0 Oct 10 2015 09:04:10 +05:30 ccpexp/external
+!Flash: 5            0 Oct 10 2015 09:04:10 +05:30 ccpexp/external/development-bundle
+!Flash: 6            0 Oct 10 2015 09:04:10 +05:30 ccpexp/external/development-bundle/themes
+!Flash: 7            0 Oct 10 2015 09:04:10 +05:30 ccpexp/external/development-bundle/themes/flick
+!Flash: 8            0 Oct 10 2015 09:04:12 +05:30 ccpexp/external/development-bundle/themes/flick/images
+!Flash: 9         1738 Oct 10 2015 09:04:16 +05:30 ccpexp/external/development-bundle/themes/flick/images/animated-overlay.gif
+!Flash: 10         180 Oct 10 2015 09:04:16 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-bg_flat_0_aaaaaa_40x100.png
+!Flash: 11         180 Oct 10 2015 09:04:16 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-bg_flat_0_eeeeee_40x100.png
+!Flash: 12         178 Oct 10 2015 09:04:16 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-bg_flat_55_ffffff_40x100.png
+!Flash: 13         178 Oct 10 2015 09:04:18 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-bg_flat_75_ffffff_40x100.png
+!Flash: 14         105 Oct 10 2015 09:04:18 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-bg_glass_65_ffffff_1x400.png
+!Flash: 15          90 Oct 10 2015 09:04:18 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png
+!Flash: 16         118 Oct 10 2015 09:04:18 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png
+!Flash: 17         136 Oct 10 2015 09:04:20 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-bg_highlight-soft_50_dddddd_1x100.png
+!Flash: 18        4369 Oct 10 2015 09:04:20 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-icons_0073ea_256x240.png
+!Flash: 19        4369 Oct 10 2015 09:04:20 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-icons_454545_256x240.png
+!Flash: 20        4369 Oct 10 2015 09:04:20 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-icons_666666_256x240.png
+!Flash: 21        4369 Oct 10 2015 09:04:22 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-icons_ff0084_256x240.png
+!Flash: 22        4369 Oct 10 2015 09:04:22 +05:30 ccpexp/external/development-bundle/themes/flick/images/ui-icons_ffffff_256x240.png
+!Flash: 23       27419 Oct 10 2015 09:04:22 +05:30 ccpexp/external/development-bundle/themes/flick/jquery-ui-1.10.3.custom.css1
+!Flash: 24       26635 Oct 10 2015 09:04:22 +05:30 ccpexp/external/development-bundle/themes/flick/jquery-ui-1.8.17.custom.css1
+!Flash: 25       27419 Oct 10 2015 09:04:24 +05:30 ccpexp/external/development-bundle/themes/flick/jquery-ui.css
+!Flash: 26         840 Oct 10 2015 09:04:24 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.accordion.css
+!Flash: 27         292 Oct 10 2015 09:04:24 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.all.css
+!Flash: 28         771 Oct 10 2015 09:04:24 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.base.css
+!Flash: 29        2541 Oct 10 2015 09:04:24 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.button.css
+!Flash: 30        1468 Oct 10 2015 09:04:26 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.core.css
+!Flash: 31        1304 Oct 10 2015 09:04:26 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.dialog.css
+!Flash: 32        1454 Oct 10 2015 09:04:26 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.menu.css
+!Flash: 33         618 Oct 10 2015 09:04:26 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.progressbar.css
+!Flash: 34        1207 Oct 10 2015 09:04:28 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.resizable.css
+!Flash: 35        1314 Oct 10 2015 09:04:28 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.slider.css
+!Flash: 36        1322 Oct 10 2015 09:04:28 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.tabs.css
+!Flash: 37       17106 Oct 10 2015 09:04:28 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.theme.css
+!Flash: 38         375 Oct 10 2015 09:04:28 +05:30 ccpexp/external/development-bundle/themes/flick/jquery.ui.tooltip.css
+!Flash: 39           0 Oct 10 2015 09:04:12 +05:30 ccpexp/external/js
+!Flash: 40       93868 Oct 10 2015 09:04:32 +05:30 ccpexp/external/js/jquery-1.7.1.min.js
+!Flash: 41           0 Oct 10 2015 09:04:32 +05:30 ccpexp/external/js/jquery-ui-1.10.3.custom.min.js
+!Flash: 42       46982 Oct 10 2015 09:04:32 +05:30 ccpexp/external/js/jquery-ui-1.10.4.custom.min.js
+!Flash: 43     1144329 Oct 10 2015 09:04:30 +05:30 ccpexp/external/jQueryFramework.js
+!Flash: 44       17769 Oct 10 2015 09:04:32 +05:30 ccpexp/external/jquery.i18n.properties-1.0.9.js
+!Flash: 45       21601 Oct 10 2015 09:04:32 +05:30 ccpexp/external/jquery.validate.min.js
+!Flash: 46         929 Oct 10 2015 09:04:34 +05:30 ccpexp/external/readme.txt
+!Flash: 47           0 Oct 10 2015 09:04:12 +05:30 ccpexp/html
+!Flash: 48           0 Oct 10 2015 09:04:12 +05:30 ccpexp/html/bundles
+!Flash: 49       11710 Oct 10 2015 09:04:34 +05:30 ccpexp/html/bundles/CCPExpNG.properties
+!Flash: 50       10824 Oct 10 2015 09:04:34 +05:30 ccpexp/html/bundles/CCPExpNG_en.properties
+!Flash: 51       11386 Oct 10 2015 09:04:34 +05:30 ccpexp/html/bundles/CCPExpNG_fr.properties
+!Flash: 52        2737 Oct 10 2015 09:04:36 +05:30 ccpexp/html/bundles/ValidationMessages.properties
+!Flash: 53        2614 Oct 10 2015 09:04:36 +05:30 ccpexp/html/bundles/ValidationMessages_en.properties
+!Flash: 54        2606 Oct 10 2015 09:04:36 +05:30 ccpexp/html/bundles/ValidationMessages_fr.properties
+!Flash: 55           0 Oct 10 2015 09:04:12 +05:30 ccpexp/html/fonts
+!Flash: 56       62856 Oct 10 2015 09:04:40 +05:30 ccpexp/html/fonts/FontAwesome.otf
+!Flash: 57       38205 Oct 10 2015 09:04:40 +05:30 ccpexp/html/fonts/fontawesome-webfont.eot
+!Flash: 58      202148 Oct 10 2015 09:04:40 +05:30 ccpexp/html/fonts/fontawesome-webfont.svg
+!Flash: 59       80652 Oct 10 2015 09:04:42 +05:30 ccpexp/html/fonts/fontawesome-webfont.ttf
+!Flash: 60       44432 Oct 10 2015 09:04:42 +05:30 ccpexp/html/fonts/fontawesome-webfont.woff
+!Flash: 61           0 Oct 10 2015 09:04:12 +05:30 ccpexp/html/images
+!Flash: 62        3406 Oct 10 2015 09:04:44 +05:30 ccpexp/html/images/Activate.png
+!Flash: 63        1282 Oct 10 2015 09:04:44 +05:30 ccpexp/html/images/Collapse.png
+!Flash: 64        1473 Oct 10 2015 09:04:44 +05:30 ccpexp/html/images/Excel.png
+!Flash: 65        3419 Oct 10 2015 09:04:44 +05:30 ccpexp/html/images/Help_uishell_16.png
+!Flash: 66        1405 Oct 10 2015 09:04:46 +05:30 ccpexp/html/images/IPS_drilldown.png
+!Flash: 67        3040 Oct 10 2015 09:04:46 +05:30 ccpexp/html/images/NoSIM.png
+!Flash: 68        3233 Oct 10 2015 09:04:46 +05:30 ccpexp/html/images/NoSignal.png
+!Flash: 69         371 Oct 10 2015 09:04:46 +05:30 ccpexp/html/images/NotActivate.png
+!Flash: 70        3219 Oct 10 2015 09:04:48 +05:30 ccpexp/html/images/SIM.png
+!Flash: 71        3421 Oct 10 2015 09:04:48 +05:30 ccpexp/html/images/Sent-Mail.png
+!Flash: 72         261 Oct 10 2015 09:04:48 +05:30 ccpexp/html/images/Signal1.png
+!Flash: 73         294 Oct 10 2015 09:04:48 +05:30 ccpexp/html/images/Signal2.png
+!Flash: 74         319 Oct 10 2015 09:04:48 +05:30 ccpexp/html/images/Signal3.png
+!Flash: 75         324 Oct 10 2015 09:04:50 +05:30 ccpexp/html/images/Signal4.png
+!Flash: 76         324 Oct 10 2015 09:04:50 +05:30 ccpexp/html/images/Signal5.png
+!Flash: 77      211889 Oct 10 2015 09:04:50 +05:30 ccpexp/html/images/UtmSpriteImage.png
+!Flash: 78       33259 Oct 10 2015 09:04:50 +05:30 ccpexp/html/images/allImagesby40.png
+!Flash: 79       22196 Oct 10 2015 09:04:52 +05:30 ccpexp/html/images/allimagesby80.jpg
+!Flash: 80         181 Oct 10 2015 09:04:52 +05:30 ccpexp/html/images/application.png
+!Flash: 81      114483 Oct 10 2015 09:04:52 +05:30 ccpexp/html/images/banner.jpg
+!Flash: 82       33012 Oct 10 2015 09:04:52 +05:30 ccpexp/html/images/bars.jpg
+!Flash: 83        2816 Oct 10 2015 09:04:54 +05:30 ccpexp/html/images/blankSpace.png
+!Flash: 84       83587 Oct 10 2015 09:04:54 +05:30 ccpexp/html/images/caaDeviceList.png
+!Flash: 85        1315 Oct 10 2015 09:04:54 +05:30 ccpexp/html/images/ccpeQR.png
+!Flash: 86       16786 Oct 10 2015 09:04:54 +05:30 ccpexp/html/images/ceserver.png
+!Flash: 87       12575 Oct 10 2015 09:04:56 +05:30 ccpexp/html/images/content-security.jpg
+!Flash: 88        1330 Oct 10 2015 09:04:56 +05:30 ccpexp/html/images/cpu_utilization.png
+!Flash: 89        1270 Oct 10 2015 09:04:56 +05:30 ccpexp/html/images/cws.png
+!Flash: 90        1102 Oct 10 2015 09:04:56 +05:30 ccpexp/html/images/device-details.png
+!Flash: 91        1269 Oct 10 2015 09:04:58 +05:30 ccpexp/html/images/device_details.png
+!Flash: 92        1268 Oct 10 2015 09:04:58 +05:30 ccpexp/html/images/disable.png
+!Flash: 93         992 Oct 10 2015 09:04:58 +05:30 ccpexp/html/images/down.png
+!Flash: 94        1972 Oct 10 2015 09:04:58 +05:30 ccpexp/html/images/dragArrow.png
+!Flash: 95        1271 Oct 10 2015 09:04:58 +05:30 ccpexp/html/images/enable.png
+!Flash: 96        1287 Oct 10 2015 09:05:00 +05:30 ccpexp/html/images/expand.png
+!Flash: 97        1435 Oct 10 2015 09:05:00 +05:30 ccpexp/html/images/firewall.png
+!Flash: 98        1597 Oct 10 2015 09:05:00 +05:30 ccpexp/html/images/flash-memory.png
+!Flash: 99        1174 Oct 10 2015 09:05:00 +05:30 ccpexp/html/images/flash_memory.png
+!Flash: 100       6877 Oct 10 2015 09:05:00 +05:30 ccpexp/html/images/header_icon_sprite.png
+!Flash: 101       1816 Oct 10 2015 09:05:02 +05:30 ccpexp/html/images/information.png
+!Flash: 102        941 Oct 10 2015 09:05:02 +05:30 ccpexp/html/images/interfacePort.png
+!Flash: 103       1191 Oct 10 2015 09:05:02 +05:30 ccpexp/html/images/interfaces.png
+!Flash: 104      22992 Oct 10 2015 09:05:02 +05:30 ccpexp/html/images/ips-enable.jpg
+!Flash: 105      39606 Oct 10 2015 09:05:04 +05:30 ccpexp/html/images/ips-in-enable.png
+!Flash: 106      17467 Oct 10 2015 09:05:04 +05:30 ccpexp/html/images/ips.jpg
+!Flash: 107        209 Oct 10 2015 09:05:04 +05:30 ccpexp/html/images/key_minus.png
+!Flash: 108        238 Oct 10 2015 09:05:04 +05:30 ccpexp/html/images/key_plus.png
+!Flash: 109       4213 Oct 10 2015 09:05:06 +05:30 ccpexp/html/images/logo.png
+!Flash: 110       1374 Oct 10 2015 09:05:06 +05:30 ccpexp/html/images/maximize.png
+!Flash: 111       1293 Oct 10 2015 09:05:06 +05:30 ccpexp/html/images/network.png
+!Flash: 112      10130 Oct 10 2015 09:05:06 +05:30 ccpexp/html/images/papergrid.jpg
+!Flash: 113       1374 Oct 10 2015 09:05:06 +05:30 ccpexp/html/images/policy.png
+!Flash: 114       1234 Oct 10 2015 09:05:08 +05:30 ccpexp/html/images/port.png
+!Flash: 115       1591 Oct 10 2015 09:05:08 +05:30 ccpexp/html/images/processor-memory.png
+!Flash: 116       1458 Oct 10 2015 09:05:08 +05:30 ccpexp/html/images/processor_memory.png
+!Flash: 117       1236 Oct 10 2015 09:05:10 +05:30 ccpexp/html/images/reload.png
+!Flash: 118       2087 Oct 10 2015 09:05:10 +05:30 ccpexp/html/images/right-check-icon.png
+!Flash: 119       4059 Oct 10 2015 09:05:10 +05:30 ccpexp/html/images/router.png
+!Flash: 120       1405 Oct 10 2015 09:05:10 +05:30 ccpexp/html/images/search-icon.png
+!Flash: 121       1178 Oct 10 2015 09:05:12 +05:30 ccpexp/html/images/settings.png
+!Flash: 122       3339 Oct 10 2015 09:05:12 +05:30 ccpexp/html/images/sortable.png
+!Flash: 123       5363 Oct 10 2015 09:05:12 +05:30 ccpexp/html/images/split-icon40.png
+!Flash: 124       1161 Oct 10 2015 09:05:12 +05:30 ccpexp/html/images/temperature.png
+!Flash: 125      13338 Oct 10 2015 09:05:12 +05:30 ccpexp/html/images/tileImages.png
+!Flash: 126       1247 Oct 10 2015 09:05:14 +05:30 ccpexp/html/images/top_10_applications.png
+!Flash: 127       1381 Oct 10 2015 09:05:14 +05:30 ccpexp/html/images/top_10_threats.png
+!Flash: 128       1590 Oct 10 2015 09:05:14 +05:30 ccpexp/html/images/top_10_users.png
+!Flash: 129      16843 Oct 10 2015 09:05:14 +05:30 ccpexp/html/images/towerDown.png
+!Flash: 130      16843 Oct 10 2015 09:05:16 +05:30 ccpexp/html/images/towerUp.png
+!Flash: 131        330 Oct 10 2015 09:05:16 +05:30 ccpexp/html/images/user.png
+!Flash: 132      17840 Oct 10 2015 09:05:16 +05:30 ccpexp/html/images/utm_40.png
+!Flash: 133       3428 Oct 10 2015 09:05:16 +05:30 ccpexp/html/images/utm_80.jpg
+!Flash: 134      12683 Oct 10 2015 09:05:18 +05:30 ccpexp/html/images/vpn.jpg
+!Flash: 135       1488 Oct 10 2015 09:05:18 +05:30 ccpexp/html/images/vpn.png
+!Flash: 136       1630 Oct 10 2015 09:05:18 +05:30 ccpexp/html/images/vpnAdd.png
+!Flash: 137       1377 Oct 10 2015 09:05:18 +05:30 ccpexp/html/images/zone.png
+!Flash: 138     137378 Oct 10 2015 09:04:36 +05:30 ccpexp/html/ccpExpress.css1
+!Flash: 139       9014 Oct 10 2015 09:04:38 +05:30 ccpexp/html/ccpExpress.html
+!Flash: 140       3289 Oct 10 2015 09:04:38 +05:30 ccpexp/html/ceServer.html
+!Flash: 141       6431 Oct 10 2015 09:04:38 +05:30 ccpexp/html/configureDHCP.html
+!Flash: 142       9175 Oct 10 2015 09:04:38 +05:30 ccpexp/html/dhcpDns.html
+!Flash: 143      17768 Oct 10 2015 09:04:40 +05:30 ccpexp/html/font-awesome.min.css1
+!Flash: 144       6488 Oct 10 2015 09:04:42 +05:30 ccpexp/html/frames.html
+!Flash: 145       1542 Oct 10 2015 09:04:42 +05:30 ccpexp/html/framesEndUser.html
+!Flash: 146      30094 Oct 10 2015 09:04:44 +05:30 ccpexp/html/iAndC.html
+!Flash: 147       5997 Oct 10 2015 09:05:20 +05:30 ccpexp/html/jquery.steps.css
+!Flash: 148        703 Oct 10 2015 09:05:20 +05:30 ccpexp/html/jsNotEnabled.html
+!Flash: 149       3670 Oct 10 2015 09:05:20 +05:30 ccpexp/html/navigationTemplate.html
+!Flash: 150      12835 Oct 10 2015 09:05:20 +05:30 ccpexp/html/nv.d3.css
+!Flash: 151      21068 Oct 10 2015 09:05:22 +05:30 ccpexp/html/overview.html
+!Flash: 152       5352 Oct 10 2015 09:05:22 +05:30 ccpexp/html/phonehome.html
+!Flash: 153       1926 Oct 10 2015 09:05:22 +05:30 ccpexp/html/pingAndTrace.html
+!Flash: 154      10278 Oct 10 2015 09:05:22 +05:30 ccpexp/html/staticRouting.html
+!Flash: 155       1735 Oct 10 2015 09:05:24 +05:30 ccpexp/html/transportCLI.html
+!Flash: 156      23182 Oct 10 2015 09:05:24 +05:30 ccpexp/html/user.html
+!Flash: 157      65149 Oct 10 2015 09:05:24 +05:30 ccpexp/html/utm.html
+!Flash: 158       1946 Oct 10 2015 09:05:24 +05:30 ccpexp/html/wireless.html
+!Flash: 159          0 Oct 10 2015 09:04:12 +05:30 ccpexp/js
+!Flash: 160          0 Oct 10 2015 09:04:14 +05:30 ccpexp/js/l10n
+!Flash: 161          0 Oct 10 2015 09:04:14 +05:30 ccpexp/js/unittest
+!Flash: 162      88802 Oct 10 2015 09:05:26 +05:30 ccpexp/js/HWDictionary.xml
+!Flash: 163       1873 Oct 10 2015 09:05:26 +05:30 ccpexp/js/analytics.js
+!Flash: 164    1237037 Oct 10 2015 09:05:28 +05:30 ccpexp/js/ccpExpressFeatures.js
+!Flash: 165      18765 Oct 10 2015 09:05:28 +05:30 ccpexp/js/ccpExpressValidation.js
+!Flash: 166       6213 Oct 10 2015 09:05:30 +05:30 ccpexp/js/cliWorker.js
+!Flash: 167      21413 Oct 10 2015 09:05:30 +05:30 ccpexp/js/deviceCommunicator.js
+!Flash: 168      23852 Oct 10 2015 09:05:30 +05:30 ccpexp/js/frames.js
+!Flash: 169      15647 Oct 10 2015 09:05:30 +05:30 ccpexp/js/performChecks.js
+!Flash: 170       3375 Oct 10 2015 09:05:30 +05:30 ccpexp/js/routerDashboardWorker.js
+!Flash: 171       3144 Oct 10 2015 09:05:32 +05:30 ccpexp/js/securityDashboardWorker.js
+!Flash: 172          0 Oct 10 2015 09:04:14 +05:30 ccpexp/odm
+!Flash: 173        506 Oct 10 2015 09:05:32 +05:30 ccpexp/odm/overviewshCpuUtil.odm
+!Flash: 174        630 Oct 10 2015 09:05:32 +05:30 ccpexp/odm/overviewshFileSystem.odm
+!Flash: 175        813 Oct 10 2015 09:05:32 +05:30 ccpexp/odm/overviewshProcMemory.odm
+!Flash: 176        818 Oct 10 2015 09:05:34 +05:30 ccpexp/odm/overviewshVer.odm
+!Flash: 177        614 Oct 10 2015 09:05:34 +05:30 ccpexp/odm/wirelessshCdpNeighborDetail.odm
+!Flash: 178          0 Oct 10 2015 09:04:14 +05:30 ccpexp/templates
+!Flash: 179         85 Oct 10 2015 09:05:42 +05:30 ccpexp/templates/ATMDescription.txt
+!Flash: 180         73 Oct 10 2015 09:05:42 +05:30 ccpexp/templates/ChatScript_EVDO.txt
+!Flash: 181         72 Oct 10 2015 09:05:44 +05:30 ccpexp/templates/ChatScript_HSPA.txt
+!Flash: 182         78 Oct 10 2015 09:05:44 +05:30 ccpexp/templates/ChatScript_HSPA7.txt
+!Flash: 183         66 Oct 10 2015 09:05:44 +05:30 ccpexp/templates/ChatScript_LTE.txt
+!Flash: 184         76 Oct 10 2015 09:05:44 +05:30 ccpexp/templates/CreateACLforNAT.txt
+!Flash: 185       1042 Oct 10 2015 09:05:44 +05:30 ccpexp/templates/CreateATMBackupWanInterface.txt
+!Flash: 186       1295 Oct 10 2015 09:05:46 +05:30 ccpexp/templates/CreateATMBackupWanInterfacewithPPPoE.txt
+!Flash: 187        174 Oct 10 2015 09:05:46 +05:30 ccpexp/templates/CreateATMPrimaryWanInterface.txt
+!Flash: 188        265 Oct 10 2015 09:05:46 +05:30 ccpexp/templates/CreateATMPrimaryWanInterfacewithPPPoE.txt
+!Flash: 189       1476 Oct 10 2015 09:05:46 +05:30 ccpexp/templates/CreateBackUpCellular_DiPer_EVDO.txt
+!Flash: 190       1447 Oct 10 2015 09:05:48 +05:30 ccpexp/templates/CreateBackUpCellular_DiPer_HSPA.txt
+!Flash: 191       1481 Oct 10 2015 09:05:48 +05:30 ccpexp/templates/CreateBackUpCellular_DiPer_HSPA7.txt
+!Flash: 192       1322 Oct 10 2015 09:05:48 +05:30 ccpexp/templates/CreateBackUpCellular_NonDiPer_EVDO.txt
+!Flash: 193       1292 Oct 10 2015 09:05:48 +05:30 ccpexp/templates/CreateBackUpCellular_NonDiPer_HSPA.txt
+!Flash: 194       1292 Oct 10 2015 09:05:50 +05:30 ccpexp/templates/CreateBackUpCellular_NonDiPer_HSPA7.txt
+!Flash: 195        999 Oct 10 2015 09:05:50 +05:30 ccpexp/templates/CreateBackWanIntwithPPPoENoDialer.txt
+!Flash: 196        907 Oct 10 2015 09:05:50 +05:30 ccpexp/templates/CreateBackupWanInterface.txt
+!Flash: 197       1164 Oct 10 2015 09:05:50 +05:30 ccpexp/templates/CreateBackupWanInterfacewithPPPoE.txt
+!Flash: 198         42 Oct 10 2015 09:05:52 +05:30 ccpexp/templates/CreateNatObjectGroup.txt
+!Flash: 199        158 Oct 10 2015 09:05:52 +05:30 ccpexp/templates/CreatePrimWanIntwithPPPoENoDialer.txt
+!Flash: 200        664 Oct 10 2015 09:05:52 +05:30 ccpexp/templates/CreatePrimaryCellular_DiPer_EVDO.txt
+!Flash: 201        678 Oct 10 2015 09:05:52 +05:30 ccpexp/templates/CreatePrimaryCellular_DiPer_HSPA.txt
+!Flash: 202        715 Oct 10 2015 09:05:54 +05:30 ccpexp/templates/CreatePrimaryCellular_DiPer_HSPA7.txt
+!Flash: 203        560 Oct 10 2015 09:05:54 +05:30 ccpexp/templates/CreatePrimaryCellular_NonDiPer_EVDO.txt
+!Flash: 204        525 Oct 10 2015 09:05:54 +05:30 ccpexp/templates/CreatePrimaryCellular_NonDiPer_HSPA.txt
+!Flash: 205        525 Oct 10 2015 09:05:54 +05:30 ccpexp/templates/CreatePrimaryCellular_NonDiPer_HSPA7.txt
+!Flash: 206        174 Oct 10 2015 09:05:56 +05:30 ccpexp/templates/CreatePrimaryWanInterface.txt
+!Flash: 207        201 Oct 10 2015 09:05:56 +05:30 ccpexp/templates/CreatePrimaryWanInterfacewithPPPoE.txt
+!Flash: 208        106 Oct 10 2015 09:05:56 +05:30 ccpexp/templates/DefaultCws.txt
+!Flash: 209         28 Oct 10 2015 09:05:56 +05:30 ccpexp/templates/DefaultInterface.txt
+!Flash: 210        696 Oct 10 2015 09:05:58 +05:30 ccpexp/templates/DefaultIps.txt
+!Flash: 211        410 Oct 10 2015 09:05:58 +05:30 ccpexp/templates/DefaultZone.txt
+!Flash: 212        110 Oct 10 2015 09:05:58 +05:30 ccpexp/templates/EncapsulationPPP.txt
+!Flash: 213         96 Oct 10 2015 09:06:00 +05:30 ccpexp/templates/FirewallPolicyCreate.txt
+!Flash: 214        271 Oct 10 2015 09:06:00 +05:30 ccpexp/templates/FirewallPolicyDeleteAll.txt
+!Flash: 215        390 Oct 10 2015 09:06:00 +05:30 ccpexp/templates/FirewallPolicyDisable.txt
+!Flash: 216        233 Oct 10 2015 09:06:00 +05:30 ccpexp/templates/FirewallPolicyEnable.txt
+!Flash: 217        172 Oct 10 2015 09:06:00 +05:30 ccpexp/templates/FirewallVPNPolicyCreate.txt
+!Flash: 218         39 Oct 10 2015 09:06:02 +05:30 ccpexp/templates/IPSAdd.txt
+!Flash: 219        229 Oct 10 2015 09:06:02 +05:30 ccpexp/templates/IPSCompileSignatures.txt
+!Flash: 220         42 Oct 10 2015 09:06:02 +05:30 ccpexp/templates/IPSDelete.txt
+!Flash: 221         65 Oct 10 2015 09:06:02 +05:30 ccpexp/templates/MMDsl.txt
+!Flash: 222         19 Oct 10 2015 09:06:04 +05:30 ccpexp/templates/NofilePrivilege.txt
+!Flash: 223       1638 Oct 10 2015 09:06:04 +05:30 ccpexp/templates/ScannerPayloadTemplate.txt
+!Flash: 224         56 Oct 10 2015 09:06:04 +05:30 ccpexp/templates/ZoneMgmtAdd.txt
+!Flash: 225         59 Oct 10 2015 09:06:04 +05:30 ccpexp/templates/ZoneMgmtDelete.txt
+!Flash: 226         45 Oct 10 2015 09:06:06 +05:30 ccpexp/templates/addDNS.txt
+!Flash: 227         66 Oct 10 2015 09:06:06 +05:30 ccpexp/templates/addNewDHCP.txt
+!Flash: 228         74 Oct 10 2015 09:06:06 +05:30 ccpexp/templates/addNewDHCP_DNS.txt
+!Flash: 229         94 Oct 10 2015 09:06:06 +05:30 ccpexp/templates/associateVlan.txt
+!Flash: 230         61 Oct 10 2015 09:06:06 +05:30 ccpexp/templates/authRoulToLAN.txt
+!Flash: 231        114 Oct 10 2015 09:06:08 +05:30 ccpexp/templates/authorizationPolicy.txt
+!Flash: 232         10 Oct 10 2015 09:06:08 +05:30 ccpexp/templates/cdpRun.txt
+!Flash: 233        146 Oct 10 2015 09:06:08 +05:30 ccpexp/templates/chap.txt
+!Flash: 234         87 Oct 10 2015 09:06:08 +05:30 ccpexp/templates/classMapApp.txt
+!Flash: 235         79 Oct 10 2015 09:06:10 +05:30 ccpexp/templates/classMapCategory.txt
+!Flash: 236         88 Oct 10 2015 09:06:10 +05:30 ccpexp/templates/classMapParameterMap.txt
+!Flash: 237         85 Oct 10 2015 09:06:10 +05:30 ccpexp/templates/classMapPolicy.txt
+!Flash: 238        103 Oct 10 2015 09:06:10 +05:30 ccpexp/templates/classMapURL.txt
+!Flash: 239         88 Oct 10 2015 09:06:12 +05:30 ccpexp/templates/classMapUserGroup.txt
+!Flash: 240        364 Oct 10 2015 09:06:12 +05:30 ccpexp/templates/cnsFormCreate.txt
+!Flash: 241        461 Oct 10 2015 09:06:12 +05:30 ccpexp/templates/cnsFormCreateWithIp.txt
+!Flash: 242        255 Oct 10 2015 09:06:12 +05:30 ccpexp/templates/cnsFormCreateWithoutIp.txt
+!Flash: 243        478 Oct 10 2015 09:06:14 +05:30 ccpexp/templates/cnsFormDelete.txt
+!Flash: 244        361 Oct 10 2015 09:06:14 +05:30 ccpexp/templates/cnsFormImage.txt
+!Flash: 245        590 Oct 10 2015 09:06:14 +05:30 ccpexp/templates/cnsFormImageDelete.txt
+!Flash: 246        478 Oct 10 2015 09:06:14 +05:30 ccpexp/templates/cnsFormIpDelete.txt
+!Flash: 247        412 Oct 10 2015 09:06:14 +05:30 ccpexp/templates/cnsFormWithoutIpDelete.txt
+!Flash: 248        110 Oct 10 2015 09:06:16 +05:30 ccpexp/templates/configAuthServer.txt
+!Flash: 249        161 Oct 10 2015 09:06:16 +05:30 ccpexp/templates/configLDAPIPv4.txt
+!Flash: 250        138 Oct 10 2015 09:06:16 +05:30 ccpexp/templates/configNTLMService.txt
+!Flash: 251        159 Oct 10 2015 09:06:16 +05:30 ccpexp/templates/configNetFlow.txt
+!Flash: 252         46 Oct 10 2015 09:06:18 +05:30 ccpexp/templates/configWebAuthService.txt
+!Flash: 253         31 Oct 10 2015 09:06:18 +05:30 ccpexp/templates/contentScan.txt
+!Flash: 254        113 Oct 10 2015 09:06:18 +05:30 ccpexp/templates/createATMInterface.txt
+!Flash: 255        148 Oct 10 2015 09:06:18 +05:30 ccpexp/templates/createATMInterfacePppoe.txt
+!Flash: 256        135 Oct 10 2015 09:06:20 +05:30 ccpexp/templates/createATMInterfaceWithDHCP.txt
+!Flash: 257        158 Oct 10 2015 09:06:20 +05:30 ccpexp/templates/createATMInterfaceWithDHCPHostname.txt
+!Flash: 258        137 Oct 10 2015 09:06:20 +05:30 ccpexp/templates/createATMInterfaceWithIpv6Autoconfig.txt
+!Flash: 259        102 Oct 10 2015 09:06:22 +05:30 ccpexp/templates/createATMInterfaceWithIpv6DhcpClient.txt
+!Flash: 260        203 Oct 10 2015 09:06:22 +05:30 ccpexp/templates/createATMInterfaceWithIpv6PrefixFPro.txt
+!Flash: 261        165 Oct 10 2015 09:06:22 +05:30 ccpexp/templates/createATMInterfaceWithIpv6StaticIP.txt
+!Flash: 262        137 Oct 10 2015 09:06:22 +05:30 ccpexp/templates/createATMInterfaceWithStaticIP.txt
+!Flash: 263        336 Oct 10 2015 09:06:22 +05:30 ccpexp/templates/createDialer.txt
+!Flash: 264        102 Oct 10 2015 09:06:24 +05:30 ccpexp/templates/createEigrp.txt
+!Flash: 265         80 Oct 10 2015 09:06:24 +05:30 ccpexp/templates/createInterface.txt
+!Flash: 266        137 Oct 10 2015 09:06:24 +05:30 ccpexp/templates/createLoopback.txt
+!Flash: 267        198 Oct 10 2015 09:06:24 +05:30 ccpexp/templates/createNat.txt
+!Flash: 268         50 Oct 10 2015 09:06:26 +05:30 ccpexp/templates/createNatOutside.txt
+!Flash: 269        131 Oct 10 2015 09:06:26 +05:30 ccpexp/templates/createVLAN.txt
+!Flash: 270         57 Oct 10 2015 09:06:26 +05:30 ccpexp/templates/cwsWhiteListing.txt
+!Flash: 271         66 Oct 10 2015 09:06:26 +05:30 ccpexp/templates/deConfigAuthRoulToLAN.txt
+!Flash: 272        116 Oct 10 2015 09:06:28 +05:30 ccpexp/templates/deConfigAuthServer.txt
+!Flash: 273        148 Oct 10 2015 09:06:28 +05:30 ccpexp/templates/deConfigNTLMAuthService.txt
+!Flash: 274        174 Oct 10 2015 09:06:28 +05:30 ccpexp/templates/deConfigNetFlow.txt
+!Flash: 275         47 Oct 10 2015 09:06:28 +05:30 ccpexp/templates/deConfigWebAuthService.txt
+!Flash: 276         67 Oct 10 2015 09:06:30 +05:30 ccpexp/templates/deconfigLDAP.txt
+!Flash: 277        108 Oct 10 2015 09:06:30 +05:30 ccpexp/templates/defaultRoute.txt
+!Flash: 278         49 Oct 10 2015 09:06:30 +05:30 ccpexp/templates/deleteAclClassMap.txt
+!Flash: 279        600 Oct 10 2015 09:06:30 +05:30 ccpexp/templates/deleteBackupInterfaceConfigs.txt
+!Flash: 280        745 Oct 10 2015 09:06:32 +05:30 ccpexp/templates/deleteBackupInterfaceConfigsPPPOE.txt
+!Flash: 281         44 Oct 10 2015 09:06:32 +05:30 ccpexp/templates/deleteClassMapApp.txt
+!Flash: 282         40 Oct 10 2015 09:06:32 +05:30 ccpexp/templates/deleteClassMapUrl.txt
+!Flash: 283         34 Oct 10 2015 09:06:32 +05:30 ccpexp/templates/deleteContentScan.txt
+!Flash: 284         19 Oct 10 2015 09:06:34 +05:30 ccpexp/templates/deleteCwsWhiteListing.txt
+!Flash: 285         25 Oct 10 2015 09:06:34 +05:30 ccpexp/templates/deleteDNS.txt
+!Flash: 286         52 Oct 10 2015 09:06:34 +05:30 ccpexp/templates/deleteDescription.txt
+!Flash: 287         49 Oct 10 2015 09:06:34 +05:30 ccpexp/templates/deleteDialerList.txt
+!Flash: 288         84 Oct 10 2015 09:06:36 +05:30 ccpexp/templates/deleteDomainNameDNS.txt
+!Flash: 289         30 Oct 10 2015 09:06:36 +05:30 ccpexp/templates/deleteEigrp.txt
+!Flash: 290         80 Oct 10 2015 09:06:36 +05:30 ccpexp/templates/deleteEnableNbarProtocolDiscovery.txt
+!Flash: 291        102 Oct 10 2015 09:06:36 +05:30 ccpexp/templates/deleteExternalDNS.txt
+!Flash: 292         32 Oct 10 2015 09:06:38 +05:30 ccpexp/templates/deleteGroup.txt
+!Flash: 293        100 Oct 10 2015 09:06:38 +05:30 ccpexp/templates/deleteInterface.txt
+!Flash: 294         40 Oct 10 2015 09:06:38 +05:30 ccpexp/templates/deleteIpAccessList.txt
+!Flash: 295         63 Oct 10 2015 09:06:38 +05:30 ccpexp/templates/deleteLocalDNS.txt
+!Flash: 296        163 Oct 10 2015 09:06:40 +05:30 ccpexp/templates/deleteNat.txt
+!Flash: 297         56 Oct 10 2015 09:06:40 +05:30 ccpexp/templates/deleteNatOutside.txt
+!Flash: 298         36 Oct 10 2015 09:06:40 +05:30 ccpexp/templates/deleteObjectGroupNetwork.txt
+!Flash: 299         38 Oct 10 2015 09:06:42 +05:30 ccpexp/templates/deleteObjectService.txt
+!Flash: 300         44 Oct 10 2015 09:06:42 +05:30 ccpexp/templates/deleteParameterMap.txt
+!Flash: 301         47 Oct 10 2015 09:06:42 +05:30 ccpexp/templates/deletePolicyClassMap.txt
+!Flash: 302         40 Oct 10 2015 09:06:42 +05:30 ccpexp/templates/deletePolicyMap.txt
+!Flash: 303         73 Oct 10 2015 09:06:44 +05:30 ccpexp/templates/deletePolicyMapClass.txt
+!Flash: 304        199 Oct 10 2015 09:06:44 +05:30 ccpexp/templates/deletePrimaryIfRoutesAndAcl.txt
+!Flash: 305        347 Oct 10 2015 09:06:44 +05:30 ccpexp/templates/deletePrimaryPPPOE.txt
+!Flash: 306        164 Oct 10 2015 09:06:44 +05:30 ccpexp/templates/deletePrimaryRoutes.txt
+!Flash: 307        120 Oct 10 2015 09:06:46 +05:30 ccpexp/templates/deleteRedundantRoute.txt
+!Flash: 308         32 Oct 10 2015 09:06:46 +05:30 ccpexp/templates/deleteScanSafe.txt
+!Flash: 309         60 Oct 10 2015 09:06:46 +05:30 ccpexp/templates/deleteScriptFromLine.txt
+!Flash: 310         46 Oct 10 2015 09:06:46 +05:30 ccpexp/templates/deleteUserClassMap.txt
+!Flash: 311         85 Oct 10 2015 09:06:48 +05:30 ccpexp/templates/deleteVlan.txt
+!Flash: 312        154 Oct 10 2015 09:06:48 +05:30 ccpexp/templates/deleteVpnIkev1.txt
+!Flash: 313        104 Oct 10 2015 09:06:48 +05:30 ccpexp/templates/deleteVpnIkev1InterfaceTunnel.txt
+!Flash: 314        269 Oct 10 2015 09:06:50 +05:30 ccpexp/templates/deleteVpnIkev2.txt
+!Flash: 315        185 Oct 10 2015 09:06:50 +05:30 ccpexp/templates/deleteVpnIkev2InterfaceTunnel.txt
+!Flash: 316         63 Oct 10 2015 09:06:50 +05:30 ccpexp/templates/deleteVpnObjectGroup.txt
+!Flash: 317         45 Oct 10 2015 09:06:50 +05:30 ccpexp/templates/deleteVpnWhiteListing.txt
+!Flash: 318         76 Oct 10 2015 09:06:52 +05:30 ccpexp/templates/deleteZonePair.txt
+!Flash: 319         44 Oct 10 2015 09:06:52 +05:30 ccpexp/templates/dest-net-ipv6Interface.txt
+!Flash: 320         47 Oct 10 2015 09:06:52 +05:30 ccpexp/templates/dest-net-ipv6InterfaceDelete.txt
+!Flash: 321         44 Oct 10 2015 09:06:52 +05:30 ccpexp/templates/dest-net-ipv6Ip.txt
+!Flash: 322         37 Oct 10 2015 09:06:54 +05:30 ccpexp/templates/dest-net-ipv6IpDelete.txt
+!Flash: 323         33 Oct 10 2015 09:06:54 +05:30 ccpexp/templates/dest-netInterfaceCreate.txt
+!Flash: 324         36 Oct 10 2015 09:06:54 +05:30 ccpexp/templates/dest-netInterfaceDelete.txt
+!Flash: 325         29 Oct 10 2015 09:06:54 +05:30 ccpexp/templates/dest-netIpCreate.txt
+!Flash: 326         29 Oct 10 2015 09:06:56 +05:30 ccpexp/templates/dest-netIpDelete.txt
+!Flash: 327         27 Oct 10 2015 09:06:56 +05:30 ccpexp/templates/dest-netIpDhcpCreate.txt
+!Flash: 328         30 Oct 10 2015 09:06:56 +05:30 ccpexp/templates/dest-netIpDhcpDelete.txt
+!Flash: 329         93 Oct 10 2015 09:06:56 +05:30 ccpexp/templates/deteteATMInterface.txt
+!Flash: 330        134 Oct 10 2015 09:06:56 +05:30 ccpexp/templates/deteteDialer.txt
+!Flash: 331        119 Oct 10 2015 09:06:58 +05:30 ccpexp/templates/dialerDHCP.txt
+!Flash: 332        130 Oct 10 2015 09:06:58 +05:30 ccpexp/templates/dialerDHCPHostname.txt
+!Flash: 333        103 Oct 10 2015 09:06:58 +05:30 ccpexp/templates/dialerIPNego.txt
+!Flash: 334        117 Oct 10 2015 09:06:58 +05:30 ccpexp/templates/dialerIpv6Autoconfig.txt
+!Flash: 335         82 Oct 10 2015 09:07:00 +05:30 ccpexp/templates/dialerIpv6DhcpClient.txt
+!Flash: 336        156 Oct 10 2015 09:07:00 +05:30 ccpexp/templates/dialerIpv6PrefixFromProvider.txt
+!Flash: 337        135 Oct 10 2015 09:07:00 +05:30 ccpexp/templates/dialerIpv6StaticIP.txt
+!Flash: 338        109 Oct 10 2015 09:07:02 +05:30 ccpexp/templates/dialerStaticIP.txt
+!Flash: 339         72 Oct 10 2015 09:07:02 +05:30 ccpexp/templates/disableNativeVlanOnInterface.txt
+!Flash: 340         59 Oct 10 2015 09:07:02 +05:30 ccpexp/templates/disableTrunkOnInterface.txt
+!Flash: 341         75 Oct 10 2015 09:07:02 +05:30 ccpexp/templates/disassociateVlan.txt
+!Flash: 342        202 Oct 10 2015 09:07:04 +05:30 ccpexp/templates/domainNameDNS.txt
+!Flash: 343        260 Oct 10 2015 09:07:04 +05:30 ccpexp/templates/enableAAAConfig.txt
+!Flash: 344         23 Oct 10 2015 09:07:04 +05:30 ccpexp/templates/enableIpv6UnicastRouting.txt
+!Flash: 345         73 Oct 10 2015 09:07:04 +05:30 ccpexp/templates/enableLicense.txt
+!Flash: 346         84 Oct 10 2015 09:07:04 +05:30 ccpexp/templates/enableNativeVlanOnInterface.txt
+!Flash: 347         74 Oct 10 2015 09:07:06 +05:30 ccpexp/templates/enableNbarProtocolDiscovery.txt
+!Flash: 348         68 Oct 10 2015 09:07:06 +05:30 ccpexp/templates/enableTrunkOnInterface.txt
+!Flash: 349         73 Oct 10 2015 09:07:06 +05:30 ccpexp/templates/encryptLicenseCWS.txt
+!Flash: 350         84 Oct 10 2015 09:07:06 +05:30 ccpexp/templates/externalDNS.txt
+!Flash: 351         19 Oct 10 2015 09:07:08 +05:30 ccpexp/templates/filePrivilege.txt
+!Flash: 352         88 Oct 10 2015 09:07:08 +05:30 ccpexp/templates/group.txt
+!Flash: 353         69 Oct 10 2015 09:07:08 +05:30 ccpexp/templates/hostnameDomainname.txt
+!Flash: 354         39 Oct 10 2015 09:07:08 +05:30 ccpexp/templates/import.txt
+!Flash: 355         63 Oct 10 2015 09:07:10 +05:30 ccpexp/templates/interfaceDescription.txt
+!Flash: 356         61 Oct 10 2015 09:07:10 +05:30 ccpexp/templates/interfaceMediaType.txt
+!Flash: 357         51 Oct 10 2015 09:07:10 +05:30 ccpexp/templates/interfaceNoShut.txt
+!Flash: 358        114 Oct 10 2015 09:07:10 +05:30 ccpexp/templates/interfacePppoe.txt
+!Flash: 359         45 Oct 10 2015 09:07:12 +05:30 ccpexp/templates/interfaceShut.txt
+!Flash: 360         86 Oct 10 2015 09:07:12 +05:30 ccpexp/templates/interfaceWithDHCP.txt
+!Flash: 361        109 Oct 10 2015 09:07:12 +05:30 ccpexp/templates/interfaceWithDHCPHostname.txt
+!Flash: 362         92 Oct 10 2015 09:07:12 +05:30 ccpexp/templates/interfaceWithIPNego.txt
+!Flash: 363        114 Oct 10 2015 09:07:14 +05:30 ccpexp/templates/interfaceWithIpv6Autoconfig.txt
+!Flash: 364        123 Oct 10 2015 09:07:14 +05:30 ccpexp/templates/interfaceWithIpv6DhcpClient.txt
+!Flash: 365        153 Oct 10 2015 09:07:14 +05:30 ccpexp/templates/interfaceWithIpv6PrefixFromProvider.txt
+!Flash: 366        132 Oct 10 2015 09:07:14 +05:30 ccpexp/templates/interfaceWithIpv6StaticIP.txt
+!Flash: 367         88 Oct 10 2015 09:07:16 +05:30 ccpexp/templates/interfaceWithStaticIP.txt
+!Flash: 368         29 Oct 10 2015 09:07:16 +05:30 ccpexp/templates/ipv4DHCPDelete.txt
+!Flash: 369         42 Oct 10 2015 09:07:16 +05:30 ccpexp/templates/ipv4DHCPDelete_DNS.txt
+!Flash: 370        193 Oct 10 2015 09:07:16 +05:30 ccpexp/templates/licenseCWS.txt
+!Flash: 371         49 Oct 10 2015 09:07:18 +05:30 ccpexp/templates/localDNS.txt
+!Flash: 372        132 Oct 10 2015 09:07:18 +05:30 ccpexp/templates/loopbackIpv6StaticIP.txt
+!Flash: 373         90 Oct 10 2015 09:07:18 +05:30 ccpexp/templates/loopbackStaticIP.txt
+!Flash: 374     106537 Oct 10 2015 09:07:18 +05:30 ccpexp/templates/masking_rule.xml
+!Flash: 375         48 Oct 10 2015 09:07:20 +05:30 ccpexp/templates/natInside.txt
+!Flash: 376        155 Oct 10 2015 09:07:20 +05:30 ccpexp/templates/networkPortAccessList.txt
+!Flash: 377         13 Oct 10 2015 09:07:20 +05:30 ccpexp/templates/noCdpRun.txt
+!Flash: 378         47 Oct 10 2015 09:07:20 +05:30 ccpexp/templates/noDefaultRoute.txt
+!Flash: 379         50 Oct 10 2015 09:07:22 +05:30 ccpexp/templates/noDslGroup0.txt
+!Flash: 380         11 Oct 10 2015 09:07:22 +05:30 ccpexp/templates/noIpSla.txt
+!Flash: 381         51 Oct 10 2015 09:07:22 +05:30 ccpexp/templates/noNatInside.txt
+!Flash: 382         42 Oct 10 2015 09:07:22 +05:30 ccpexp/templates/noimport.txt
+!Flash: 383         61 Oct 10 2015 09:07:24 +05:30 ccpexp/templates/objectGroupNetwork.txt
+!Flash: 384        111 Oct 10 2015 09:07:24 +05:30 ccpexp/templates/objectGroupPort.txt
+!Flash: 385        137 Oct 10 2015 09:07:24 +05:30 ccpexp/templates/pap.txt
+!Flash: 386        220 Oct 10 2015 09:07:24 +05:30 ccpexp/templates/papchap.txt
+!Flash: 387         76 Oct 10 2015 09:07:26 +05:30 ccpexp/templates/parameterMapURL.txt
+!Flash: 388        276 Oct 10 2015 09:07:26 +05:30 ccpexp/templates/parserCLIAaaCommands.txt
+!Flash: 389        305 Oct 10 2015 09:07:26 +05:30 ccpexp/templates/parserCLICellularCommands.txt
+!Flash: 390        201 Oct 10 2015 09:07:26 +05:30 ccpexp/templates/parserCLIDeleteAaaCommand.txt
+!Flash: 391         29 Oct 10 2015 09:07:28 +05:30 ccpexp/templates/parserCLIDeleteView.txt
+!Flash: 392         55 Oct 10 2015 09:07:28 +05:30 ccpexp/templates/parserCLIInterface.txt
+!Flash: 393        667 Oct 10 2015 09:07:28 +05:30 ccpexp/templates/parserCLIView.txt
+!Flash: 394        242 Oct 10 2015 09:07:28 +05:30 ccpexp/templates/parserCLIWlanCommand.txt
+!Flash: 395         26 Oct 10 2015 09:07:30 +05:30 ccpexp/templates/parserUserDeleteCmd.txt
+!Flash: 396        110 Oct 10 2015 09:07:30 +05:30 ccpexp/templates/policyMap.txt
+!Flash: 397         96 Oct 10 2015 09:07:30 +05:30 ccpexp/templates/removeAccessList23.txt
+!Flash: 398       1160 Oct 10 2015 09:07:30 +05:30 ccpexp/templates/sampleSwitchConfiguration.txt
+!Flash: 399        104 Oct 10 2015 09:07:32 +05:30 ccpexp/templates/scanSafeNameOrIPv4.txt
+!Flash: 400        108 Oct 10 2015 09:07:32 +05:30 ccpexp/templates/secondaryIPv4OrName.txt
+!Flash: 401        102 Oct 10 2015 09:07:32 +05:30 ccpexp/templates/setDefaultRoute.txt
+!Flash: 402         59 Oct 10 2015 09:07:32 +05:30 ccpexp/templates/setMTUSize.txt
+!Flash: 403         52 Oct 10 2015 09:07:32 +05:30 ccpexp/templates/shdslATM.txt
+!Flash: 404         50 Oct 10 2015 09:07:34 +05:30 ccpexp/templates/shdslAUTO.txt
+!Flash: 405         64 Oct 10 2015 09:07:34 +05:30 ccpexp/templates/shdslEFM.txt
+!Flash: 406         50 Oct 10 2015 09:07:34 +05:30 ccpexp/templates/shdslEFMATM.txt
+!Flash: 407         93 Oct 10 2015 09:07:34 +05:30 ccpexp/templates/shdslMMEFMATM.txt
+!Flash: 408         73 Oct 10 2015 09:07:36 +05:30 ccpexp/templates/shutdownDmvpn.txt
+!Flash: 409        428 Oct 10 2015 09:07:36 +05:30 ccpexp/templates/tunnelConfiguration.txt
+!Flash: 410         21 Oct 10 2015 09:07:36 +05:30 ccpexp/templates/userFormDelete.txt
+!Flash: 411         61 Oct 10 2015 09:07:36 +05:30 ccpexp/templates/userPasswordCreate.txt
+!Flash: 412         59 Oct 10 2015 09:07:38 +05:30 ccpexp/templates/userSecretCreate.txt
+!Flash: 413         48 Oct 10 2015 09:07:38 +05:30 ccpexp/templates/userToGroup.txt
+!Flash: 414        566 Oct 10 2015 09:07:38 +05:30 ccpexp/templates/vpnIKEv1.txt
+!Flash: 415        690 Oct 10 2015 09:07:38 +05:30 ccpexp/templates/vpnIKEv2.txt
+!Flash: 416        323 Oct 10 2015 09:07:40 +05:30 ccpexp/templates/vpnIkev1InterfaceTunnel.txt
+!Flash: 417        300 Oct 10 2015 09:07:40 +05:30 ccpexp/templates/vpnIkev2InterfaceTunnel.txt
+!Flash: 418         85 Oct 10 2015 09:07:40 +05:30 ccpexp/templates/vpnWhiteListing.txt
+!Flash: 419         20 Oct 10 2015 09:07:40 +05:30 ccpexp/templates/wanMode.txt
+!Flash: 420        117 Oct 10 2015 09:07:42 +05:30 ccpexp/templates/zonePair.txt
+!Flash: 421          0 Oct 10 2015 09:04:14 +05:30 ccpexp/templates2
+!Flash: 422         51 Oct 10 2015 09:05:34 +05:30 ccpexp/templates2/addNAT.txt
+!Flash: 423         61 Oct 10 2015 09:05:34 +05:30 ccpexp/templates2/addNATInterface.txt
+!Flash: 424         95 Oct 10 2015 09:05:36 +05:30 ccpexp/templates2/addNATwithPort.txt
+!Flash: 425         85 Oct 10 2015 09:05:36 +05:30 ccpexp/templates2/addPort.txt
+!Flash: 426         41 Oct 10 2015 09:05:36 +05:30 ccpexp/templates2/cntrlrOperatingMode.txt
+!Flash: 427        214 Oct 10 2015 09:05:36 +05:30 ccpexp/templates2/createDialerEthernet.txt
+!Flash: 428         68 Oct 10 2015 09:05:38 +05:30 ccpexp/templates2/createSerialPPP.txt
+!Flash: 429        109 Oct 10 2015 09:05:38 +05:30 ccpexp/templates2/createSubEthernet.txt
+!Flash: 430         60 Oct 10 2015 09:05:38 +05:30 ccpexp/templates2/createSubEthernetWithoutPPPoE.txt
+!Flash: 431        151 Oct 10 2015 09:05:38 +05:30 ccpexp/templates2/deleteATMInterfacePppoe.txt
+!Flash: 432        105 Oct 10 2015 09:05:40 +05:30 ccpexp/templates2/deleteEthernetInterfacePppoe.txt
+!Flash: 433         72 Oct 10 2015 09:05:40 +05:30 ccpexp/templates2/deleteNATInterface.txt
+!Flash: 434         98 Oct 10 2015 09:05:40 +05:30 ccpexp/templates2/deleteNATIntwithPort.txt
+!Flash: 435         62 Oct 10 2015 09:05:40 +05:30 ccpexp/templates2/deleteNATVal.txt
+!Flash: 436         88 Oct 10 2015 09:05:42 +05:30 ccpexp/templates2/deleteOldNAT.txt
+!Flash: 437         61 Oct 10 2015 09:05:42 +05:30 ccpexp/templates2/interfaceWithDHCPPool.txt
+!Flash: 438      96446 Oct 10 2015 09:04:16 +05:30 ccpexp/CCPExpress_3.0_Open_Source_Documentation.html
+!Flash: 439         70 Oct 10 2015 09:07:42 +05:30 ccpexp/version.txt
+!Flash: 440       2464 Oct 10 2015 09:07:42 +05:30 home.shtml
+!Flash: 441   74503236 Mar 18 2016 15:17:18 +05:30 c2900-universalk9-mz.SPA.151-4.M4.bin
+!Flash: 76193792 bytes available (185004032 bytes used)
+!
+!Flash: nvram: Directory of nvram:/
+!Flash: nvram:   223  -rw-       30254                    <no date>  startup-config
+!Flash: nvram:   224  ----        1914                    <no date>  private-config
+!Flash: nvram:   225  -rw-       30254                    <no date>  underlying-config
+!Flash: nvram:     1  -rw-        2945                    <no date>  cwmp_inventory
+!Flash: nvram:     4  ----         222                    <no date>  persistent-data
+!Flash: nvram:     5  -rw-          17                    <no date>  ecfm_ieee_mib
+!Flash: nvram:     6  -rw-         555                    <no date>  IOS-Self-Sig#1.cer
+!Flash: nvram:     7  -rw-         768                    <no date>  ifIndex-table
+!Flash: nvram: 262136 bytes total (222748 bytes free)
+!
+!Interface: GigabitEthernet0/0, PLATFORM SGMII INTERFACE
+!Interface: GigabitEthernet0/1, PLATFORM SGMII INTERFACE
+!Interface: GigabitEthernet0/2, PLATFORM SGMII INTERFACE
+!
+!Slot 0: fru CISCO2911/K9
+!Slot 0: fru PWR-2911-AC
+!Slot 0: type C2911 Mother board 3GE, integrated VPN and 4W, 19 ports
+!Slot 0: hvers 1.0 rev J0
+!Slot 0: hvers  rev A0
+!Slot 0: part 800-30797-06, serial 
+!Slot 0: part , serial 
+!
+!Slot 0/0: fru HWIC-16A
+!Slot 0/0: type HWIC Serial 16A
+!Slot 0/0: hvers 1.0 rev A0
+!Slot 0/0: part 800-32848-01, serial FOC1937411P
+!
+!NAME: "CISCO2911/K9 chassis",  DESCR: "CISCO2911/K9 chassis"
+!PID: CISCO2911/K9
+!VID: V07
+!SN: FGL194111ZN
+!NAME: "C2911 Chassis Slot 0",  DESCR: "C2911 Chassis Slot"
+!NAME: "C2911 Mother board 3GE, integrated VPN and 4W on Slot 0", DESCR: "C2911 Mother board 3GE, integrated VPN and 4W"
+!VID: V07
+!SN: FOC193901Z7
+!NAME: "DaughterCard Slot 0 on Card 0", DESCR: "C2911 DaughterCard Slot"
+!NAME: "High Speed Wan Interface card with 16 RS232 async ports(HWIC-16A) on Slot 0 SubSlot 0", DESCR: "High Speed Wan Interface card with 16 RS232 async ports(HWIC-16A)"
+!PID: HWIC-16A
+!VID: V02
+!SN: FOC1937411P
+!NAME: "Async0/0/0",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/1",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/2",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/3",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/4",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/5",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/6",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/7",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/8",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/9",            DESCR: "HWIC-Serial"
+!NAME: "Async0/0/10",           DESCR: "HWIC-Serial"
+!NAME: "Async0/0/11",           DESCR: "HWIC-Serial"
+!NAME: "Async0/0/12",           DESCR: "HWIC-Serial"
+!NAME: "Async0/0/13",           DESCR: "HWIC-Serial"
+!NAME: "Async0/0/14",           DESCR: "HWIC-Serial"
+!NAME: "Async0/0/15",           DESCR: "HWIC-Serial"
+!NAME: "DaughterCard Slot 1 on Card 0", DESCR: "C2911 DaughterCard Slot"
+!NAME: "DaughterCard Slot 2 on Card 0", DESCR: "C2911 DaughterCard Slot"
+!NAME: "DaughterCard Slot 3 on Card 0", DESCR: "C2911 DaughterCard Slot"
+!NAME: "DaughterCard Slot 4 on Card 0", DESCR: "C2911 DaughterCard Slot"
+!NAME: "DaughterCard Slot 5 on Card 0", DESCR: "C2911 DaughterCard Slot"
+!NAME: "DaughterCard Slot 6 on Card 0", DESCR: "C2911 DaughterCard Slot"
+!NAME: "Embedded-Service-Engine0/0", DESCR: "Embedded Service Engine"
+!NAME: "GigabitEthernet0/0",    DESCR: "CN Gigabit Ethernet"
+!NAME: "GigabitEthernet0/1",    DESCR: "CN Gigabit Ethernet"
+!NAME: "GigabitEthernet0/2",    DESCR: "CN Gigabit Ethernet"
+!NAME: "C2911 Chassis Slot 1",  DESCR: "C2911 Chassis Slot"
+!NAME: "C2911 ISM Slot 0",      DESCR: "C2911 ISM Slot"
+!NAME: "Container of powerSupply Containers", DESCR: "Container of powerSupply Containers"
+!NAME: "Container of Power Supply", DESCR: "Container of Power Supply"
+!NAME: "C2911 AC Power Supply", DESCR: "C2911 AC Power Supply"
+!PID: PWR-2911-AC
+!VID: V05
+!SN: DCA1939R1MA
+!NAME: "Container of RPS",      DESCR: "Container of RPS"
+!
+!VTP: VTP Version                     : 2
+!VTP: Configuration Revision          : 0
+!VTP: Maximum VLANs supported locally : 36
+!VTP: Number of existing VLANs        : 5
+!VTP: VTP Operating Mode              : Server
+!VTP: VTP Domain Name                 : 
+!VTP: VTP Pruning Mode                : Disabled
+!VTP: VTP V2 Mode                     : Disabled
+!VTP: VTP Traps Generation            : Disabled
+!VTP: MD5 digest                      : 0xBF 0x86 0x94 0x45 0xFC 0xDF 0xB5 0x70 
+!VTP: Local updater ID is 10.3.235.26 on interface Gi0/0.2400 (first interface found)
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        1002   1003
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        1      1003
+!VLAN: 1003 tr    101003     1500  1005   0      -        -    srb      1      1002
+!VLAN: 1004 fdnet 101004     1500  -      -      1        ibm  -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      1        ibm  -        0      0   
+!
+!
+config-register 0x2102
+!
+version 15.1
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service sequence-numbers
+no service dhcp
+!
+hostname abi-t1a-v38x-rt02-kpi-TS
+!
+boot-start-marker
+boot system flash0:c2900-universalk9-mz.SPA.151-4.M4.bin
+boot system flash0:c2900-universalk9-mz.SPA.154-3.M3.bin
+boot-end-marker
+!
+logging buffered 51200 warnings
+no logging console
+enable secret 4 ENmtlXcHsI5I3b2UZYj7TXXu6J3P/ruPPf7jnU2JAH.
+!
+aaa new-model
+!
+aaa authentication login vty group tacacs+ local
+aaa authentication login conuser local
+aaa authentication enable default group tacacs+ enable
+aaa authorization console
+aaa authorization config-commands
+aaa authorization exec LINE_AUTHOR group tacacs+ local 
+aaa authorization commands 0 LINE_AUTHOR group tacacs+ local 
+aaa authorization commands 15 LINE_AUTHOR group tacacs+ local 
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 0 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+!
+aaa session-id common
+clock timezone IST 5 30
+!
+no ipv6 source-route
+no ipv6 cef
+no ip source-route
+ip cef
+!
+ip vrf OOB
+ rd 101:101
+!
+ip dhcp excluded-address 10.10.10.1
+!
+ip dhcp pool ccp-pool
+ import all
+ network 10.10.10.0 255.255.255.248
+ default-router 10.10.10.1 
+ lease 0 2
+!
+no ip bootp server
+no ip domain lookup
+ip domain name tatacommunications.com
+ip host abi-t1a-v38x-hrt01-CPM-A 2011 10.10.10.10
+ip host abi-t1a-v38x-hrt01-CPM-B 2003 10.10.10.10
+ip host abi-t1a-v38x-sw01 2004 10.10.10.10
+ip name-server 172.31.6.90
+ip name-server 172.31.6.190
+multilink bundle-name authenticated
+!
+crypto pki token default removal timeout 0
+!
+crypto pki trustpoint TP-self-signed-32516940
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-32516940
+ revocation-check none
+ rsakeypair TP-self-signed-32516940
+!
+crypto pki certificate chain TP-self-signed-32516940
+ certificate self-signed 01
+  30820227 30820190 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  2F312D30 2B060355 04031324 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 33323531 36393430 301E170D 31353130 31303033 34313336 
+  5A170D32 30303130 31303030 3030305A 302F312D 302B0603 55040313 24494F53 
+  2D53656C 662D5369 676E6564 2D436572 74696669 63617465 2D333235 31363934 
+  3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 8100AB2F 
+  16EED312 C299707E DFE1E2D6 0D19EEC9 3428D1E7 0705CE4D 6AAB3C45 01420776 
+  E12D31F9 688C591B 2FCB20B3 EB1204BE D65BC940 3E4F33EE 4C8D6524 AA13EF4A 
+  D01C9A51 60E58675 B0D111FD 007424E8 4BA25D19 CA5D7B52 AA719BDD 9E3E18FA 
+  ED5D8FA0 56253E4C 3EC2A470 3DB7A54D 4248BBC2 DDFA4EA0 F85EAA0B 31D30203 
+  010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603 551D2304 
+  18301680 1419B8F6 B76A2172 5CA8117F 3B704F86 26AD948A AB301D06 03551D0E 
+  04160414 19B8F6B7 6A21725C A8117F3B 704F8626 AD948AAB 300D0609 2A864886 
+  F70D0101 05050003 8181005C 75FFA708 624728B9 E4BB9768 5EA833CB 230F5CB5 
+  0261F456 B8F8B67A 05A83C5B B5C07A18 7490AB06 66B6FDC5 2E6DBF3F 2CB60C2B 
+  5124A4BA DDAD4DED 5AC57C1A B4B55911 E78DE387 98EEA56C D131D2BC 0B7392A0 
+  F9D25E13 192F8185 3E571E1B 4F44F4B8 CA14036A 3763227D 3C80722C 064913E6 
+  7B6F5504 111A9DE1 C22297
+  	quit
+license udi pid CISCO2911/K9 sn FGL194111ZN
+!
+username ipnoc privilege 15 secret 5 $1$rhWM$koRRGOPdYr.WPjg//C46t0
+username sambhav privilege 15 secret 5 $1$68lF$Iog7T5Bd2YpZpBfPsaIMc/
+!
+redundancy
+!
+ip ftp username ftponly
+ip ftp password 7 094A5A19160B1B0B5C545D
+ip ssh time-out 60
+ip ssh version 2
+!
+interface Loopback0
+ ip address 10.10.10.10 255.255.255.255
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ description (IOR_312582/XC/Connected to abi-t1a-v38x-sw01 Gi0/24 /1G/Single/Abidjan)
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0.2400
+ description (IOR_411971|INT|IP SLA Configuration at Abidjan|10MB|Abijan)
+ encapsulation dot1Q 2400
+ ip address 10.3.235.26 255.255.255.252
+ no cdp enable
+!
+interface GigabitEthernet0/0.3041
+ description (OOB_Management)
+ encapsulation dot1Q 3041
+ ip address 172.31.247.74 255.255.255.252
+ no cdp enable
+!
+interface GigabitEthernet0/1
+ ip vrf forwarding OOB
+ ip address 41.207.210.105 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface Async0/0/0
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/1
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/2
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/3
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/4
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/5
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/6
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/7
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/8
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/9
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/10
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/11
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/12
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/13
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/14
+ no ip address
+ encapsulation slip
+!
+interface Async0/0/15
+ no ip address
+ encapsulation slip
+!
+ip forward-protocol nd
+!
+no ip http server
+ip http access-class 23
+ip http authentication local
+no ip http secure-server
+ip http timeout-policy idle 60 life 86400 requests 10000
+!
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0.3041 172.31.247.73
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/1 41.207.210.1 100
+ip route 10.0.0.0 255.0.0.0 10.3.235.25
+ip route 202.54.29.29 255.255.255.255 GigabitEthernet0/1 41.207.210.1
+ip route vrf OOB 0.0.0.0 0.0.0.0 41.207.210.1
+ip tacacs source-interface GigabitEthernet0/0
+!
+ip access-list standard TELNET23
+ permit 172.31.6.163
+ permit 172.31.6.162
+ permit 66.198.145.8
+ permit 115.114.85.108
+ permit 202.81.192.11
+ permit 115.114.79.29
+ permit 115.114.79.24
+ permit 115.114.79.23
+ permit 202.81.192.5
+ permit 115.114.79.56
+ permit 115.114.79.52
+ permit 115.114.79.53
+ permit 115.114.79.51
+ permit 115.114.79.48
+ permit 115.114.151.19
+ permit 115.110.121.225
+ permit 115.110.121.226
+ permit 115.110.121.227
+ permit 14.143.130.137
+ permit 115.114.151.10
+ permit 172.31.5.116
+ permit 172.31.6.113
+ permit 172.31.5.115
+ permit 172.31.6.100
+ permit 115.114.146.71
+ permit 115.114.146.70
+ permit 115.114.146.69
+ permit 172.31.6.89
+ permit 172.31.6.90
+ permit 172.31.6.73
+ permit 202.54.29.29
+ip access-list standard TELNET24
+ permit any
+!
+ip sla responder
+ip sla 1001
+ udp-jitter 10.70.240.244 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->AHMEDABAD(AD) - COS1 
+ frequency 300
+ip sla 1002
+ udp-jitter 10.70.240.228 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->BANGALORE(BG) - COS1 
+ frequency 300
+ip sla 1003
+ udp-jitter 10.70.240.224 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->CHENNAI(CN) - COS1 
+ frequency 300
+ip sla 1004
+ udp-jitter 10.70.240.220 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DELHI(DL) - COS1 
+ frequency 300
+ip sla 1005
+ udp-jitter 10.70.241.168 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->ERNAKULAM(EK) - COS1 
+ frequency 300
+ip sla 1006
+ udp-jitter 10.70.240.232 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->HYDERABAD(HB) - COS1 
+ frequency 300
+ip sla 1007
+ udp-jitter 10.70.240.240 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->KOLKATA(KK) - COS1 
+ frequency 300
+ip sla 1008
+ udp-jitter 10.70.240.216 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MUMBAI(MU) - COS1 
+ frequency 300
+ip sla 1009
+ udp-jitter 10.70.240.236 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->PUNE(PU) - COS1 
+ frequency 300
+ip sla 1010
+ udp-jitter 10.70.240.204 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SANTACLARA(S99) - COS1 
+ frequency 300
+ip sla 1011
+ udp-jitter 10.70.240.192 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->NEWYORK(NM3) - COS1 
+ frequency 300
+ip sla 1012
+ udp-jitter 10.70.241.164 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SINGAPORE1(SVW) - COS1 
+ frequency 300
+ip sla 1013
+ udp-jitter 10.70.240.208 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->FRANKFURT1(FNM) - COS1 
+ frequency 300
+ip sla 1014
+ udp-jitter 10.70.240.196 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->LONDON1(L78) - COS1 
+ frequency 300
+ip sla 1015
+ udp-jitter 10.70.240.212 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->TOKYO1(T0V) - COS1 
+ frequency 300
+ip sla 1016
+ udp-jitter 10.70.240.1 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->NEWJERSEY(NJY) - COS1 
+ frequency 300
+ip sla 1017
+ udp-jitter 10.70.247.205 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->KUALALUMPUR1(KVD) - COS1 
+ frequency 300
+ip sla 1018
+ udp-jitter 10.70.59.128 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MANILA1(P98) - COS1 
+ frequency 300
+ip sla 1019
+ udp-jitter 10.70.59.132 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->HIGHBRIDGE(HB9) - COS1 
+ frequency 300
+ip sla 1020
+ udp-jitter 10.70.59.136 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->HONGKONG2(KTH) - COS1 
+ frequency 300
+ip sla 1021
+ udp-jitter 10.70.59.140 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SINGAPORE2(SVQ) - COS1 
+ frequency 300
+ip sla 1022
+ udp-jitter 10.70.59.144 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->PARIS2(PVU) - COS1 
+ frequency 300
+ip sla 1023
+ udp-jitter 10.70.59.148 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->LOSANGELES(27G) - COS1 
+ frequency 300
+ip sla 1025
+ udp-jitter 10.70.59.156 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MIAMI(MLN) - COS1 
+ frequency 300
+ip sla 1026
+ udp-jitter 10.70.59.160 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->ATLANTA(A56) - COS1 
+ frequency 300
+ip sla 1027
+ udp-jitter 10.70.59.164 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->TORONTO1(T6U) - COS1 
+ frequency 300
+ip sla 1028
+ udp-jitter 10.70.59.168 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->ASHBURN(AE6) - COS1 
+ frequency 300
+ip sla 1029
+ udp-jitter 10.70.59.172 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->BRUSSELS(B1D) - COS1 
+ frequency 300
+ip sla 1030
+ udp-jitter 10.70.59.176 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->STOCKHOLM(STK) - COS1 
+ frequency 300
+ip sla 1031
+ udp-jitter 10.70.59.180 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->WARSAW(WZN) - COS1 
+ frequency 300
+ip sla 1032
+ udp-jitter 10.70.59.184 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->ZURICH(ZMI) - COS1 
+ frequency 300
+ip sla 1033
+ udp-jitter 10.70.176.214 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DALLAS(D0V) - COS1 
+ frequency 300
+ip sla 1034
+ udp-jitter 10.70.59.192 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->FRANKFURT2(FEQ) - COS1 
+ frequency 300
+ip sla 1035
+ udp-jitter 10.70.59.196 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->OSAKA(OS7) - COS1 
+ frequency 300
+ip sla 1036
+ udp-jitter 10.70.59.220 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SYDNEY1(1MH) - COS1 
+ frequency 300
+ip sla 1037
+ udp-jitter 10.70.59.216 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MELBOURNE1(1ME) - COS1 
+ frequency 300
+ip sla 1038
+ udp-jitter 10.70.59.244 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DUBAI(DDW) - COS1 
+ frequency 300
+ip sla 1039
+ udp-jitter 10.70.59.232 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DUBLIN(EDU) - COS1 
+ frequency 300
+ip sla 1040
+ udp-jitter 10.70.59.204 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->TAIPEI(TJ5) - COS1 
+ frequency 300
+ip sla 1041
+ udp-jitter 10.70.59.200 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SEOUL1(SB8) - COS1 
+ frequency 300
+ip sla 1042
+ udp-jitter 10.70.95.128 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->ISTANBUL1(IS8) - COS1 
+ frequency 300
+ip sla 1043
+ udp-jitter 10.70.95.132 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->CASABLANCA(52W) - COS1 
+ frequency 300
+ip sla 1044
+ udp-jitter 10.70.59.229 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MOSCOW(1M9) - COS1 
+ frequency 300
+ip sla 1050
+ udp-jitter 10.70.95.173 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->AMSTERDAM(A99) - COS1 
+ frequency 300
+ip sla 1051
+ udp-jitter 10.70.176.238 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->PARIS1(PV0) - COS1 
+ frequency 300
+ip sla 1052
+ udp-jitter 10.70.59.122 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->CRESSEX(HW1) - COS1 
+ frequency 300
+ip sla 1053
+ udp-jitter 10.70.176.234 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MADRID(WV6) - COS1 
+ frequency 300
+ip sla 1054
+ udp-jitter 10.70.95.161 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->CHICAGO(CT8) - COS1 
+ frequency 300
+ip sla 1055
+ udp-jitter 10.70.59.253 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->RIYADH(RMZ) - COS1 
+ frequency 300
+ip sla 1056
+ udp-jitter 10.70.95.177 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->NAIROBI1(3KD) - COS1 
+ frequency 300
+ip sla 1058
+ udp-jitter 10.70.59.237 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->BUDAPEST(EHB) - COS1 
+ frequency 300
+ip sla 1059
+ udp-jitter 10.70.95.145 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MILAN(ITM) - COS1 
+ frequency 300
+ip sla 1060
+ udp-jitter 10.70.95.149 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->GENEVA(GVS) - COS1 
+ frequency 300
+ip sla 1061
+ udp-jitter 10.70.239.209 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->HONGKONG1(H99) - COS1 
+ frequency 300
+ip sla 1062
+ udp-jitter 10.70.95.189 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->TOKYO2(2TV) - COS1 
+ frequency 300
+ip sla 1064
+ udp-jitter 10.70.95.193 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DOHA1(1DA) - COS1 
+ frequency 300
+ip sla 1065
+ udp-jitter 10.70.176.226 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->LAGOS(XNL) - COS1 
+ frequency 300
+ip sla 1066
+ udp-jitter 10.70.176.21 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->BANGKOK1(T9Y) - COS1 
+ frequency 300
+ip sla 1067
+ udp-jitter 10.70.176.130 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->VIETNAM1(XNL) - COS1 
+ frequency 300
+ip sla 1068
+ udp-jitter 10.70.176.134 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->PORTLOUIS(77M) - COS1 
+ frequency 300
+ip sla 1069
+ udp-jitter 10.70.176.138 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->ACCRA(XZT) - COS1 
+ frequency 300
+ip sla 1070
+ udp-jitter 10.70.176.142 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DHAKA(AD8) - COS1 
+ frequency 300
+ip sla 1071
+ udp-jitter 10.70.176.146 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->KARACHI(5MJ) - COS1 
+ frequency 300
+ip sla 1072
+ udp-jitter 10.70.179.86 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->AUCKLAND(DNZ) - COS1 
+ frequency 300
+ip sla 1073
+ udp-jitter 10.70.179.98 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->JAKARTA1(ZPI) - COS1 
+ frequency 300
+ip sla 1074
+ udp-jitter 10.70.179.90 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->BOSTON(EBN) - COS1 
+ frequency 300
+ip sla 1075
+ udp-jitter 10.70.179.94 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->HOUSTON(HOD) - COS1 
+ frequency 300
+ip sla 1076
+ udp-jitter 10.75.127.166 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SYDNEY2(0PP) - COS1 
+ frequency 300
+ip sla 1077
+ udp-jitter 10.75.127.170 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->EMI(KV8) - COS1 
+ frequency 300
+ip sla 1078
+ udp-jitter 10.75.127.174 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->HELSINKI1(7Y3) - COS1 
+ frequency 300
+ip sla 1079
+ udp-jitter 10.75.127.182 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->HELSINKI2(7Y4) - COS1 
+ frequency 300
+ip sla 1080
+ udp-jitter 10.75.127.178 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->ISTANBUL2(IT5) - COS1 
+ frequency 300
+ip sla 1081
+ udp-jitter 10.75.127.126 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->NAIROBI2(AX8) - COS1 
+ frequency 300
+ip sla 1082
+ udp-jitter 10.3.131.82 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DARESSALAAM(AXD) - COS1 
+ frequency 300
+ip sla 1083
+ udp-jitter 10.75.127.154 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->KAMPALA(AX4) - COS1 
+ frequency 300
+ip sla 1085
+ udp-jitter 10.75.127.162 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->HARARE(AX7) - COS1 
+ frequency 300
+ip sla 1087
+ udp-jitter 10.70.179.214 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->FUJAIRAH(N71) - COS1 
+ frequency 300
+ip sla 1088
+ udp-jitter 10.204.192.106 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SEATTLE(00S) - COS1 
+ frequency 300
+ip sla 1089
+ udp-jitter 10.204.192.118 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->WINDHOEK(XTN) - COS1 
+ frequency 300
+ip sla 1090
+ udp-jitter 10.70.179.218 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->LONDON2(LDN) - COS1 
+ frequency 300
+ip sla 1091
+ udp-jitter 10.77.136.102 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->CAIRO(WE7) - COS1 
+ frequency 300
+ip sla 1092
+ udp-jitter 10.204.99.30 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->COLOMBO(COL) - COS1 
+ frequency 300
+ip sla 1093
+ udp-jitter 10.77.136.106 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->LUANDA(7B5) - COS1 
+ frequency 300
+ip sla 1094
+ udp-jitter 10.77.136.110 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->GABORONE(7B6) - COS1 
+ frequency 300
+ip sla 1095
+ udp-jitter 10.77.136.114 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MAPUTO(1Z9) - COS1 
+ frequency 300
+ip sla 1096
+ udp-jitter 10.77.136.118 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->PERTH(H9U) - COS1 
+ frequency 300
+ip sla 1097
+ udp-jitter 10.1.254.102 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DOHA2(UN4) - COS1 
+ frequency 300
+ip sla 1098
+ udp-jitter 10.77.136.122 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MANILA2(GX0) - COS1 
+ frequency 300
+ip sla 1099
+ udp-jitter 10.77.136.130 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->KUALALUMPUR2(KT1) - COS1 
+ frequency 300
+ip sla 1100
+ udp-jitter 10.77.136.134 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MELBOURNE2(JN1) - COS1 
+ frequency 300
+ip sla 1101
+ udp-jitter 10.77.136.138 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SEOUL2(OO7) - COS1 
+ frequency 300
+ip sla 1102
+ udp-jitter 10.3.212.154 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SEOUL3(OO8) - COS1 
+ frequency 300
+ip sla 1104
+ udp-jitter 10.77.136.142 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MUSCAT(OB6) - COS1 
+ frequency 300
+ip sla 1105
+ udp-jitter 10.77.136.86 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->BANGKOK2(C9V) - COS1 
+ frequency 300
+ip sla 1106
+ udp-jitter 10.1.167.150 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->WALL(WV1) - COS1 
+ frequency 300
+ip sla 1107
+ udp-jitter 10.204.98.118 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->JAKARTA2(IJN) - COS1 
+ frequency 300
+ip sla 1108
+ udp-jitter 10.204.192.2 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MUNICH(MU1) - COS1 
+ frequency 300
+ip sla 1109
+ udp-jitter 10.204.192.6 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->VIETNAM2(YQL) - COS1 
+ frequency 300
+ip sla 1110
+ udp-jitter 10.204.192.10 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->FRANKFURT3(FR1) - COS1 
+ frequency 300
+ip sla 1111
+ udp-jitter 10.204.99.26 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->TORONTO2(TTT) - COS1 
+ frequency 300
+ip sla 1112
+ udp-jitter 10.204.98.114 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->MANCHESTER(UKU) - COS1 
+ frequency 300
+ip sla 1113
+ udp-jitter 10.204.192.17 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->SEATTLE2(EMS) - COS1 
+ frequency 300
+ip sla 1114
+ udp-jitter 10.204.192.114 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DJIBOUTI(YPQ) - COS1 
+ frequency 300
+ip sla 1115
+ udp-jitter 10.6.217.54 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->JOHANNESBURG1(EOP) - COS1 
+ frequency 300
+ip sla 1116
+ udp-jitter 10.204.102.102 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->BRAZIL(XXH) - COS1 
+ frequency 300
+ip sla 1117
+ udp-jitter 10.6.216.14 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->CAPETOWN(EAG) - COS1 
+ frequency 300
+ip sla 1118
+ udp-jitter 10.6.216.18 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->DURBAN(EAO) - COS1 
+ frequency 300
+ip sla 1119
+ udp-jitter 10.6.217.178 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->JOHANNESBURG2(JBH) - COS1 
+ frequency 300
+ip sla 1120
+ udp-jitter 10.204.192.30 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->LISBON(PV9) - COS1 
+ frequency 300
+ip sla 1121
+ udp-jitter 10.204.192.22 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->TELAVIV(XXG) - COS1 
+ frequency 300
+ip sla 1122
+ udp-jitter 10.204.192.82 1000 source-ip 10.3.235.26 num-packets 20
+ request-data-size 64
+ tos 160
+ tag ABIDJAN(V38)->COPENHAGEN(ACPHB) - COS1 
+ frequency 300
+ip sla group schedule 4755 1000-1200 schedule-period 300 frequency 300 start-time now life forever
+logging trap debugging
+logging source-interface GigabitEthernet0/0
+logging 115.114.151.19
+logging 172.31.6.90
+logging 172.31.6.102
+logging 172.31.6.113
+access-list 23 permit 10.10.10.0 0.0.0.7
+access-list 88 permit 10.70.0.202
+access-list 88 permit 10.70.95.58
+access-list 88 permit 10.209.19.205
+access-list 88 permit 10.209.20.30
+access-list 88 permit 115.110.121.225
+access-list 88 permit 115.110.121.226
+access-list 88 permit 115.110.121.227
+access-list 88 permit 115.114.79.23
+access-list 88 permit 115.114.79.24
+access-list 88 permit 115.114.79.25
+access-list 88 permit 115.114.79.26
+access-list 88 permit 115.114.79.27
+access-list 88 permit 115.114.79.28
+access-list 88 permit 115.114.79.42
+access-list 88 permit 115.114.79.43
+access-list 88 permit 115.114.79.51
+access-list 88 permit 115.114.85.108
+access-list 88 permit 115.114.151.10
+access-list 88 permit 115.114.151.19
+access-list 88 permit 172.31.5.81
+access-list 88 permit 172.31.5.87
+access-list 88 permit 172.31.5.114
+access-list 88 permit 172.31.5.115
+access-list 88 permit 172.31.5.116
+access-list 88 permit 172.31.5.226
+access-list 88 permit 172.31.5.227
+access-list 88 permit 172.31.5.228
+access-list 88 permit 172.31.5.230
+access-list 88 permit 172.31.5.250
+access-list 88 permit 172.31.5.252
+access-list 88 permit 172.31.6.11
+access-list 88 permit 172.31.6.36
+access-list 88 permit 172.31.6.37
+access-list 88 permit 172.31.6.72
+access-list 88 permit 172.31.6.73
+access-list 88 permit 172.31.6.78
+access-list 88 permit 172.31.6.79
+access-list 88 permit 172.31.6.80
+access-list 88 permit 172.31.6.82
+access-list 88 permit 172.31.6.83
+access-list 88 permit 172.31.6.88
+access-list 88 permit 172.31.6.89
+access-list 88 permit 172.31.6.90
+access-list 88 permit 172.31.6.95
+access-list 88 permit 172.31.6.100
+access-list 88 permit 172.31.6.102
+access-list 88 permit 172.31.6.103
+access-list 88 permit 172.31.6.104
+access-list 88 permit 172.31.6.107
+access-list 88 permit 172.31.6.110
+access-list 88 permit 172.31.6.111
+access-list 88 permit 172.31.6.113
+access-list 88 permit 172.31.6.117
+access-list 88 permit 172.31.6.119
+access-list 88 permit 172.31.6.120
+access-list 88 permit 172.31.6.123
+access-list 88 permit 172.31.6.135
+access-list 88 permit 172.31.6.136
+access-list 88 permit 172.31.6.158
+access-list 88 permit 172.31.6.161
+access-list 88 permit 172.31.6.162
+access-list 88 permit 172.31.6.163
+access-list 88 permit 172.31.6.190
+access-list 88 permit 192.168.57.200
+access-list 88 permit 192.168.255.130
+access-list 88 permit 192.168.255.163
+access-list 88 permit 202.54.29.19
+access-list 88 permit 202.54.29.25
+access-list 88 permit 202.54.29.29
+access-list 88 permit 202.54.29.78
+access-list 88 permit 202.54.29.81
+access-list 88 permit 202.81.192.5
+access-list 88 permit 202.81.192.11
+access-list 88 permit 202.81.192.20
+access-list 89 permit 172.31.5.114
+access-list 89 permit 172.31.5.115
+access-list 89 permit 172.31.5.116
+access-list 89 permit 172.31.6.161
+access-list 89 permit 172.31.6.162
+access-list 89 permit 172.31.6.163
+access-list 91 permit 10.209.19.162
+access-list 91 permit 10.209.19.166
+access-list 91 permit 10.209.19.168
+access-list 91 permit 10.209.19.205
+!
+no cdp run
+!
+snmp-server group secure v3 priv read secure-ro access 88
+snmp-server view secure-ro internet included
+snmp-server community g01ng10ba1 RO 91
+snmp-server community t7t7m1tr01 RO 88
+snmp-server ifindex persist
+snmp ifmib ifalias long
+tacacs-server host 115.114.151.7
+tacacs-server host 115.114.151.67
+tacacs-server directed-request
+tacacs-server key 7 1313041C07
+!
+ipv6 access-list TELNET-IPv6
+ deny ipv6 any any
+!
+control-plane
+!
+banner exec ^C
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!              ****  WARNING: UNAUTHORISED ACCESS PROHIBITED  ****            !
+!  You are into Tata Communications Network System. By entering               !
+!  this System, you consent to having your activities record and monitored.   !
+!  Anyone who access this system without authorization or in access of their  !
+!  authorization could be subject to civil and/or criminal liability. If the  !
+!  record reveals evidence of unauthorised use or criminal activity, Tata     !
+!  Communications may provide the evidence to supervisory personnel, law      !
+!  enforcement authorities, and their third parties.                          !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+^C
+banner login ^C
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                Authorized access only                        !
+!       This system is the property of TATA COMMUNICATIONS LTD !
+! Disconnect IMMEDIATELY if you are not an authorized user     !
+!            Contact [ip.noc@tatacommunications.com]           !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+^C
+!
+line con 0
+ exec-timeout 5 0
+ authorization commands 0 LINE_AUTHOR
+ authorization commands 15 LINE_AUTHOR
+ login authentication vty
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport input all
+ transport output lat pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line 0/0/0
+ transport input all
+ transport output all
+ speed 115200
+line 0/0/1 0/0/7
+ transport input all
+ transport output all
+line 0/0/8
+ transport input all
+ transport output all
+ speed 115200
+line 0/0/9 0/0/15
+ transport input all
+ transport output all
+line vty 0 4
+ access-class TELNET23 in vrf-also
+ exec-timeout 5 0
+ privilege level 15
+ authorization commands 0 LINE_AUTHOR
+ authorization commands 15 LINE_AUTHOR
+ authorization exec LINE_AUTHOR
+ login authentication vty
+ transport input all
+ transport output all
+line vty 5 15
+ access-class TELNET23 in vrf-also
+ exec-timeout 5 0
+ privilege level 15
+ ipv6 access-class TELNET-IPv6 in
+ login authentication vty
+ transport input telnet ssh
+!
+scheduler allocate 20000 1000
+ntp authentication-key 1 md5 00301232050F4D534A2F785E 7
+ntp authenticate
+ntp trusted-key 1
+ntp source GigabitEthernet0/0
+ntp server 115.114.76.110 key 1 prefer
+ntp server 115.114.76.178 key 1
+end

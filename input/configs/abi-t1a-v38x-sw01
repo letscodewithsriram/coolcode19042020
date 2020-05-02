@@ -1,0 +1,730 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: ME-3600X-24TS-M - a ME-3600X-24TS-M router
+!CPU: PowerPC8572
+!
+!Memory: main 983040K/65528K
+!Serial Number: FCW1933H028
+!Model revision number           : C0
+!Model number                    : ME-3600X-24TS-M
+!Motherboard assembly number     : 73-12694-06
+!Motherboard serial number       : FOC1932NLWD
+!Motherboard revision number     : C0
+!
+!Processor ID: FCW1933H028
+!
+!
+!Image: Software: ME360x-UNIVERSALK9-M, 15.6(2)SP3, RELEASE SOFTWARE (fc4)
+!Image: Compiled: Tue 19-Sep-17 22:20 by prod_rel_team
+!Image: flash:/me360x-universalk9-mz.156-2.SP3.bin
+!
+!BOOTLDR: Version 12.2 [sourdutt-loader_release_ledfix 100]
+!
+!
+!BootFlash: BOOT path-list      : flash:/me360x-universalk9-mz.156-2.SP3.bin
+!BootFlash: Config file         : flash:/config.text
+!BootFlash: Private Config file : flash:/private-config.text
+!BootFlash: Manual Boot         : no
+!BootFlash: HELPER path-list    : 
+!
+!Flash: nvram: Directory of nvram:/
+!Flash: nvram:  1537  -rw-            18776                    <no date>  startup-config
+!Flash: nvram:  1538  ----                5                    <no date>  private-config
+!Flash: nvram:  1539  -rw-            18776                    <no date>  underlying-config
+!Flash: nvram:     1  -rw-               17                    <no date>  ecfm_ieee_mib
+!Flash: nvram:     2  -rw-             1141                    <no date>  ifIndex-table
+!Flash: nvram: 1572864 bytes total (1550959 bytes free)
+!
+!Interface: GigabitEthernet0, PQUICC3 PowerPC8572 ADDR: 10092078, FASTSEND: 2CA717C
+!
+!NAME: "1",                     DESCR: "ME-3600X-24TS-M"
+!PID: ME-3600X-24TS-M
+!VID: V01
+!SN: FCW1933H028
+!NAME: "Container 0",           DESCR: "ME-3600X-24TS-M - Container 0"
+!NAME: "Power Supply 1",        DESCR: "FRU Power Supply"
+!PID: PWR-ME3KX-AC
+!VID: V01
+!SN: QCS192624HC
+!NAME: "Fan 0",                 DESCR: "Switch FRU Fan"
+!NAME: "Power Supply Sensor 0", DESCR: "Power Supply Sensor 0"
+!NAME: "Container 1",           DESCR: "ME-3600X-24TS-M - Container 1"
+!NAME: "Power Supply 2",        DESCR: "FRU Power Supply"
+!PID: PWR-ME3KX-AC
+!VID: V01
+!SN: QCS1926249M
+!NAME: "Fan 1",                 DESCR: "Switch FRU Fan"
+!NAME: "Power Supply Sensor 1", DESCR: "Power Supply Sensor 1"
+!NAME: "ME-3600X-24TS-M - Sensor 0", DESCR: "ME-3600X-24TS-M - Sensor 0"
+!NAME: "ME-3600X-24TS-M - Fixed Module 0", DESCR: "ME-3600X-24TS-M - Fixed Module 0"
+!PID: ME-3600X-24TS-M
+!VID: V01
+!SN: FCW1933H028
+!NAME: "TenGigabitEthernet0/1 Container", DESCR: "TenGigabitEthernet Container"
+!NAME: "TenGigabitEthernet0/1", DESCR: "1000BaseLX SFP"
+!PID: GLC-LH-SMD
+!VID: V01
+!SN: AVJ19363J84
+!NAME: "Te0/1 Module Temperature Sensor", DESCR: "TenGigabitEthernet0/1 Module Temperature Sensor"
+!NAME: "Te0/1 Supply Voltage Sensor", DESCR: "TenGigabitEthernet0/1 Supply Voltage Sensor"
+!NAME: "Te0/1 Bias Current Sensor", DESCR: "TenGigabitEthernet0/1 Bias Current Sensor"
+!NAME: "Te0/1 Transmit Power Sensor", DESCR: "TenGigabitEthernet0/1 Transmit Power Sensor"
+!NAME: "Te0/1 Receive Power Sensor", DESCR: "TenGigabitEthernet0/1 Receive Power Sensor"
+!NAME: "TenGigabitEthernet0/2 Container", DESCR: "TenGigabitEthernet Container"
+!NAME: "TenGigabitEthernet0/2", DESCR: "1000BaseLX SFP"
+!PID: GLC-LH-SMD
+!VID: V01
+!SN: AVJ19363J82
+!NAME: "Te0/2 Module Temperature Sensor", DESCR: "TenGigabitEthernet0/2 Module Temperature Sensor"
+!NAME: "Te0/2 Supply Voltage Sensor", DESCR: "TenGigabitEthernet0/2 Supply Voltage Sensor"
+!NAME: "Te0/2 Bias Current Sensor", DESCR: "TenGigabitEthernet0/2 Bias Current Sensor"
+!NAME: "Te0/2 Transmit Power Sensor", DESCR: "TenGigabitEthernet0/2 Transmit Power Sensor"
+!NAME: "Te0/2 Receive Power Sensor", DESCR: "TenGigabitEthernet0/2 Receive Power Sensor"
+!NAME: "GigabitEthernet0/1",    DESCR: "GigabitEthernet0/1"
+!NAME: "GigabitEthernet0/2",    DESCR: "GigabitEthernet0/2"
+!NAME: "GigabitEthernet0/3",    DESCR: "GigabitEthernet0/3"
+!NAME: "GigabitEthernet0/4",    DESCR: "GigabitEthernet0/4"
+!NAME: "GigabitEthernet0/5",    DESCR: "GigabitEthernet0/5"
+!NAME: "GigabitEthernet0/6",    DESCR: "GigabitEthernet0/6"
+!NAME: "GigabitEthernet0/7",    DESCR: "GigabitEthernet0/7"
+!NAME: "GigabitEthernet0/8",    DESCR: "GigabitEthernet0/8"
+!NAME: "GigabitEthernet0/9",    DESCR: "GigabitEthernet0/9"
+!NAME: "GigabitEthernet0/10",   DESCR: "GigabitEthernet0/10"
+!NAME: "GigabitEthernet0/11",   DESCR: "GigabitEthernet0/11"
+!NAME: "GigabitEthernet0/12",   DESCR: "GigabitEthernet0/12"
+!NAME: "GigabitEthernet0/13",   DESCR: "GigabitEthernet0/13"
+!NAME: "GigabitEthernet0/14",   DESCR: "GigabitEthernet0/14"
+!NAME: "GigabitEthernet0/15",   DESCR: "GigabitEthernet0/15"
+!NAME: "GigabitEthernet0/16",   DESCR: "GigabitEthernet0/16"
+!NAME: "GigabitEthernet0/17",   DESCR: "GigabitEthernet0/17"
+!NAME: "GigabitEthernet0/18",   DESCR: "GigabitEthernet0/18"
+!NAME: "GigabitEthernet0/19",   DESCR: "GigabitEthernet0/19"
+!NAME: "GigabitEthernet0/20",   DESCR: "GigabitEthernet0/20"
+!NAME: "GigabitEthernet0/21",   DESCR: "GigabitEthernet0/21"
+!NAME: "GigabitEthernet0/22",   DESCR: "GigabitEthernet0/22"
+!NAME: "GigabitEthernet0/23",   DESCR: "GigabitEthernet0/23"
+!NAME: "GigabitEthernet0/24",   DESCR: "GigabitEthernet0/24"
+!NAME: "GigabitEthernet0",      DESCR: "GigabitEthernet0"
+!
+!
+!DEBUG:   platform debug Disabled for 0 Groups
+!
+config-register 0xF
+!
+version 15.6
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service sequence-numbers
+no service dhcp
+platform bfd allow-svi
+!
+hostname abi-t1a-v38x-sw01
+!
+no logging console
+enable secret 5 $1$ajmz$Z2BIJhff.kSkIsSXreoVm1
+!
+aaa new-model
+!
+aaa authentication login vty group tacacs+ local
+aaa authentication login conuser local
+aaa authentication enable default group tacacs+ enable
+aaa authorization console
+aaa authorization config-commands
+aaa authorization exec LINE_AUTHOR group tacacs+ local 
+aaa authorization commands 0 LINE_AUTHOR group tacacs+ local 
+aaa authorization commands 15 LINE_AUTHOR group tacacs+ local 
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 0 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+!
+aaa session-id common
+clock timezone IST 5 30
+no ip source-route
+!
+ip name-server 172.31.6.90 172.31.6.190
+
+no ip domain lookup
+ip domain name tatacommunications.com
+ipv6 multicast rpf use-bgp
+!
+udld aggressive
+
+!
+mac access-list extended Block-Invalid-EWS-Frames
+ permit any host 0180.c200.0000
+ permit any host 0180.c200.0002
+ permit any host 0100.0ccc.cccd
+ permit any host 0100.0ccc.cccc
+ permit any host 0100.0ccd.cdcd
+ deny   any host 0100.0c00.0000
+ deny   any host 0100.0ccd.cdce
+ deny   any host 0100.0ccd.cdd0
+ deny   any host 0180.c200.0001
+ deny   any 0180.c200.0000 0000.0000.000f
+ deny   any host 0180.c200.0010
+ permit any any
+mac access-list extended Block-Invalid-Frames
+ deny   any 0180.c200.0000 0000.0000.000f
+ deny   any host 0100.0c00.0000
+ deny   any host 0100.0ccc.cccc
+ deny   any host 0100.0ccd.cdd0
+ deny   any host 0100.0ccc.cccd
+ deny   any host 0100.0ccd.cdce
+ permit any any
+!
+spanning-tree mode mst
+spanning-tree portfast bpduguard default
+spanning-tree portfast bpdufilter default
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+!
+spanning-tree mst configuration
+ name VSNL
+ revision 20
+ instance 1 vlan 224, 1100-1299, 1500-1899
+ instance 2 vlan 3100-3549
+ instance 3 vlan 246-247, 3000-3099
+ instance 4 vlan 2400-2999
+ instance 5 vlan 3550-4000
+ instance 6 vlan 1300-1499, 1900-2399
+ instance 7 vlan 400-999
+ instance 8 vlan 2-223, 225-245, 248-399, 1000-1099
+!
+license udi pid ME-3600X-24TS-M sn FCW1933H028
+diagnostic bootup level complete
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause security-violation
+errdisable recovery cause pagp-flap
+errdisable recovery cause dtp-flap
+errdisable recovery cause link-flap
+errdisable recovery cause gbic-invalid
+errdisable recovery cause psecure-violation
+errdisable recovery cause loopback
+errdisable recovery interval 900
+username ipnoc privilege 15 secret 5 $1$.o5T$FhwSFycnpTUI1hBgT7C9y.
+username sambhav privilege 7 secret 5 $1$DeVM$QM0VrNWV0vbABPG.D36YI.
+!
+transceiver type all
+ monitoring
+vlan internal allocation policy ascending
+!
+vlan 230,249,2400,3040-3041,3203 
+no cdp run
+!
+interface Port-channel1
+ description (IOR_312594//Connected to abi-t1a-v38x-hrt01 LAG-1)
+ switchport trunk allowed vlan 230,249,2400,3040,3041,3203
+ switchport mode trunk
+ mtu 9150
+ load-interval 30
+ speed nonegotiate
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet0
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+ negotiation auto
+!
+interface GigabitEthernet0/1
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/2
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/3
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/4
+ switchport trunk allowed vlan none
+ switchport mode trunk
+ shutdown
+ speed 1000
+ duplex full
+ storm-control broadcast level 5.00
+ storm-control multicast level 5.00
+ storm-control action trap
+ no cdp enable
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ service instance 3203 ethernet
+  encapsulation dot1q 3203
+  rewrite ingress tag pop 1 symmetric
+  bridge-domain 3203 split-horizon group 0
+  mac security maximum addresses 5
+  mac security aging time 5 inactivity
+  mac security violation restrict
+  mac security
+ !
+!
+interface GigabitEthernet0/5
+ description *****  FREE PORT  *****
+ speed 1000
+ duplex full
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/6
+ description "225ABID623018193767/KDDI CORPORATION/Abidjan/GVPN"
+ switchport access vlan 249
+ speed 1000
+ duplex full
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ no cdp enable
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/7
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/8
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/9
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/10
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/11
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/12
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/13
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/14
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/15
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/16
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/17
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/18
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/19
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/20
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/21
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/22
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/23
+ description *****  FREE PORT  *****
+ shutdown
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/24
+ description (IOR_312582/XC/Connected to abi-t1a-v38x-rt02-kpi-TS Gi0/0 /1G/Single/Abidjan)
+ switchport trunk allowed vlan 2400,3041
+ switchport mode trunk
+ storm-control broadcast level 5.00 2.00
+ storm-control multicast level 5.00 2.00
+ storm-control action trap
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface TenGigabitEthernet0/1
+ description (IOR_312594/XC/Connected to abi-t1a-v38x-hrt01 [P 1/3/2] /10G/Single/Abidjan)
+ switchport trunk allowed vlan 230,249,2400,3040,3041,3203
+ switchport mode trunk
+ mtu 9150
+ speed nonegotiate
+ spanning-tree bpdufilter enable
+ channel-group 1 mode active
+!
+interface TenGigabitEthernet0/2
+ description (IOR_312594/XC/Connected to abi-t1a-v38x-hrt01 [P 1/7/2] /10G/Single/Abidjan)
+ switchport trunk allowed vlan 230,249,2400,3040,3041,3203
+ switchport mode trunk
+ mtu 9150
+ speed nonegotiate
+ spanning-tree bpdufilter enable
+ channel-group 1 mode active
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan3040
+ description (EOR_312112/BB/Switch_Management)
+ ip address 172.31.247.70 255.255.255.252
+!
+ip default-gateway 172.31.247.69
+ip forward-protocol nd
+!
+ip ftp username ftponly
+ip ftp password 7 0827585E0617090E455355
+no ip http server
+no ip http secure-server
+ip tacacs source-interface Vlan3040
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+ip access-list standard TELNET
+ permit 202.54.29.19
+ permit 202.54.29.29
+ permit 10.209.19.0 0.0.0.255
+ permit 172.31.6.64 0.0.0.63
+ permit 172.31.5.64 0.0.0.63
+ permit 172.31.6.128 0.0.0.63
+ip access-list standard TELNET23
+ permit 172.31.6.163
+ permit 172.31.6.162
+ permit 115.114.85.108
+ permit 202.81.192.11
+ permit 115.114.79.28
+ permit 115.114.79.29
+ permit 115.114.79.26
+ permit 115.114.79.27
+ permit 115.114.79.24
+ permit 115.114.79.25
+ permit 115.114.79.23
+ permit 202.81.192.5
+ permit 115.114.79.56
+ permit 115.114.79.52
+ permit 115.114.79.53
+ permit 115.114.79.51
+ permit 115.114.151.19
+ permit 115.110.121.225
+ permit 115.110.121.226
+ permit 115.110.121.227
+ permit 115.114.151.10
+ permit 172.31.5.116
+ permit 172.31.6.113
+ permit 172.31.5.115
+ permit 10.205.30.17
+ permit 10.205.30.18
+ permit 172.31.6.100
+ permit 115.114.146.71
+ permit 115.114.146.70
+ permit 115.114.146.69
+ permit 172.31.6.89
+ permit 172.31.6.90
+ permit 172.31.6.73
+!
+logging history informational
+logging trap debugging
+logging source-interface Vlan3040
+logging host 172.31.6.102
+logging host 172.31.6.113
+logging host 172.31.6.90
+logging host 115.114.85.108
+logging host 115.114.146.91
+logging host 115.114.151.19
+logging host 115.114.79.25 transport udp port 516
+logging host 115.114.79.23 transport udp port 516
+logging host 115.114.79.27 transport udp port 516
+access-list 23 permit 10.205.30.17
+access-list 23 permit 10.205.30.18
+access-list 23 permit 115.114.85.108
+access-list 23 permit 115.114.146.69
+access-list 23 permit 115.114.146.70
+access-list 23 permit 115.114.146.71
+access-list 80 permit 115.114.146.64 0.0.0.31
+access-list 88 permit 10.70.0.202
+access-list 88 permit 10.70.95.58
+access-list 88 permit 10.209.19.205
+access-list 88 permit 10.209.20.30
+access-list 88 permit 115.110.121.226
+access-list 88 permit 115.114.79.23
+access-list 88 permit 115.114.79.24
+access-list 88 permit 115.114.79.25
+access-list 88 permit 115.114.79.26
+access-list 88 permit 115.114.79.27
+access-list 88 permit 115.114.79.28
+access-list 88 permit 115.114.79.42
+access-list 88 permit 115.114.79.43
+access-list 88 permit 115.114.85.108
+access-list 88 permit 115.114.151.10
+access-list 88 permit 115.114.151.19
+access-list 88 permit 172.31.5.81
+access-list 88 permit 172.31.5.87
+access-list 88 permit 172.31.5.114
+access-list 88 permit 172.31.5.115
+access-list 88 permit 172.31.5.116
+access-list 88 permit 172.31.5.226
+access-list 88 permit 172.31.5.227
+access-list 88 permit 172.31.5.228
+access-list 88 permit 172.31.5.230
+access-list 88 permit 172.31.5.250
+access-list 88 permit 172.31.5.252
+access-list 88 permit 172.31.6.11
+access-list 88 permit 172.31.6.36
+access-list 88 permit 172.31.6.37
+access-list 88 permit 172.31.6.72
+access-list 88 permit 172.31.6.73
+access-list 88 permit 172.31.6.78
+access-list 88 permit 172.31.6.79
+access-list 88 permit 172.31.6.80
+access-list 88 permit 172.31.6.82
+access-list 88 permit 172.31.6.83
+access-list 88 permit 172.31.6.88
+access-list 88 permit 172.31.6.89
+access-list 88 permit 172.31.6.90
+access-list 88 permit 172.31.6.95
+access-list 88 permit 172.31.6.100
+access-list 88 permit 172.31.6.102
+access-list 88 permit 172.31.6.103
+access-list 88 permit 172.31.6.104
+access-list 88 permit 172.31.6.107
+access-list 88 permit 172.31.6.110
+access-list 88 permit 172.31.6.111
+access-list 88 permit 172.31.6.113
+access-list 88 permit 172.31.6.117
+access-list 88 permit 172.31.6.119
+access-list 88 permit 172.31.6.120
+access-list 88 permit 172.31.6.123
+access-list 88 permit 172.31.6.135
+access-list 88 permit 172.31.6.136
+access-list 88 permit 172.31.6.158
+access-list 88 permit 172.31.6.161
+access-list 88 permit 172.31.6.162
+access-list 88 permit 172.31.6.163
+access-list 88 permit 172.31.6.190
+access-list 88 permit 192.168.57.200
+access-list 88 permit 192.168.255.130
+access-list 88 permit 192.168.255.163
+access-list 88 permit 202.54.29.19
+access-list 88 permit 202.54.29.25
+access-list 88 permit 202.54.29.29
+access-list 88 permit 202.54.29.78
+access-list 88 permit 202.54.29.81
+access-list 88 permit 202.81.192.5
+access-list 88 permit 202.81.192.11
+access-list 89 permit 172.31.5.114
+access-list 89 permit 172.31.5.115
+access-list 89 permit 172.31.5.116
+access-list 89 permit 172.31.6.161
+access-list 89 permit 172.31.6.162
+access-list 89 permit 172.31.6.163
+access-list 91 permit 10.209.19.162
+access-list 91 permit 10.209.19.166
+access-list 91 permit 10.209.19.168
+access-list 91 permit 10.209.19.205
+!
+snmp-server view secure-ro internet included
+snmp-server community P0cT3st RO 80
+snmp-server community arboR RO
+snmp-server community g01ng10ba1 RO 91
+snmp-server community t7t7m1tr01 RO 88
+snmp-server trap-source Vlan3040
+snmp-server location NEWJERSEY site NJYX
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps bgp
+snmp-server enable traps config-copy
+snmp-server enable traps ipmulticast
+snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps entity
+snmp-server enable traps flash insertion
+snmp-server enable traps flash removal
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server host 10.209.19.205 t7t7m1tr01 
+snmp-server host 172.31.6.86 t7t7m1tr01 
+snmp-server host 172.31.6.102 readvsnl 
+snmp-server host 172.31.6.138 trapvsnl 
+snmp ifmib ifalias long
+snmp ifmib ifindex persist
+tacacs-server host 115.114.151.7
+tacacs-server host 115.114.151.67
+tacacs-server directed-request
+tacacs-server key 7 044D180803
+!
+control-plane
+!
+banner exec ^C
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!              ****  WARNING: UNAUTHORISED ACCESS PROHIBITED  ****            !
+!  You are into Tata Communications Network System. By entering               !
+!  this System, you consent to having your activities record and monitored.   !
+!  Anyone who access this system without authorization or in access of their  !
+!  authorization could be subject to civil and/or criminal liability. If the  !
+!  record reveals evidence of unauthorised use or criminal activity, Tata     !
+!  Communications may provide the evidence to supervisory personnel, law      !
+!  enforcement authorities, and their third parties.                          !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+^C
+banner login ^C
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                Authorized access only                        !
+!       This system is the property of TATA COMMUNICATIONS LTD !
+! Disconnect IMMEDIATELY if you are not an authorized user     !
+!            Contact [ip.noc@tatacommunications.com]           !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+^C
+!
+line con 0
+ exec-timeout 5 0
+ authorization commands 0 LINE_AUTHOR
+ authorization commands 15 LINE_AUTHOR
+ login authentication vty
+line vty 0 4
+ access-class TELNET23 in
+ exec-timeout 5 0
+ authorization commands 0 LINE_AUTHOR
+ authorization commands 15 LINE_AUTHOR
+ authorization exec LINE_AUTHOR
+ login authentication vty
+ transport input all
+ transport output all
+line vty 5 15
+ access-class TELNET23 in
+ exec-timeout 5 0
+ ipv6 access-class TELNET-IPv6 in
+ login authentication vty
+!
+exception crashinfo file flash:crashinfo
+ntp authentication-key 1 md5 122D0423135F4A516F251038 7
+ntp authenticate
+ntp trusted-key 1
+ntp source Vlan3040
+ntp server 115.114.76.110 key 1 prefer
+ntp server 115.114.76.178 key 1
+!
+end

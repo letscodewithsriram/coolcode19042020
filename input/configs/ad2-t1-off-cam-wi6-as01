@@ -1,0 +1,944 @@
+!RANCID-CONTENT-TYPE: huawei
+!
+! 'display version':
+!
+! Huawei Versatile Routing Platform Software
+! VRP (R) software, Version 5.170 (S5320 V200R011C10SPC600)
+! Copyright (C) 2000-2018 HUAWEI TECH Co., Ltd.
+! HUAWEI S5320-28X-LI-DC Routing Switch  
+! 
+! ES5D2T28S008 0(Master)  :  
+! DDR             Memory Size : 512   M bytes
+! FLASH Total     Memory Size : 512   M bytes
+! FLASH Available Memory Size : 238   M bytes
+! Pcb           Version   : VER.C
+! BootROM       Version   : 020b.0a05
+! BootLoad      Version   : 020b.0a06
+! CPLD          Version   : 0106 
+! Software      Version   : VRP (R) Software, Version 5.170 (V200R011C10SPC600)
+! FLASH         Version   : 0x0
+! 
+! 'dir /all-filesystems':
+!
+! Directory of flash:/
+! 
+!   Idx  Attr     Size(Byte)  Date        Time       FileName 
+!     0  drw-              -  Dec 10 2019 16:04:56   dhcp
+!     1  drw-              -  Dec 10 2019 16:04:23   user
+!     2  -rw-         13,432  Dec 10 2019 16:05:00   default_ca.cer
+!     3  -rw-             36  Jul 12 2017 04:06:17   $_patchstate_reboot
+!     4  -rw-          1,407  Dec 10 2019 16:05:02   default_local.cer
+!     5  drw-              -  Dec 10 2019 16:04:59   logfile
+!     6  -rw-          4,515  Feb 03 2020 16:23:04   vrpcfg.zip
+!     7  -rw-      9,047,084  Dec 19 2018 17:01:48   s5320li-v200r011sph010.pat
+!     8  drw-              -  Dec 10 2019 16:04:23   pmdata
+!     9  drw-              -  Jul 12 2017 04:06:18   $_install_mod
+!    10  -rw-            836  Dec 10 2019 16:04:55   rr.bak
+!    11  -rw-            836  Dec 10 2019 16:04:55   rr.dat
+!    12  -rw-          1,013  Dec 10 2019 21:50:39   private-data.txt
+!    13  drw-              -  Dec 13 2019 22:06:47   localuser
+!    14  -rw-     69,500,428  Dec 19 2018 17:01:47   s5320li-v200r011c10spc600.cc
+!    15  drw-              -  Dec 10 2019 23:49:49   $_backup
+!    16  -rw-            200  Dec 10 2019 16:05:02   ca_config.ini
+! 
+! 244,164 KB total (166,788 KB free)
+! 
+! 
+! 'display device':
+!
+! S5320-28X-LI-DC's Device status:
+! Slot Sub  Type                   Online    Power    Register     Status   Role  
+! -------------------------------------------------------------------------------
+! 0    -    S5320-28X-LI           Present   PowerOn  Registered   Normal   Master
+! 
+! 'display fan':
+!
+! -------------------------------------------------------------------------
+!  Slot  FanID   Online    Status    Speed     Mode     Airflow            
+! -------------------------------------------------------------------------
+!  0     1       Present   Normal    35%       Auto     Side-to-Side
+! 
+! 'display power':
+!
+! Info: There is no power information.
+! 
+! 'display domain':
+!
+!   -------------------------------------------------------------------------
+!   index    DomainName 
+!   -------------------------------------------------------------------------
+!   0        default                                                         
+!   1        default_admin                                                   
+!   -------------------------------------------------------------------------
+!   Total: 2
+! 
+! 'display local-user':
+!
+!   ----------------------------------------------------------------------------
+!   User-name                      State  AuthMask  AdminLevel  
+!   ----------------------------------------------------------------------------
+!   tata                           A      FMS       0          
+!   admin                          A      MH        15         
+!   sambhav                        A      -         15         
+!   ----------------------------------------------------------------------------
+!   Total 3 user(s)
+! 
+! 'display ssh server status':
+!
+!  SSH version                         :2.0
+!  SSH connection timeout              :60 seconds
+!  SSH server key generating interval  :0 hours
+!  SSH authentication retries          :3 times
+!  SFTP IPv4 server                    :Enable
+!  SFTP IPv6 server                    :Enable
+!  STELNET IPv4 server                 :Enable
+!  STELNET IPv6 server                 :Enable
+!  SCP IPv4 server                     :Disable
+!  SCP IPv6 server                     :Disable
+!  SSH server source                   :0.0.0.0
+!  ACL4 number                         :0
+!  ACL6 number                         :0
+! 
+! 'display fib':
+!
+! Route Flags: G - Gateway Route, H - Host Route,    U - Up Route
+!              S - Static Route,  D - Dynamic Route, B - Black Hole Route
+!              L - Vlink Route
+! --------------------------------------------------------------------------------
+!  FIB Table:
+!  Total number of Routes : 5 
+!  
+! Destination/Mask   Nexthop         Flag  Interface      TunnelID
+! 127.0.0.1/32       127.0.0.1       HU    InLoop0        0x0
+! 10.175.65.197/32   127.0.0.1       HU    InLoop0        0x0
+! 127.0.0.0/8        127.0.0.1       U     InLoop0        0x0
+! 10.175.65.192/26   10.175.65.197   U     Vlanif2305     0x0
+! 0.0.0.0/0          10.175.65.193   GSU   Vlanif2305     0x0
+! 
+! 'display ip routing-table':
+!
+! Route Flags: R - relay, D - download to fib
+! ------------------------------------------------------------------------------
+! Routing Tables: Public
+!          Destinations : 5        Routes : 5        
+! 
+! Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+! 
+!         0.0.0.0/0   Static  60   0           D   10.175.65.193   Vlanif2305
+!   10.175.65.192/26  Direct  0    0           D   10.175.65.197   Vlanif2305
+!   10.175.65.197/32  Direct  0    0           D   127.0.0.1       Vlanif2305
+!       127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+!       127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+! 
+! 
+! 'display lacp statistics eth-trunk':
+!
+! 
+!Software Version V200R011C10SPC600
+#
+sysname ad2-t1-off-cam-wi6-as01
+#
+info-center channel 6 name syslog
+info-center loghost source Vlanif2305
+info-center loghost 172.31.6.90 channel 6
+info-center loghost 172.31.6.102 channel 6
+info-center loghost 172.31.6.103 channel 6
+info-center loghost 115.114.151.19 channel 6
+#
+vlan batch 2 to 4094
+#
+authentication-profile name default_authen_profile
+authentication-profile name dot1x_authen_profile
+authentication-profile name mac_authen_profile
+authentication-profile name portal_authen_profile
+authentication-profile name dot1xmac_authen_profile
+authentication-profile name multi_authen_profile
+#
+telnet server enable
+#
+undo http server enable
+#
+clock timezone IST add 05:30:00
+#
+dhcp enable
+#
+dhcp snooping enable ipv4
+#
+stp region-configuration
+ region-name HUAWEI-VSNL
+ revision-level 20
+ instance 1 vlan 224 1100 to 1299 1500 to 1899
+ instance 2 vlan 3100 to 3549
+ instance 3 vlan 246 to 247 3000 to 3099
+ instance 4 vlan 2400 to 2999
+ instance 5 vlan 3550 to 4000
+ instance 6 vlan 1300 to 1499 1900 to 2399
+ instance 7 vlan 400 to 999
+ instance 8 vlan 2 to 223 225 to 245 248 to 399 1000 to 1099
+ active region-configuration
+#
+radius-server template default
+#
+hwtacacs-server template tcl
+ hwtacacs-server authentication 115.114.151.7
+ hwtacacs-server authentication 115.114.151.67 secondary
+ hwtacacs-server authorization 115.114.151.7
+ hwtacacs-server authorization 115.114.151.67 secondary
+ hwtacacs-server accounting 115.114.151.7
+ hwtacacs-server accounting 115.114.151.67 secondary
+ hwtacacs-server source-ip 10.175.65.197
+ hwtacacs-server shared-key cipher %^%#b$ROS=qaJ@f(N+&IqIQD{=AD*A0l:#CJYMDWd!UD%^%#
+ undo hwtacacs-server user-name domain-included
+#
+pki realm default
+ certificate-check none
+#
+acl number 2001
+ description for SNMP
+ rule 5 permit source 172.31.5.87 0
+ rule 10 permit source 172.31.5.230 0
+ rule 15 permit source 172.31.6.80 0
+ rule 20 permit source 172.31.6.89 0
+ rule 25 permit source 172.31.6.90 0
+ rule 30 permit source 172.31.6.100 0
+ rule 35 permit source 172.31.6.113 0
+ rule 40 permit source 172.31.6.123 0
+ rule 45 permit source 172.31.6.190 0
+ rule 50 permit source 202.54.29.78 0
+ rule 55 permit source 202.54.29.81 0
+ rule 60 permit source 172.31.5.250 0
+ rule 65 permit source 10.209.19.162 0
+ rule 70 permit source 10.209.19.166 0
+ rule 75 permit source 10.209.19.168 0
+ rule 80 permit source 115.114.85.108 0
+ rule 85 permit source 115.114.79.60 0
+ rule 90 permit source 115.114.79.59 0
+ rule 95 permit source 172.31.5.252 0
+ rule 105 permit source 115.110.121.226 0
+ rule 110 permit source 115.110.121.227 0
+ rule 115 permit source 115.114.79.29 0
+ rule 120 permit source 115.114.79.48 0
+ rule 125 permit source 115.114.79.37 0
+ rule 130 permit source 115.114.79.38 0
+ rule 135 permit source 115.114.79.39 0
+ rule 140 permit source 115.114.79.40 0
+ rule 145 permit source 115.114.79.41 0
+ rule 350 permit source 115.114.85.187 0
+ rule 903 permit source 115.110.121.225 0
+ rule 1000 deny
+acl number 2011
+#
+acl number 3002
+ description for ssh
+ rule 5 permit tcp source 172.31.6.163 0 destination-port eq 22
+ rule 10 permit tcp source 172.31.6.163 0 destination-port eq ftp-data
+ rule 15 permit tcp source 172.31.6.163 0 destination-port eq ftp
+ rule 20 permit tcp source 172.31.6.162 0 destination-port eq 22
+ rule 25 permit tcp source 172.31.6.162 0 destination-port eq ftp-data
+ rule 30 permit tcp source 172.31.6.162 0 destination-port eq ftp
+ rule 35 permit tcp source 115.114.151.19 0 destination-port eq 22
+ rule 40 permit tcp source 115.114.151.19 0 destination-port eq ftp-data
+ rule 45 permit tcp source 115.114.151.19 0 destination-port eq ftp
+ rule 50 permit tcp source 115.114.151.10 0 destination-port eq 22
+ rule 55 permit tcp source 115.114.151.10 0 destination-port eq ftp-data
+ rule 60 permit tcp source 115.114.151.10 0 destination-port eq ftp
+ rule 65 permit tcp source 172.31.5.116 0 destination-port eq 22
+ rule 70 permit tcp source 172.31.5.116 0 destination-port eq ftp-data
+ rule 75 permit tcp source 172.31.5.116 0 destination-port eq ftp
+ rule 80 permit tcp source 172.31.6.113 0 destination-port eq 22
+ rule 85 permit tcp source 172.31.6.113 0 destination-port eq ftp-data
+ rule 90 permit tcp source 172.31.6.113 0 destination-port eq ftp
+ rule 95 permit tcp source 172.31.6.115 0 destination-port eq 22
+ rule 100 permit tcp source 172.31.6.115 0 destination-port eq ftp-data
+ rule 105 permit tcp source 172.31.6.115 0 destination-port eq ftp
+ rule 110 permit tcp source 172.31.6.100 0 destination-port eq 22
+ rule 115 permit tcp source 172.31.6.100 0 destination-port eq ftp-data
+ rule 120 permit tcp source 172.31.6.100 0 destination-port eq ftp
+ rule 125 permit tcp source 115.114.146.71 0 destination-port eq 22
+ rule 130 permit tcp source 115.114.146.71 0 destination-port eq ftp-data
+ rule 135 permit tcp source 115.114.146.71 0 destination-port eq ftp
+ rule 140 permit tcp source 115.114.146.70 0 destination-port eq 22
+ rule 145 permit tcp source 115.114.146.70 0 destination-port eq ftp-data
+ rule 150 permit tcp source 115.114.146.70 0 destination-port eq ftp
+ rule 155 permit tcp source 115.114.146.69 0 destination-port eq 22
+ rule 160 permit tcp source 115.114.146.69 0 destination-port eq ftp-data
+ rule 165 permit tcp source 115.114.146.69 0 destination-port eq ftp
+ rule 170 permit tcp source 172.31.6.89 0 destination-port eq 22
+ rule 175 permit tcp source 172.31.6.89 0 destination-port eq ftp-data
+ rule 180 permit tcp source 172.31.6.89 0 destination-port eq ftp
+ rule 185 permit tcp source 172.31.6.90 0 destination-port eq 22
+ rule 190 permit tcp source 172.31.6.90 0 destination-port eq ftp-data
+ rule 195 permit tcp source 172.31.6.90 0 destination-port eq ftp
+ rule 200 permit tcp source 172.31.6.73 0 destination-port eq 22
+ rule 205 permit tcp source 172.31.6.73 0 destination-port eq ftp-data
+ rule 210 permit tcp source 172.31.6.73 0 destination-port eq ftp
+ rule 215 permit tcp source 115.114.79.59 0 destination-port eq 22
+ rule 220 permit tcp source 115.114.79.60 0 destination-port eq ftp-data
+ rule 225 permit tcp source 115.114.79.60 0 destination-port eq ftp
+ rule 230 permit tcp source 115.114.79.60 0 destination-port eq 22
+ rule 480 permit tcp source 115.114.85.187 0 destination-port eq 22
+ rule 485 permit tcp source 115.114.85.187 0 destination-port eq ftp-data
+ rule 490 permit tcp source 115.114.85.187 0 destination-port eq ftp
+ rule 495 permit tcp source 115.110.121.226 0 destination-port eq 22
+ rule 500 permit tcp source 115.110.121.226 0 destination-port eq ftp-data
+ rule 505 permit tcp source 115.110.121.226 0 destination-port eq ftp
+ rule 510 permit tcp source 115.110.121.227 0 destination-port eq 22
+ rule 515 permit tcp source 115.110.121.227 0 destination-port eq ftp-data
+ rule 520 permit tcp source 115.110.121.227 0 destination-port eq ftp
+ rule 525 permit tcp source 115.114.79.29 0 destination-port eq 22
+ rule 530 permit tcp source 115.114.79.29 0 destination-port eq ftp-data
+ rule 535 permit tcp source 115.114.79.29 0 destination-port eq ftp
+ rule 540 permit tcp source 115.114.79.48 0 destination-port eq 22
+ rule 545 permit tcp source 115.114.79.48 0 destination-port eq ftp-data
+ rule 550 permit tcp source 115.114.79.48 0 destination-port eq ftp
+ rule 555 permit tcp source 115.110.121.225 0 destination-port eq 22
+ rule 560 permit tcp source 115.110.121.225 0 destination-port eq ftp-data
+ rule 565 permit tcp source 115.110.121.225 0 destination-port eq ftp
+ rule 1000 deny ip
+#
+acl name Block-Invalid-EWS-Frames 4000
+ description Block-Invalid-EWS-Frames
+ rule 2 deny source-mac 10e8-786a-7896
+ rule 5 permit destination-mac 0180-c200-0000
+ rule 10 permit destination-mac 0180-c200-0002
+ rule 15 permit destination-mac 0100-0ccc-cccc
+ rule 20 permit destination-mac 0100-0ccd-cdcd
+ rule 25 deny destination-mac 0100-0c00-0000
+ rule 30 deny destination-mac 0100-0ccd-cdce
+ rule 35 deny destination-mac 0100-0ccd-cdd0
+ rule 40 deny destination-mac 0180-c200-0001
+ rule 45 deny destination-mac 0180-c200-0000 ffff-ffff-fff0
+ rule 50 deny destination-mac 0180-c200-0010
+ rule 1000 permit
+acl name Block-Invalid-Frames 4001
+ description Block-Invalid-Frames
+ rule 2 deny source-mac 10e8-786a-7896
+ rule 5 deny destination-mac 0180-c200-0000 ffff-ffff-fff0
+ rule 10 deny destination-mac 0100-0c00-0000
+ rule 15 deny destination-mac 0100-0ccc-cccc
+ rule 20 deny destination-mac 0100-0ccd-cdd0
+ rule 25 deny destination-mac 0100-0ccc-cccd
+ rule 30 deny destination-mac 0100-0ccd-cdce
+ rule 1000 permit
+acl name Block-PVST-CDP 4005
+ description Block-PVST-CDP
+ rule 10 deny destination-mac 0100-0ccc-cccc
+ rule 20 deny destination-mac 0100-0ccc-cccd
+ rule 100 permit
+acl name Block-Rough-Traffic 4006
+ description Block-Rough-traffic to CPU
+ rule 10 deny destination-mac 0100-0ccc-cccd
+#
+free-rule-template name default_free_rule
+#
+portal-access-profile name portal_access_profile
+#
+aaa
+ authentication-scheme default
+ authentication-scheme radius
+  authentication-mode radius
+ authentication-scheme tcl
+  authentication-mode hwtacacs local
+ authorization-scheme default
+ authorization-scheme tcl
+  authorization-mode hwtacacs local
+  authorization-cmd 15 hwtacacs local
+ accounting-scheme default
+ accounting-scheme tcl
+  accounting-mode hwtacacs
+  accounting realtime 3
+  accounting start-fail online
+  accounting interim-fail max-times 5 online
+ local-aaa-user password policy administrator 
+  password history record number 0
+  password expire 0
+ domain default
+  authentication-scheme tcl
+  accounting-scheme tcl
+  authorization-scheme tcl
+  radius-server default
+  hwtacacs-server tcl
+ domain default_admin
+  authentication-scheme tcl
+  accounting-scheme tcl
+  authorization-scheme tcl
+  hwtacacs-server tcl
+ local-user tata privilege level 0
+ local-user tata ftp-directory flash:/
+ local-user tata service-type terminal ssh ftp
+ local-user admin password irreversible-cipher $1a$s%XX#xgusL$qvIzLr@gZNHI^S._djj/dY9B0MiA@%Qt(R:=rV"3$
+ local-user admin privilege level 15
+ local-user admin service-type terminal http
+ local-user sambhav password cipher %^%#@D`O*(f4uD]+[!~GtmpK:Ct[(2k^u<I~yk-T-tHU%^%#
+ local-user sambhav privilege level 15
+#
+ntp-service server disable
+ntp-service ipv6 server disable
+ntp-service authentication enable
+ntp-service source-interface Vlanif2305
+ntp-service authentication-keyid 1 authentication-mode md5 cipher %^%#MSy-P)!yVRYz^^DJ$pG9O@F`)]v<#9tI+k0/KcqU%^%#
+ntp-service reliable authentication-keyid 1
+ntp-service unicast-server 192.168.194.91
+#
+interface Vlanif1
+#
+interface Vlanif2305
+ description "|EOR_905840|Management Pool|"
+ ip address 10.175.65.197 255.255.255.192
+#
+interface GigabitEthernet0/0/1
+ undo negotiation auto
+ speed 100
+ description "|BB|EOR_650198|Connected-To|1st Cambium 450m sector|Campus_Corner|10.173.76.4|"
+ undo port hybrid vlan 1
+ port hybrid tagged vlan 100 102 104 638 2305 2310 2620 3552 to 3553 3555 3559 to 3563
+ port hybrid tagged vlan 3565 3567 to 3568 3574 3576 3580 3582 to 3583 3585 3600 3608 3617
+ port hybrid tagged vlan 3623 3626 3857 3865 3867 3885 3908 3910 3955
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/2
+ undo negotiation auto
+ speed 100
+ description "|BB|EOR_650200|connetced-To|2nd Cambium 450m sector|Campus_Corner|10.173.76.5|"
+ undo port hybrid vlan 1
+ port hybrid tagged vlan 100 102 104 638 2305 2310 2620 3552 to 3553 3555 3559 to 3563
+ port hybrid tagged vlan 3565 3567 to 3568 3574 3576 3580 3582 to 3583 3585 3600 3608 3617
+ port hybrid tagged vlan 3623 3626 3857 3865 3867 3885 3908 3910 3955
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/3
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/4
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/5
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/6
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/7
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/8
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/9
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/10
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/11
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/12
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/13
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/14
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/15
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/16
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/17
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/18
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/19
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/20
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/21
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/22
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/23
+ undo negotiation auto
+ speed 100
+ description “Free Port”
+ shutdown
+ undo port hybrid vlan 1
+ stp root-protection
+ traffic-filter inbound acl name Block-Invalid-Frames
+ bpdu disable
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ unicast-suppression 1
+ multicast-suppression 1
+ broadcast-suppression 1
+ storm-control action block
+ storm-control enable trap
+ storm-control enable log
+#
+interface GigabitEthernet0/0/24
+ undo negotiation auto
+ speed 100
+ description "|IOR_286374|Connetced-To|ad-sha-kal-b1-as03|ge-0/0/8|"
+ undo port hybrid vlan 1
+ port hybrid tagged vlan 2 to 4094
+ jumboframe enable 10000
+ trust 8021p
+ trust dscp
+ qos schedule-profile TCL
+ dhcp snooping trusted
+#
+interface XGigabitEthernet0/0/1
+#
+interface XGigabitEthernet0/0/2
+#
+interface XGigabitEthernet0/0/3
+#
+interface XGigabitEthernet0/0/4
+#
+interface NULL0
+#
+qos schedule-profile TCL
+ qos queue 0 wrr weight 2
+ qos queue 1 wrr weight 3
+ qos queue 2 wrr weight 4
+ qos queue 3 wrr weight 5
+ qos queue 4 wrr weight 6
+ qos queue 5 wrr weight 0
+ qos queue 6 wrr weight 0
+ qos queue 7 wrr weight 0
+#
+cpu-defend policy block-rough-traffic
+ blacklist 1 acl 4006
+#
+ip route-static 0.0.0.0 0.0.0.0 Vlanif2305 10.175.65.193
+#
+snmp-agent
+snmp-agent local-engineid 800007DB03684AAEFD16E3
+snmp-agent sys-info location Pune
+snmp-agent sys-info version v3
+snmp-agent group v3 secure privacy write-view ViewDefault acl 2001
+snmp-agent target-host trap address udp-domain 115.114.79.59 source Vlanif2305 params securityname ipnmc v3 privacy private-netmanager
+snmp-agent target-host trap address udp-domain 115.114.79.60 source Vlanif2305 params securityname ipnmc v3 privacy private-netmanager
+snmp-agent usm-user v3 ipnmc
+snmp-agent usm-user v3 ipnmc group secure
+snmp-agent usm-user v3 ipnmc authentication-mode md5 cipher %^%#827n2jlBf9!Q5dLTpo136k<78&"yJ31G4wB5uP46%^%#
+snmp-agent usm-user v3 ipnmc privacy-mode des56 cipher %^%#YfYF$l0,pL"e}(5`lH-0|_KDHMT_5F2f/<>uVH~G%^%#
+snmp-agent usm-user v3 ipnmc acl 2001
+#
+sftp ipv4 server enable
+sftp ipv6 server enable
+stelnet ipv4 server enable
+stelnet ipv6 server enable
+ssh client first-time enable
+#
+header shell information "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!        ****  WARNING: UNAUTHORISED ACCESS PROHIBITED  ****          !
+!  You are now into Tata Communications Network System. Anyone who    !
+!  access this system without authorization or in access of their     !
+!  authorization could be subject to civil and/or criminal liability. !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"
+header login information "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                Authorized access only                        !
+!       This system is the property of TATA COMMUNICATIONS LTD !
+! Disconnect IMMEDIATELY if you are not an authorized user     !
+!            Contact [ip.noc@tatacommunications.com]           !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1a$ZLwoM7Z,p#$A(f)U|MK%7\oq.*SYbw*K243*3ilz"Q:kBGBhBBQ$
+user-interface vty 0 4
+ acl 3002 inbound
+ authentication-mode password
+ user privilege level 15
+ set authentication password cipher $1a$m<ATSgE!"+$htQGGRvt;>fkAZNvU9fNH6.wGV[RSGVpZ@J6F%PY$
+ idle-timeout 5 0
+ protocol inbound all
+user-interface vty 16 20
+ acl 3002 inbound
+ authentication-mode aaa
+ idle-timeout 5 0
+ protocol inbound all
+#
+dot1x-access-profile name dot1x_access_profile
+#
+mac-access-profile name mac_access_profile
+#
+return
