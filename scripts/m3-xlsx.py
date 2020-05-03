@@ -291,8 +291,24 @@ for line in fh.readlines():
 
 	rs_row = rs_row + 2
 
-	router_sheet.write(rs_row, rs_col, 'router_sheet.write(rs_row, rs_col, 'i
+	router_sheet.write(rs_row, rs_col, 'Access-List', column_header_format)
 
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("access-list "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+				
 fh.close()
 
 workbook.close()
