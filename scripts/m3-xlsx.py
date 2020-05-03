@@ -103,8 +103,6 @@ for line in fh.readlines():
 	router_sheet.write_url('J2', "internal:'Summary'!B" + str(sno + 4), string="SUMMARY", cell_format=summary_icon_format)
 	router_sheet.merge_range('A3:U3', "PARSED DEVICE CONFIGURATION - " + datapts[0] + "/" + datapts[1], page_header_format)
 
-	rs_row = 6
-
 	# rcfh = open (dir + "m2-configs/" + sheet_name + ".txt", 'r')
 	
 	from ciscoconfparse import CiscoConfParse
@@ -114,6 +112,8 @@ for line in fh.readlines():
 	# Interface Section - Column 1
 
 	rs_col = 0
+
+	rs_row = 6
 
 	router_sheet.write('A5', 'Interface Context - With IP Address', column_header_format)
 	
@@ -155,20 +155,24 @@ for line in fh.readlines():
 
 	rs_col = 1
 
+	rs_row = 6
+
 	router_sheet.write('B5', 'Routing Context', column_header_format)
 
 	router_sheet.set_column('B:B', 75)
 
-	rs_row = 4 
-	
 	router_sheet.write(rs_row, rs_col, 'OSPF', column_header_format)
 
 	rs_row = rs_row + 2
 
-	for routing_objs in parse.find_object("^router ospf "):
+	for routing_objs in parse.find_objects("^router ospf "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
 		for routing_line in routing_objs.children:
-			routing_line = routing_line.strip()
-			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)`	
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
 			rs_row = rs_row + 1
 
 
@@ -178,14 +182,117 @@ for line in fh.readlines():
 
 	rs_row = rs_row + 2
 
-	for routing_objs in parse.find_object("^router bgp "):
+	for routing_objs in parse.find_objects("^router bgp "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
 		for routing_line in routing_objs.children:
-			routing_line = routing_line.strip()
-			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
 			rs_row = rs_row + 1
 
 	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'EIGRP', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^router eigrp "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'RIP', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^router rip "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'STATIC', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^ip route "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	# Route Filters & Manipulations - Column 3
+
+	rs_col = 2
 	
+	rs_row = 6
+
+	router_sheet.write('C5', "Router Filters & Manipulations", column_header_format)
+
+	router_sheet.set_column('C:C', 75)
+
+	router_sheet.write(rs_row, rs_col, 'Route-Map', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^route-map "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+	
+	router_sheet.write(rs_row, rs_col, 'Prefix-List', column_header_format)
+	
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^ip prefix-list "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'router_sheet.write(rs_row, rs_col, 'i
+
 fh.close()
 
 workbook.close()
