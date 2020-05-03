@@ -100,8 +100,8 @@ for line in fh.readlines():
 
 
 	router_sheet.set_column('J:J', 20)
-	router_sheet.write_url('J2', "internal:'Summary'!B" + str(sno + 4), string="SUMMARY", cell_format=summary_icon_format)
-	router_sheet.merge_range('A3:U3', "PARSED DEVICE CONFIGURATION - " + datapts[0] + "/" + datapts[1], page_header_format)
+	router_sheet.write_url('B2', "internal:'Summary'!B" + str(sno + 4), string="SUMMARY", cell_format=summary_icon_format)
+	router_sheet.merge_range('A3:C3', "PARSED DEVICE CONFIGURATION - " + datapts[0] + "/" + datapts[1], page_header_format)
 
 	# rcfh = open (dir + "m2-configs/" + sheet_name + ".txt", 'r')
 	
@@ -115,9 +115,13 @@ for line in fh.readlines():
 
 	rs_row = 6
 
-	router_sheet.write('A5', 'Interface Context - With IP Address', column_header_format)
+	router_sheet.write('A5', 'Interface Context', column_header_format)
 	
 	router_sheet.set_column('A:A', 75)
+
+	router_sheet.write(rs_row, rs_col, 'Interfaces - With IP Address', column_header_format)
+
+	rs_row = rs_row + 2
 
 	for interface_objs in parse.find_objects("^interface "):
 		if interface_objs.re_search_children(" ip address [0-9]"):
@@ -134,7 +138,7 @@ for line in fh.readlines():
 
 	rs_row = rs_row + 2
 
-	router_sheet.write(rs_row, rs_col, 'Interface Context - Without IP Address', column_header_format)
+	router_sheet.write(rs_row, rs_col, 'Interfaces - Without IP Address', column_header_format)
 
 	rs_row = rs_row + 2
 
