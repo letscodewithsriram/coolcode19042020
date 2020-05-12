@@ -63,21 +63,21 @@ summary_icon_format = workbook.add_format({
 
 worksheet.set_tab_color('gray')
 worksheet.set_column('A:A', 10)
-worksheet.set_column('B:G', 30)
+worksheet.set_column('B:C', 75)
 worksheet.set_row(0, 8)
 
-worksheet.autofilter('A4:G4')
+worksheet.autofilter('A4:C4')
 worksheet.freeze_panes(4, 0)
 
-worksheet.merge_range('A2:G2', "TCL NETWORK ASSESSMENT - [M3] WAN NETWORK DEVICE CONFIGURATION PARSER MODULE", page_header_format)
+worksheet.merge_range('A2:C2', "TCL NETWORK ASSESSMENT - [M3] WAN NETWORK DEVICE CONFIGURATION PARSER MODULE", page_header_format)
 
 worksheet.write('A4', 'S.No', column_header_format)
 worksheet.write('B4', 'LOOPBACK-IP', column_header_format)
 worksheet.write('C4', 'HOSTNAME', column_header_format)
-worksheet.write('D4', 'ICMP', column_header_format)
-worksheet.write('E4', 'SNMP', column_header_format)
-worksheet.write('F4', 'SSH', column_header_format)
-worksheet.write('G4', 'CPU-UTILS', column_header_format)
+#worksheet.write('D4', 'ICMP', column_header_format)
+#worksheet.write('E4', 'SNMP', column_header_format)
+#worksheet.write('F4', 'SSH', column_header_format)
+#worksheet.write('G4', 'CPU-UTILS', column_header_format)
 
 sno = 0
 
@@ -102,12 +102,14 @@ for line in fh.readlines():
 	router_sheet.set_column('J:J', 20)
 	router_sheet.write_url('B2', "internal:'Summary'!B" + str(sno + 4), string="SUMMARY", cell_format=summary_icon_format)
 	router_sheet.merge_range('A3:C3', "PARSED DEVICE CONFIGURATION - " + datapts[0] + "/" + datapts[1], page_header_format)
+	router_sheet.merge_range('D3:G3', "", page_header_format)
 
 	# rcfh = open (dir + "m2-configs/" + sheet_name + ".txt", 'r')
 	
 	from ciscoconfparse import CiscoConfParse
 
-	parse = CiscoConfParse("/home/tools/network-assess/coolcode19042020/input/configs/Primary_Hub.txt")
+	# parse = CiscoConfParse("/home/tools/network-assess/coolcode19042020/input/configs/Primary_Hub.txt")
+	parse = CiscoConfParse("/network-assess/coolcode19042020/input/configs/Primary_Hub.txt")
 
 	# Interface Section - Column 1
 
@@ -178,7 +180,6 @@ for line in fh.readlines():
 			routing_line = routing_line.text.strip()
 			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
 			rs_row = rs_row + 1
-
 
 	rs_row = rs_row + 2
 
@@ -312,7 +313,244 @@ for line in fh.readlines():
 		rs_row = rs_row + 1
 
 	rs_row = rs_row + 2
-				
+
+	# QoS Context - Column 4
+
+	rs_col = 3
+
+	rs_row = 6
+
+	router_sheet.write('D5', 'QoS Context', column_header_format)
+
+	router_sheet.set_column('D:D', 75)
+
+	router_sheet.write(rs_row, rs_col, 'Class Map', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^class-map "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'Policy Map', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^policy-map "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	# Service Management - Column 5
+
+	rs_col = 4
+
+	rs_row = 6
+
+	router_sheet.write('E5', 'Service Management', column_header_format)
+
+	router_sheet.set_column('E:E', 75)
+
+	router_sheet.write(rs_row, rs_col, 'IP-SLA', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^ip sla "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'Logging', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^logging "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'SNMP', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^snmp "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+		
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'NTP', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^ntp "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	# Management Plane - Column 6
+
+	rs_col = 5
+	
+	rs_row = 6
+
+	router_sheet.write('F5', 'Management Plane', column_header_format)
+
+	router_sheet.set_column('F:F', 75)
+
+	router_sheet.write(rs_row, rs_col, 'Line VTY', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^line vty "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'Username', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^username "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+		
+	rs_row = rs_row + 2
+
+	router_sheet.write(rs_row, rs_col, 'AAA Authentication', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^aaa "):
+		config_line = routing_objs.text.strip()
+		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+		rs_row = rs_row + 1
+
+		for routing_line in routing_objs.children:
+			routing_line = routing_line.text.strip()
+			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+			rs_row = rs_row + 1
+
+		rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	# Crypto Context - Column 6
+
+	rs_col = 6
+
+	rs_row = 6
+
+	router_sheet.write('G5', 'Crypto Context', column_header_format)
+
+	router_sheet.set_column('G:G', 75)
+
+	router_sheet.write(rs_row, rs_col, 'Crypto Commands', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("^crypto "):
+		config_line = routing_objs.text.strip()
+		if not "certificate" in config_line:
+			router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
+			rs_row = rs_row + 1
+
+			for routing_line in routing_objs.children:
+				routing_line = routing_line.text.strip()
+				router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
+				rs_row = rs_row + 1
+
+			rs_row = rs_row + 1
+
+	rs_row = rs_row + 2
+
+	# Unfiltered Other Configurations - Column 7
+
+	rs_col = 7
+	
+	rs_row = 6
+
+	router_sheet.write('H5', 'Unfiltered Other Configuration', column_header_format)
+
+	router_sheet.set_column('H:H', 75)
+
+	router_sheet.write(rs_row, rs_col, 'Remaining Configurations', column_header_format)
+
+	rs_row = rs_row + 2
+
+	for routing_objs in parse.find_objects("
+
+
+
 fh.close()
 
 workbook.close()

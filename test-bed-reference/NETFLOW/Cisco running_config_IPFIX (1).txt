@@ -1,0 +1,162 @@
+Router1#sh run
+Building configuration...
+
+Current configuration : 2504 bytes
+!
+! Last configuration change at 06:00:08 UTC Fri Dec 13 2019 by lavanya
+upgrade fpd auto
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Router1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable password lavanya
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+ip flow-cache timeout inactive 20
+ip flow-cache timeout active 1
+no ip domain lookup
+ip domain name cisco
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+flow record flow_record
+ match ipv4 tos
+ match ipv4 protocol
+ match ipv4 source address
+ match ipv4 destination address
+ match transport source-port
+ match transport destination-port
+ collect counter bytes long
+ collect counter packets long
+!
+!
+flow exporter EXPORTER-1
+ description linux-server destination 192.168.56.106 source FastEthernet0/0
+ destination 192.168.56.106
+ source FastEthernet0/0
+ output-features
+ ttl 15
+ transport udp 9995
+ export-protocol ipfix
+ template data timeout 120
+!
+!
+flow monitor FLOW-MONITOR-1
+ exporter EXPORTER-1
+ record flow_record
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+username lavanya password 0 lavanya
+!
+redundancy
+!
+!
+ip tcp synwait-time 5
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ description to_Linux_server
+ ip address 192.168.56.105 255.255.255.0
+ ip flow monitor FLOW-MONITOR-1 input
+ ip flow monitor FLOW-MONITOR-1 output
+ ip flow ingress
+ ip flow egress
+ duplex full
+!
+interface GigabitEthernet1/0
+ ip address 10.0.0.1 255.255.255.0
+ ip nat inside
+ ip virtual-reassembly in
+ negotiation auto
+!
+interface GigabitEthernet2/0
+ ip address dhcp
+ ip nat outside
+ ip virtual-reassembly in
+ ip ospf 1 area 2
+ negotiation auto
+!
+router ospf 1
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+!
+ip nat inside source list 1 interface GigabitEthernet1/0 overload
+ip route 192.168.56.0 255.255.255.0 192.168.56.106
+!
+ip access-list standard ACL_PROTECTSNMP
+ permit 192.168.56.106
+!
+logging trap debugging
+logging host 192.168.56.106
+access-list 1 permit any
+no cdp log mismatch duplex
+!
+snmp-server group systems v3 priv
+snmp-server community secretROpw RO ACL_PROTECTSNMP
+snmp-server enable traps entity-sensor threshold
+!
+!
+control-plane
+!
+!
+!
+mgcp profile default
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ login local
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input telnet ssh
+!
+!
+end

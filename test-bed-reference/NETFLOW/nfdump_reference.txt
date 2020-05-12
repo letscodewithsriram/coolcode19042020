@@ -1,0 +1,49 @@
+
+
+
+nfcapd -w 
+
+-D 
+
+-S 2 
+
+-B 1024000 
+
+-l flow_base_dir/ -p 23456
+
+nfcapd -w -D -S 2 -B 1024 -l /home/tools/network-assess/coolcode19042020/m6-netflow/ -p 12345
+
+-w Align file rotation with next n minute ( specified by -t ) interval.  Example: If interval is 5 min, sync at 0,5,10... wall clock minutes Default: no alignment.
+
+-D Daemon mode: fork to background and detach from terminal.  Nfcapd terminates on signal TERM, INT and HUP.
+
+-B bufflen
+          Specifies the socket input buffer length in bytes. For high volume traffic ( near GB traffic ) it is recommended to set this value as high as possible ( typically > 100k ),  otherwise  you risk to lose packets. The default is OS ( and kernel )  dependent.
+
+-p portnum
+          Specifies the port number to listen. Default port is 9995
+
+-l base_directory 
+Specifies  the  base directory to store the output files.
+
+If a sub hierarchy is specified with 
+
+-S the final directory is concatenated to base_directory/sub_hierarchy. This is for compatibility with nfdump 1.5.x and used to specify a single netflow source.
+
+-S <num>
+          Allows  to specify an additional directory sub hierarchy to store the data files. The default is 0, no sub hierarchy, which means the files go directly in the base directory (-l). The base
+          directory (-l) is concatenated with the specified sub hierarchy format to form the final data directory.  The following hierarchies are defined:
+            0 default     no hierarchy levels
+            1 %Y/%m/%d    year/month/day
+            2 %Y/%m/%d/%H year/month/day/hour
+            3 %Y/%W/%u    year/week_of_year/day_of_week
+            4 %Y/%W/%u/%H year/week_of_year/day_of_week/hour
+            5 %Y/%j       year/day-of-year
+            6 %Y/%j/%H    year/day-of-year/hour
+            7 %Y-%m-%d    year-month-day
+            8 %Y-%m-%d/%H year-month-day/hour
+
+
+/home/tools/network-assess/coolcode19042020/m6-netflow
+
+
