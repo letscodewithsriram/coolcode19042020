@@ -1,4 +1,5 @@
 
+Issues: Source and Destination IP - From it got originated is hard to identify
 
 
 nfcapd -w 
@@ -11,7 +12,7 @@ nfcapd -w
 
 -l flow_base_dir/ -p 23456
 
-nfcapd -w -D -S 2 -B 1024 -l /home/tools/network-assess/coolcode19042020/m6-netflow/ -p 12345
+nfcapd -w -D -S 2 -B 1024 -l /home/tools/network-assess/coolcode19042020/m6-netflow/ -p 23456
 
 -w Align file rotation with next n minute ( specified by -t ) interval.  Example: If interval is 5 min, sync at 0,5,10... wall clock minutes Default: no alignment.
 

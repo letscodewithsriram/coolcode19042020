@@ -1,0 +1,8 @@
+add autoenable  *       {enablesriram}
+add method      *       {ssh} {telnet}
+add user        *       {sriram}
+add userprompt  *       {"username:"}
+add password    *       {sriram} {enablesriram}
+add cyphertype  *       {3des-cbc,aes256-ctr,aes192-ctr,aes128-ctr,aes256-cbc}
+add sshcmd	*	{ssh\ -o\ KexAlgorithms=+diffie-hellman-group1-sha1}
+add cyphertype	*	{aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc}
