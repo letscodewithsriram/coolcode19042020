@@ -1,6 +1,13 @@
 
 Issues: Source and Destination IP - From it got originated is hard to identify
 
+Key Note: Netflow v5 - Will not support egress; It support only ingress
+
+Steps:
+
+1) Telnet - 
+2) OSPF - 
+
 
 nfcapd -w 
 
@@ -46,5 +53,7 @@ If a sub hierarchy is specified with
 
 
 /home/tools/network-assess/coolcode19042020/m6-netflow
+
+
 
 
