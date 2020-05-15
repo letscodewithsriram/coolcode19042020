@@ -3,6 +3,9 @@ Issues: Source and Destination IP - From it got originated is hard to identify
 
 Key Note: Netflow v5 - Will not support egress; It support only ingress
 
+date '+%s' -d '2020-05-14 05:31:56.080'
+
+
 Steps:
 
 1) Telnet - 
