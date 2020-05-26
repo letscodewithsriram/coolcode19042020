@@ -1,0 +1,916 @@
+﻿in-bap-pune-co-07#
+in-bap-pune-co-07#ter len 0
+in-bap-pune-co-07#
+in-bap-pune-co-07#show run
+Building configuration...
+
+
+Current configuration : 28109 bytes
+!
+! Last configuration change at 17:24:59 IST Tue Feb 25 2020
+! NVRAM config last updated at 14:04:02 IST Mon May 18 2020 by rancidproj
+!
+version 16.9
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime
+service timestamps log datetime msec localtime
+service password-encryption
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform hardware throughput level 300000
+!
+hostname in-bap-pune-co-07
+!
+boot-start-marker
+boot system bootflash:isr4300-universalk9.16.09.03.SPA.bin
+boot system bootflash:isr4300-universalk9.16.09.02.SPA.bin
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+logging buffered 8192
+enable secret 5 $1$0s2P$5W2W.OViKJaYmHZKoXEcJ0
+!
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ local
+aaa authentication enable default group tacacs+ enable
+aaa authorization exec default group tacacs+ local 
+aaa authorization commands 1 default group tacacs+ local 
+aaa authorization commands 15 default group tacacs+ local 
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 1 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+aaa accounting connection default start-stop group tacacs+
+!
+!
+!
+!
+!
+!
+aaa session-id common
+clock timezone IST 5 30
+no ip source-route
+!
+!
+!
+!
+!
+!
+!
+no ip bootp server
+no ip domain lookup
+ip domain name tata.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+flow record FLOW-RECORD-1
+ description "LAN Traffic Analysis"
+ match ipv4 destination address
+ collect interface input
+ collect interface output
+!
+!
+flow exporter FLOWEXPORT1
+ destination 10.0.12.182
+ source Loopback0
+ transport udp 9996
+!
+!
+flow monitor IPFLOWMONITOR
+ exporter FLOWEXPORT1
+ record netflow ipv4 original-input
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2007005557
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2007005557
+ revocation-check none
+ rsakeypair TP-self-signed-2007005557
+!
+crypto pki trustpoint GM19_FM_CA1
+ enrollment url http://172.23.33.46:80
+ fqdn GM19_FM_CA1.tata.com
+ subject-name CN=GM19_FM_CA1, O=C121, OU=C122
+ revocation-check none
+ source interface GigabitEthernet0/0/0
+ rsakeypair GM19_FM_CA1
+ auto-enroll 70
+!
+crypto pki trustpoint GM19_FM_CA2
+ enrollment url http://172.23.33.34:80
+ fqdn GM19_FM_CA2.tata.com
+ subject-name CN=GM19_FM_CA2, O=D121, OU=D122
+ revocation-check none
+ source interface GigabitEthernet0/0/0
+ rsakeypair GM19_FM_CA2
+ auto-enroll 70
+!
+!
+crypto pki certificate chain TP-self-signed-2007005557
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32303037 30303535 3537301E 170D3139 30393132 30363536 
+  35345A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 30303730 
+  30353535 37308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100B199 24766DF4 CDF9E58D 513E6AA0 671681F7 B4233795 54022B49 
+  47C1E9D7 7A4782F3 045CF612 684FFF40 FE973FF6 7D870AC8 97C15612 B64028B2 
+  AFCCF8D8 E74FD6DF A4B5E745 4B9F8E41 2FC4EDA4 FFC31136 60404423 9C0590BD 
+  0ECCAB2B 87054B63 E6833DC4 079F1727 905FFED8 433851ED 3D543B5E 918CE66F 
+  E143DD99 875BD6CD 14C938DC 635D8880 9FEF5C8D 12925906 468A1DED F5BAB8E1 
+  E35561E3 9C2051BC 1E3C2FB3 E12C04A3 E8CB7E15 35C40C3A 094AC75B B7864FEB 
+  A2C17F43 B74114F6 12D017B6 94626088 3200D834 C04D07D8 543BEE70 FB07A6DB 
+  545797D3 7BF4CAF7 C348A4C3 543A5605 E95CABB3 118A9CA3 3D670DE2 3B7AF159 
+  C51D37D3 CC1B0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 1428707C 17C97A21 F81658DD 962BF4E7 0E556296 
+  82301D06 03551D0E 04160414 28707C17 C97A21F8 1658DD96 2BF4E70E 55629682 
+  300D0609 2A864886 F70D0101 05050003 82010100 17508376 347C6B3A 591F2D4B 
+  EDCD3BC2 26EA978F A4966E7A 22F9939D ACFD26F5 9EDEB70B AD21C78B 3F500D1B 
+  EA5C45F4 89E76EAE FC7EF3C4 C86D3795 D654FCF5 FE287144 3BD3DAA4 81D36A58 
+  E02B337D 4F344588 79950185 4732309B 6ED890A9 A2648C48 B327FF4D 44B1E111 
+  FF3CB749 82B09571 36247823 CD98B0D1 D909CFBC 2E243B87 0EB28128 38E73BC9 
+  4898B65E 5A9AE24A 00C703EB 776797B2 3CC4C07E 22ECE57C 0258CCE9 E5E21131 
+  F7752C25 54B15C24 520BD0B3 12618E25 37F10C3C EA77E566 42A56A60 7531961B 
+  7F1E2D37 77C4F564 D8158EB6 C2806211 9D35B84E FFBFC443 6A9F0C5F 4FF4B860 
+  03F20A66 5EF5895C C491B2FD B00FEB0E 1323EDB3
+        quit
+crypto pki certificate chain GM19_FM_CA1
+ certificate 0F
+  308203A4 3082028C A0030201 0202010F 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 424F5343 48310F30 0D060355 040B1306 47455456 
+  504E310F 300D0603 55040313 06535542 43413130 1E170D31 39303932 35303935 
+  3231305A 170D3230 30393234 30393532 31305A30 59310D30 0B060355 040B1304 
+  43313232 310D300B 06035504 0A130443 31323131 14301206 03550403 0C0B474D 
+  31395F46 4D5F4341 31312330 2106092A 864886F7 0D010902 1614474D 31395F46 
+  4D5F4341 312E7461 74612E63 6F6D3082 0122300D 06092A86 4886F70D 01010105 
+  00038201 0F003082 010A0282 010100A1 D27A833C 753DCC5D D4FF73B8 98E20237 
+  59B15C71 71812DF1 E022E06D CDEC69A7 86EB2523 F1073B22 3A7A4A51 33C99661 
+  D16487AE A2D93180 E6F04990 6A8A7F19 6456EEA9 8D9A7ECB 500F9650 99AB7D53 
+  87264740 EE426236 112577C1 1E3DE29B 4935E055 F6B54FAC 871F8317 496005AD 
+  8FBB197E 35395058 92BFDF0A 8D05CBEE 8DB81445 BC21C63C 742BC046 319B750E 
+  0E762002 16A15EE9 5C483E27 5CD3BA0F C793F133 B5983BDC CDEAAEB7 24ADF5D9 
+  5899E6E3 1F33F834 9B986464 E0A64256 F7AB39FA F2E9E2A6 E43C352D E7B7007A 
+  2F70B010 29955F19 426D5075 9A066F62 351C8FF6 DB3FA290 7B365765 2CCC4B9D 
+  188D7C1F EC95F4EF 4397FC00 F4D5CD02 03010001 A3819D30 819A304B 0603551D 
+  1F044430 423040A0 3EA03C86 3A687474 703A2F2F 3137322E 32332E33 332E3436 
+  2F636769 2D62696E 2F706B69 636C6965 6E742E65 78653F6F 70657261 74696F6E 
+  3D476574 43524C30 0B060355 1D0F0404 030205A0 301F0603 551D2304 18301680 
+  1417B1B0 59317240 294485FB 75930388 E4DACF4E 91301D06 03551D0E 04160414 
+  C8DCB092 39922873 8CCC5A4B 083AD389 E2A6A7E2 300D0609 2A864886 F70D0101 
+  0B050003 82010100 84267307 16F3E0A2 69D1774D B834D30A 76A4B510 38FE1D57 
+  065BAE05 E320158B 344C3A44 94CC86CB 080938B3 6B3C16BE F1B33854 BCD3CD29 
+  5F4291B1 A6188ABE DB634DCB 60F977DF 3E322150 8E68FEBE A4CB1332 3135DBE2 
+  E38A6118 09E62EFA 0DE914E6 D1387587 D16EAD6B 96F7A9F0 F23477CB D38EAC0F 
+  52030E28 5E9DDF05 7A086BEF 58F5D9C4 649BE4C0 3228702B 825C4873 E36BBCFD 
+  5B056DCF 4CA75A29 C53CF79B 08C42C27 0EC9F41C 0527377A 19C9DA2E 2A8BAFC3 
+  8651E493 A744B2B4 257034D3 E33CEECB 0F98F927 15AB45DB F0C53CA4 A8F75D81 
+  4CD5701C 37C55629 D212119A C6D1FC85 7BD0C582 A3709A73 27E95BB6 7A7B3C5F 
+  BD3CB9F7 F2809451
+        quit
+ certificate ca 02
+  3082038E 30820276 A0030201 02020102 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 424F5343 48310F30 0D060355 040B1306 47455456 
+  504E310F 300D0603 55040313 06524F4F 54434130 1E170D31 39303832 39323132 
+  3734355A 170D3232 30383238 32313237 34355A30 32310E30 0C060355 040A1305 
+  424F5343 48310F30 0D060355 040B1306 47455456 504E310F 300D0603 55040313 
+  06535542 43413130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 97ED3C0B C45BFBDF 245E156B 5AA9104B 8C553948 9224AB22 
+  6DAB9030 7AD99EA2 AAF8E297 922DD607 20B0CC31 00FAE2F6 A0251BD6 2E0F917B 
+  0FFC38FA 3989A7D7 904127E6 64C8030D A79E4AD2 DCC7D574 EF0B255D 826542F2 
+  1342AA7C 1665DF77 4FB862CF A6566688 2D8A7768 3828E496 4341BA65 4404A8B2 
+  3BE086DF AABC7C73 0D8D234F C2E31B4D 3F9821B9 D4CA5C6D 877D1901 3EB48996 
+  BD186998 4B8B96FE C4ACD21A 26ACDFE0 830795E5 490491C8 3CD6C888 556890CA 
+  57611DFF 96010B20 CACBE47F B9F68AD5 A2B4E6B5 C5750512 B20E5E70 2E023967 
+  54506986 8943CA01 22EF1D6E E207F168 97D2D2F1 D06D2064 0FED658F F1BFC663 
+  97A86D1B BEDB419F 02030100 01A381AE 3081AB30 4B060355 1D1F0444 30423040 
+  A03EA03C 863A6874 74703A2F 2F313732 2E32332E 33332E34 352F6367 692D6269 
+  6E2F706B 69636C69 656E742E 6578653F 6F706572 6174696F 6E3D4765 7443524C 
+  300F0603 551D1301 01FF0405 30030101 FF300B06 03551D0F 04040302 0186301F 
+  0603551D 23041830 16801415 CF4C75F0 37B4F4A6 3620BA54 235E092D 7914CC30 
+  1D060355 1D0E0416 041417B1 B0593172 40294485 FB759303 88E4DACF 4E91300D 
+  06092A86 4886F70D 01010B05 00038201 0100703C 26D918A2 3D7D4D92 02C58018 
+  C408EB2B 03AD10CA 672C06B4 3727A79F E32E12B7 8ECDBF4C DCBEFBBE 6AF31979 
+  AC144D1C 059D7569 2B84DE2A E05E1471 20AAADA4 6FDBCEA5 6F26B87D 7CA55D6D 
+  AA881B15 9BE4C2D8 F08A76D3 CA02745B B1E52706 99F6E30D 630883A5 154D4A29 
+  BC408025 63A51E9C 609B6796 0EB4A396 0C773B67 D313CFD8 95D5521E 108A9F77 
+  0CC89D3D 3A0F6617 15FDACC1 4400922B 85D6E340 C70FB4A3 7FCA13CC 8337C3AE 
+  4CB38EDD C059168A 656026F6 309A356E 29FC0337 2CC15F22 EA67986B A0B4CDB9 
+  754BF3A3 AD97434D C69FC08F 86F45B8C EFDB48F9 CD1F90B6 36BA3265 5BC6E53D 
+  E7239425 8E2E15A6 CA585D71 063EB5C2 6F6E
+        quit
+crypto pki certificate chain GM19_FM_CA2
+ certificate 0F
+  308203A4 3082028C A0030201 0202010F 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 424F5343 48310F30 0D060355 040B1306 47455456 
+  504E310F 300D0603 55040313 06535542 43413230 1E170D31 39303932 35303935 
+  3332385A 170D3230 30393234 30393533 32385A30 59310D30 0B060355 040B1304 
+  44313232 310D300B 06035504 0A130444 31323131 14301206 03550403 0C0B474D 
+  31395F46 4D5F4341 32312330 2106092A 864886F7 0D010902 1614474D 31395F46 
+  4D5F4341 322E7461 74612E63 6F6D3082 0122300D 06092A86 4886F70D 01010105 
+  00038201 0F003082 010A0282 010100B4 72C05156 19F85B92 674CEB61 9614A2E6 
+  F93933D6 F1DAF130 14F36593 16769E7D D86D6BE5 44E35A82 C1B05C08 FB8FCA07 
+  8406CE41 256FE104 20FA540F 813F1C9C 829E7F08 6FC92A70 D2C65499 1536F425 
+  533FCCAC 1B3E0F77 2990B138 75FFA462 66827E2C 45ADBA0A BB110CA5 6F1A40F6 
+  8449F291 AFA54D04 7097213B 875ABF26 FA71C27C A53D4E49 4CB4226F 0B2B8FCC 
+  178019A7 BE082B6C 9C3C1081 56D65BD3 525748AC 075B6B5E 205B3A54 0B94E0C9 
+  A6EA053F BC7B26D7 944ED284 6020B3DE B4DE1492 3F139E69 E7496922 87999DAC 
+  E9C4F55B 76B726B8 F04024DE 67FAF8DB F626A576 F05588D4 6A3F4767 6724E3E0 
+  F4CABB0A 29CF6E44 6CECD8CE F92EF102 03010001 A3819D30 819A304B 0603551D 
+  1F044430 423040A0 3EA03C86 3A687474 703A2F2F 3137322E 32332E33 332E3334 
+  2F636769 2D62696E 2F706B69 636C6965 6E742E65 78653F6F 70657261 74696F6E 
+  3D476574 43524C30 0B060355 1D0F0404 030205A0 301F0603 551D2304 18301680 
+  1422069C B92FE665 F221F94B A19BAAB6 65FDA96E BB301D06 03551D0E 04160414 
+  D568AF63 41598357 F2CEF6E8 B7BF4879 843F8FB5 300D0609 2A864886 F70D0101 
+  0B050003 82010100 7913309C 1F691C99 8B648C56 E524C5D0 1618D170 5E8A098E 
+  FF20776E 85EFF53C CE4FD642 B09BFD05 52362CF0 E1AD92F0 6E9536DA 483DADE2 
+  DB3A06AC E14379EE 4CFBF50A EED65DF7 12113A8F 53E6A9D0 094A198F 3D1C7239 
+  E6B2F5BB 87BBB435 AC6E4BCA 053A174D BCC99640 76626725 02F1D775 1780822E 
+  360BF494 1495CB3A 46333F07 7FE980B2 BF6DAE1F 5E49A7B4 DAB9597A 36E9BB69 
+  56861A2E 87ACE669 CF4C960D F0EC0CD7 DD5A479E CD49CCD3 06D3459E E910DB9A 
+  FCC0A0AD 74A5FE4A 76B77F97 7A7783A4 6A160740 ACB16242 FED6DD14 49A1E47D 
+  2E1B79BC 82E57B07 5258B41A 4D5402F5 CF741F83 A3CEA9E4 41CC1297 9F247668 
+  698AD8E8 98127C4B
+        quit
+ certificate ca 04
+  3082038E 30820276 A0030201 02020104 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 424F5343 48310F30 0D060355 040B1306 47455456 
+  504E310F 300D0603 55040313 06524F4F 54434130 1E170D31 39303832 39323133 
+  3934395A 170D3232 30383238 32313339 34395A30 32310E30 0C060355 040A1305 
+  424F5343 48310F30 0D060355 040B1306 47455456 504E310F 300D0603 55040313 
+  06535542 43413230 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 BA69307F 99B40BFF 45DEAD46 DFD8F5A7 4F4CA328 0D96B43B 
+  07B9DB34 3FF98511 447C524D EC4FADA1 23DD1D6B F548F0D7 681AA7C6 563FA68E 
+  61580FE2 AAE0F53E 2B2F070B 9DF0BABF DD1E3441 D08DC025 E5ACD0BD F01E48E7 
+  10000B33 C9A1A6C1 E17C3F47 4813E494 850B553B D6787F82 00BAE05D E2ED2E9F 
+  F1EC804E D33670C6 C6B90744 5A6F445E 7B5FB065 7CBB3A2A 008CAF43 980D8DB9 
+  BE261EAA D40BD6E5 07938A7F B37CB70E AB51C5B5 B9E78CBB 41D82FC1 BB43C0BD 
+  CEC49414 2524E708 18CF3360 42988B2C B4007563 B96BDCB0 BF820746 1E64EB22 
+  53A3F45B 913BB4E2 9D98705C D5D2AA66 5120782D F4BD0D48 859D1395 46A40F95 
+  7BE02175 889B8C75 02030100 01A381AE 3081AB30 4B060355 1D1F0444 30423040 
+  A03EA03C 863A6874 74703A2F 2F313732 2E32332E 33332E34 352F6367 692D6269 
+  6E2F706B 69636C69 656E742E 6578653F 6F706572 6174696F 6E3D4765 7443524C 
+  300F0603 551D1301 01FF0405 30030101 FF300B06 03551D0F 04040302 0186301F 
+  0603551D 23041830 16801415 CF4C75F0 37B4F4A6 3620BA54 235E092D 7914CC30 
+  1D060355 1D0E0416 04142206 9CB92FE6 65F221F9 4BA19BAA B665FDA9 6EBB300D 
+  06092A86 4886F70D 01010B05 00038201 0100537F 16E7D042 A9415992 AA4C090F 
+  B41194AB 5D3B607D F690A752 B1CF77CE 00FC8600 758CF585 960DD280 4E7A7F4B 
+  056CA30B E2B3E702 70703E9F E45DFC2D 4B651C84 34BF2449 5DFFF668 B3D7B0AD 
+  A7E51508 073CB473 83F06CAD 7D880D7A 3359DDFC BD18FAFE A8859B02 BBB9C820 
+  964390EC D8C47534 C112FC8E D7B13234 63F0DA96 3228888F BA380460 F555C0B7 
+  47AA8002 A1A232F0 1834E8C9 14DB8284 0B203802 8B8B77E2 CA8F5336 C8EF2BBB 
+  19A22F81 B7996C0E 4AA7F91B 2E972F06 E68363F8 B109D3BB 5D31835B F71CDE22 
+  3D6D3436 CE44AFF5 0B424F4F 61922C74 9595C485 6A52BF39 5CDEC161 FBF7AE73 
+  B118AE7F 5885B32C 1DFA4625 4C60355F 4C60
+        quit
+!
+license udi pid ISR4331/K9 sn FDO232610WS
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+username vsnl password 7 045904152F375F4005
+username emergency privilege 15 secret 5 $1$bspH$xwSOAH.u2nAHnqb1KE8sK1
+!
+redundancy
+ mode none
+!
+crypto ikev2 proposal IKEv2_PROPOSAL 
+ encryption aes-gcm-256
+ prf sha256
+ group 19
+!
+crypto ikev2 policy IKEv2_POLICY 
+ proposal IKEv2_PROPOSAL
+no crypto ikev2 policy default
+!
+!
+crypto ikev2 profile IKEv2_PROFILE
+ match identity remote any
+ identity local dn 
+ authentication remote rsa-sig
+ authentication local rsa-sig
+ pki trustpoint GM19_FM_CA1
+ pki trustpoint GM19_FM_CA2
+!
+!
+!
+!
+lldp run
+no cdp run
+!
+!
+class-map match-any BULK_CLASS
+ match ip dscp cs1  af11  af12  af13 
+class-map match-all BULK_CLASS_WAN
+ match ip dscp cs5 
+ match dscp cs5 
+class-map match-all BUSINESS_CLASS_WAN
+ match ip dscp cs3 
+ match dscp cs3 
+class-map match-any VOIP_CLASS
+ match ip dscp ef 
+class-map match-all VOIP_CLASS_WAN
+ match ip dscp ef 
+class-map match-any BUSINESS_CLASS
+ match ip dscp cs2  af21  af22  af23 
+ match access-group name NC1_LAN_BUSINESS.ACL
+class-map match-any VIDEO_CLASS
+ match ip dscp cs3  cs4  af41  af42  af43 
+class-map match-all VIDEO_CLASS_WAN
+ match dscp cs4 
+ match ip dscp cs4 
+class-map match-all SIGNALING_CLASS_WAN
+ match dscp af31 
+ match ip dscp af31 
+class-map match-any SIGNALING_CLASS
+ match ip dscp af31  af32  af33  cs6 
+!
+policy-map CHILD_WAN_OUT
+ class VOIP_CLASS_WAN
+  priority percent 20
+ class VIDEO_CLASS_WAN
+  bandwidth percent 8 
+ class SIGNALING_CLASS_WAN
+  bandwidth percent 2 
+ class BUSINESS_CLASS_WAN
+  bandwidth percent 21 
+ class BULK_CLASS_WAN
+  bandwidth percent 3 
+ class class-default
+  fair-queue
+policy-map PARENT_WAN_OUT
+ class class-default
+  shape average 31457280   
+   service-policy CHILD_WAN_OUT
+policy-map LAN_TRAFFIC_IN
+ class VOIP_CLASS
+  set dscp ef
+ class VIDEO_CLASS
+  set dscp cs4
+ class SIGNALING_CLASS
+  set ip dscp af31
+ class BUSINESS_CLASS
+  set ip dscp cs3
+ class BULK_CLASS
+  set ip dscp cs5
+ class class-default
+  set dscp default
+!
+! 
+!
+!
+!
+!
+!
+crypto ipsec df-bit clear
+!
+!
+crypto gdoi group FULLMESH
+ identity number 100
+ server address ipv4 172.23.33.42
+ server address ipv4 172.23.33.36
+ client protocol gikev2 IKEv2_PROFILE
+!
+!
+crypto map CM_FULLMESH 1 gdoi 
+ set group FULLMESH
+ match address FULLMESH_DENY_LOCAL
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback0
+ description ### TCL Management loopback ###
+ ip address 172.23.32.250 255.255.255.255
+!
+interface GigabitEthernet0/0/0
+ description *** TCL WAN ***
+ bandwidth 30720
+ ip flow monitor IPFLOWMONITOR input
+ ip address 10.95.21.234 255.255.255.252
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ load-interval 30
+ media-type rj45
+ speed 100
+ no negotiation auto
+ crypto map CM_FULLMESH
+ service-policy output PARENT_WAN_OUT
+!
+interface GigabitEthernet0/0/1
+ description *** LAN LINK ***
+ ip flow monitor IPFLOWMONITOR input
+ ip flow monitor IPFLOWMONITOR output
+ ip address 100.105.162.235 255.255.255.248
+ no ip proxy-arp
+ ip tcp adjust-mss 1360
+ load-interval 30
+ negotiation auto
+ arp timeout 900
+ service-policy input LAN_TRAFFIC_IN
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ auto-cost reference-bandwidth 100000
+ network 100.105.162.235 0.0.0.0 area 80
+ default-information originate metric 1000 metric-type 1
+!
+router bgp 64982
+ bgp log-neighbor-changes
+ network 172.23.32.250 mask 255.255.255.255
+ redistribute ospf 1 match internal external 1 external 2 nssa-external 1 nssa-external 2 route-map LAN-OSPF
+ neighbor 10.95.21.233 remote-as 4755
+ neighbor 10.95.21.233 timers 10 30
+ neighbor 10.95.21.233 soft-reconfiguration inbound
+ neighbor 10.95.21.233 prefix-list DENY-LAN in
+!
+ip forward-protocol nd
+no ip http server
+ip http authentication local
+no ip http secure-server
+ip tftp source-interface GigabitEthernet0
+!
+ip ssh version 2
+ip ssh server algorithm encryption aes128-cbc
+ip ssh client algorithm encryption aes128-cbc
+!
+!
+ip prefix-list DENY-LAN seq 5 deny 10.167.248.0/23 le 32
+ip prefix-list DENY-LAN seq 10 deny 10.167.171.0/24 le 32
+ip prefix-list DENY-LAN seq 15 deny 100.105.162.192/26 le 32
+ip prefix-list DENY-LAN seq 25 permit 0.0.0.0/0
+ip prefix-list DENY-LAN seq 30 permit 0.0.0.0/0 ge 1
+!
+ip prefix-list LAN seq 5 permit 10.167.248.0/23 le 32
+ip prefix-list LAN seq 10 permit 10.167.171.0/24 le 32
+ip prefix-list LAN seq 15 permit 100.105.162.192/26 le 32
+!
+ip access-list standard TATA-MONITORING-SNMP
+ permit 121.244.180.49
+ permit 121.244.180.47
+ permit 121.244.180.37
+ permit 121.244.227.114
+ permit 121.244.180.36
+ permit 121.244.227.113
+ permit 115.114.226.164
+ permit 115.114.9.67
+ permit 115.114.9.68
+ permit 14.143.102.157
+ permit 14.143.102.156
+ permit 14.143.102.155
+ permit 115.110.215.75
+ permit 10.70.0.202
+ permit 115.110.215.76
+ permit 115.110.215.77
+ permit 10.70.0.199
+ permit 202.54.29.81
+ permit 172.31.6.123
+ permit 115.114.146.71
+ permit 115.114.146.70
+ permit 115.114.146.69
+ permit 202.54.29.25
+ permit 115.114.219.35
+ permit 202.54.29.27
+ permit 10.209.19.0 0.0.0.255
+ permit 115.114.226.160 0.0.0.31
+ permit 115.114.219.32 0.0.0.15
+ deny   any
+ip access-list standard TCL_SNMP
+ permit 121.244.180.49
+ permit 115.110.215.75
+ permit 115.110.215.76
+ permit 115.110.215.77
+ip access-list standard snmpaccess
+ permit 10.4.102.106
+ permit 10.25.145.134
+ permit 10.3.194.217
+ permit 10.3.194.216
+ permit 10.224.196.10
+ permit 10.224.196.11
+ permit 10.224.199.29
+ permit 10.224.199.27
+ permit 10.224.199.26
+ permit 10.25.144.186
+ permit 10.25.144.195
+ permit 10.4.4.91
+ permit 10.4.4.94
+ permit 10.4.4.93
+ permit 10.4.4.83
+ permit 10.4.4.84
+ permit 10.35.41.95
+ permit 10.187.51.224
+ permit 10.187.51.225
+ permit 10.3.165.220
+ permit 10.3.188.49
+ permit 10.4.102.238
+ permit 10.3.168.43
+ permit 10.25.144.18
+ permit 10.3.169.52
+ permit 10.4.12.150
+ permit 10.3.4.152
+ permit 10.3.169.53
+ permit 10.3.169.54
+ permit 10.3.165.50
+ permit 10.8.141.47
+ permit 10.0.12.164
+ permit 10.11.132.38
+ permit 10.3.12.166
+ permit 10.0.12.162
+ permit 10.0.12.163
+ permit 10.0.12.161
+ permit 10.3.128.32
+ permit 10.0.12.170
+ permit 10.0.12.182
+ permit 10.187.50.52
+ permit 10.25.144.61
+ permit 10.187.51.67
+ permit 10.187.51.65
+ permit 10.3.6.193
+ permit 10.3.182.106
+ permit 10.4.102.191
+ permit 10.3.149.65
+ permit 10.21.240.48
+ permit 10.187.51.102
+ permit 10.3.169.69
+ permit 10.187.51.101
+ permit 10.187.50.123
+ permit 10.21.240.18
+ permit 10.3.221.0 0.0.0.255
+ permit 10.187.108.0 0.0.0.255
+ permit 10.224.2.0 0.0.0.255
+ deny   any
+!
+ip access-list extended FULLMESH_DENY_LOCAL
+ deny   ip 10.95.21.232 0.0.0.3 any
+ deny   ip any 10.95.21.232 0.0.0.3
+ deny   ip host 172.23.32.250 any
+ deny   ip any host 172.23.32.250
+ip access-list extended NC1_LAN_BUSINESS.ACL
+ remark *** Class Business ***
+ permit tcp any any range 3200 3399
+ permit tcp any any range 3600 3699
+ permit tcp any range 3200 3399 any
+ permit tcp any range 3600 3699 any
+ permit tcp any any eq 1494
+ permit tcp any eq 1494 any
+ permit tcp any any eq 2598
+ permit tcp any eq 2598 any
+ permit tcp any any eq 1812
+ permit tcp any any eq 1813
+ permit tcp any eq 1812 any
+ permit tcp any eq 1813 any
+ permit tcp any eq 2065 any
+ permit tcp any eq 1996 any
+ permit tcp any any eq 2065
+ permit tcp any any eq 1996
+ permit tcp any any dscp af32
+ deny   ip any any
+ip access-list extended business-critical
+ permit tcp any any range 3200 3399
+ permit tcp any any range 3600 3699
+ permit tcp any any eq 2065
+ permit tcp any any eq 1996
+ permit tcp any any eq 1494
+ permit tcp any any eq 2598
+ip sla 10
+ icmp-echo 10.77.95.106 source-interface GigabitEthernet0/0/1
+ frequency 120
+ip sla schedule 10 life forever start-time now
+ip sla responder
+logging trap debugging
+logging facility local5
+logging source-interface GigabitEthernet0/0/1
+logging host 10.70.0.201
+logging host 10.209.19.200
+logging host 121.240.6.13
+logging host 121.240.5.113
+logging host 121.240.118.90
+logging host 115.114.170.78
+logging host 202.54.29.110
+logging host 121.244.227.114
+logging host 115.114.151.107
+logging host 115.114.151.114
+access-list 10 permit 121.244.180.47
+access-list 10 permit 121.244.180.37
+access-list 10 permit 121.244.227.114
+access-list 10 permit 121.244.180.36
+access-list 10 permit 121.244.227.113
+access-list 10 permit 115.114.226.164
+access-list 10 permit 115.114.9.67
+access-list 10 permit 115.114.9.68
+access-list 10 permit 10.70.0.202
+access-list 10 permit 10.70.0.199
+access-list 10 permit 202.54.29.81
+access-list 10 permit 172.31.6.123
+access-list 10 permit 202.54.29.25
+access-list 10 permit 115.114.219.35
+access-list 10 permit 202.54.29.27
+access-list 10 permit 10.209.19.0 0.0.0.255
+access-list 10 permit 115.114.226.160 0.0.0.31
+access-list 10 permit 115.114.219.32 0.0.0.15
+access-list 10 deny   any
+!
+!
+route-map backup permit 10 
+ set as-path prepend 64982 64982
+!
+route-map LAN-OSPF permit 10 
+ match ip address prefix-list LAN
+!
+snmp-server community t2c2l2com RO TATA-MONITORING-SNMP
+snmp-server community bos#vsnl RO 10
+snmp-server community SNMPBOSCH99 RO snmpaccess
+snmp-server community CISCO RW
+snmp-server community bos@vsnl RO 10
+snmp-server trap-source Loopback0
+snmp-server system-shutdown
+snmp-server enable traps memory bufferpeak
+snmp-server enable traps event-manager
+snmp-server enable traps cpu threshold
+snmp-server enable traps syslog
+snmp-server enable traps ipsla
+snmp-server enable traps bgp state-changes all
+snmp ifmib ifindex persist
+snmp mib persist cbqos
+tacacs-server host 121.244.227.114
+tacacs-server host 115.114.151.107
+tacacs-server host 115.114.151.114
+tacacs-server timeout 1
+tacacs-server directed-request
+tacacs-server key 7 15044F02102907743B32
+!
+!
+!
+!
+control-plane
+!
+privilege exec level 4 copy running-config
+privilege exec level 4 copy
+privilege exec level 4 dir /all
+privilege exec level 4 dir
+privilege exec level 4 traceroute ip
+privilege exec level 4 traceroute
+privilege exec level 4 ping ip
+privilege exec level 4 ping
+privilege exec level 4 show diag
+privilege exec level 4 show inventory
+privilege exec level 4 show vrf
+privilege exec level 4 show ipv6 interface
+privilege exec level 4 show ipv6 route
+privilege exec level 4 show ipv6
+privilege exec level 4 show vlans
+privilege exec level 4 show vlan internal usage
+privilege exec level 4 show vlan internal
+privilege exec level 4 show vlan private-vlan
+privilege exec level 4 show vlan
+privilege exec level 4 show vtp status
+privilege exec level 4 show vtp
+privilege exec level 4 show ip accounting
+privilege exec level 4 show ip bgp summary
+privilege exec level 4 show ip bgp
+privilege exec level 4 show ip route
+privilege exec level 4 show ip interface brief
+privilege exec level 4 show ip interface
+privilege exec level 4 show ip
+privilege exec level 4 show arp
+privilege exec level 4 show power inline
+privilege exec level 4 show power
+privilege exec level 4 show version
+privilege exec level 4 show startup-config
+privilege exec level 4 show running-config
+privilege exec level 4 show configuration
+privilege exec level 4 show interfaces description
+privilege exec level 4 show interfaces status
+privilege exec level 4 show interfaces
+privilege exec level 4 show platform hardware
+privilege exec level 4 show platform
+privilege exec level 4 show
+privilege exec level 4 clear ip accounting
+privilege exec level 4 clear ip
+privilege exec level 4 clear counters
+privilege exec level 4 clear
+banner login ^CC
+
+This computer system is private and may be accessed only
+by authorised users. Data and programs in this system
+are confidential and proprietary to the system owner and
+may not be accessed, viewed, copied, reproduced, duplicated,
+modified, distributed, or disclosed without authorisation.
+Unauthorised users or users who exceed their authorised
+level of access are subject to prosecution under state or
+federal law as well as Company initiated proceedings
+
+^C
+banner motd ^CC
+
+*---------------------------------------------------------------------*
+*  TATA assets, including this system, should be used only for        *
+*      Tata communications management approved purposes.              *
+*                                                                     *
+*  You should be aware that it may be a criminal offence to secure    *
+*    unauthorised access to any program or data in the system or      *
+*      to make any unauthorised modification to its contents.         *
+*                                                                     *
+*  If you are not authorised by TATA management to access this        *
+*                     system, please LOGOFF now.                      *
+*                                                                     *
+* Tata internal systems business authorised management audit any time *
+*---------------------------------------------------------------------*
+
+^C
+!
+line con 0
+ logging synchronous
+ transport input none
+ stopbits 1
+line aux 0
+ password 7 14141B180F0B
+ modem InOut
+ no exec
+ transport input all
+ stopbits 1
+ speed 115200
+ flowcontrol hardware
+line vty 0 4
+ logging synchronous
+ transport input all
+ transport output all
+line vty 5 15
+ transport input all
+ transport output all
+!
+ntp source GigabitEthernet0/0/1
+ntp server 10.95.21.233
+ntp server 10.95.21.237
+!
+!
+!
+!
+event manager environment q "
+event manager applet port_shutdown authorization bypass
+ event syslog pattern "%TRACKING-5-STATE: 455 ip sla 455 state Up->Down"
+ action 1.0 cli command "enable"
+ action 2.0 cli command "config t"
+ action 3.0 cli command "interface GigabitEthernet0/0/1"
+ action 4.0 cli command "shut"
+ action 5.0 syslog msg "Admin Down the Interface GigabitEthernet0/0/1"
+ action 6.0 cli command "event manager applet interface_up authorization bypass"
+ action 7.0 cli command "event timer countdown name SHUT time 10"
+ action 8.0 cli command "action 1.0 cli command  enable "
+ action 9.0 cli command "action 2.0 cli command $q config t $q"
+ action 9.1 cli command "action 3.0 cli command $q interface GigabitEthernet0/0/1$q"
+ action 9.2 cli command "action 4.0 cli command $q no shut$q"
+ action 9.3 cli command "action 5.0 cli command end"
+ action 9.4 syslog msg "Bring UP the Interface GigabitEthernet0/0/1"
+event manager applet SAVE_CERTIFICATE authorization bypass
+ event syslog pattern "to save new certificate"
+ action 1.0 syslog msg "WRITE MEMORY SCRIPT EXECUTED"
+ action 1.1 cli command "enable"
+ action 1.2 cli command "write memory"
+!
+end
+
+in-bap-pune-co-07#
+in-bap-pune-co-07#show version
+Cisco IOS XE Software, Version 16.09.03
+Cisco IOS Software [Fuji], ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.9.3, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2019 by Cisco Systems, Inc.
+Compiled Wed 20-Mar-19 08:02 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2019 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+in-bap-pune-co-07 uptime is 12 weeks, 20 hours, 58 minutes
+Uptime for this control processor is 12 weeks, 21 hours, 0 minutes
+System returned to ROM by PowerOn at 16:41:59 IST Thu Sep 12 2019
+System restarted at 17:24:26 IST Tue Feb 25 2020
+System image file is "bootflash:isr4300-universalk9.16.09.03.SPA.bin"
+Last reload reason: PowerOn
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+
+
+Suite License Information for Module:'esg' 
+
+--------------------------------------------------------------------------------
+Suite                 Suite Current         Type           Suite Next reboot     
+--------------------------------------------------------------------------------
+FoundationSuiteK9     None                  None           None                  
+securityk9
+appxk9
+
+AdvUCSuiteK9          None                  None           None                  
+uck9
+cme-srst
+cube
+
+
+Technology Package License Information: 
+
+-----------------------------------------------------------------
+Technology    Technology-package           Technology-package
+              Current       Type           Next reboot  
+------------------------------------------------------------------
+appxk9           appxk9           Permanent        appxk9
+uck9             None             None             None
+securityk9       securityk9       Permanent        securityk9
+ipbase           ipbasek9         Permanent        ipbasek9
+
+The current throughput level is 300000 kbps 
+
+
+Smart Licensing Status: Smart Licensing is DISABLED
+
+cisco ISR4331/K9 (1RU) processor with 1784679K/6147K bytes of memory.
+Processor board ID FDO2327A11B
+4 Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+4194304K bytes of physical memory.
+3125247K bytes of flash memory at bootflash:.
+0K bytes of WebUI ODM Files at webui:.
+
+Configuration register is 0x2102
+
+in-bap-pune-co-07#

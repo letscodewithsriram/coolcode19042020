@@ -63,22 +63,21 @@ summary_icon_format = workbook.add_format({
 
 worksheet.set_tab_color('gray')
 worksheet.set_column('A:A', 10)
-worksheet.set_column('B:C', 55)
-worksheet.set_column('D:G', 20)
+worksheet.set_column('B:C', 75)
 worksheet.set_row(0, 8)
 
 worksheet.autofilter('A4:C4')
 worksheet.freeze_panes(4, 0)
 
-worksheet.merge_range('A2:G2', "TCL NETWORK ASSESSMENT - [M3] WAN NETWORK DEVICE CONFIGURATION PARSER MODULE", page_header_format)
+worksheet.merge_range('A2:C2', "TCL NETWORK ASSESSMENT - [M3] WAN NETWORK DEVICE CONFIGURATION PARSER MODULE", page_header_format)
 
 worksheet.write('A4', 'S.No', column_header_format)
 worksheet.write('B4', 'LOOPBACK-IP', column_header_format)
 worksheet.write('C4', 'HOSTNAME', column_header_format)
-worksheet.write('D4', 'ICMP', column_header_format)
-worksheet.write('E4', 'SNMP', column_header_format)
-worksheet.write('F4', 'SSH', column_header_format)
-worksheet.write('G4', 'CPU-UTILS', column_header_format)
+#worksheet.write('D4', 'ICMP', column_header_format)
+#worksheet.write('E4', 'SNMP', column_header_format)
+#worksheet.write('F4', 'SSH', column_header_format)
+#worksheet.write('G4', 'CPU-UTILS', column_header_format)
 
 sno = 0
 
@@ -103,7 +102,7 @@ for line in fh.readlines():
 	router_sheet.set_column('J:J', 20)
 	router_sheet.write_url('B2', "internal:'Summary'!B" + str(sno + 4), string="SUMMARY", cell_format=summary_icon_format)
 	router_sheet.merge_range('A3:C3', "PARSED DEVICE CONFIGURATION - " + datapts[0] + "/" + datapts[1], page_header_format)
-	router_sheet.merge_range('D3:L3', "", page_header_format)
+	router_sheet.merge_range('D3:G3', "", page_header_format)
 
 	# rcfh = open (dir + "m2-configs/" + sheet_name + ".txt", 'r')
 	
@@ -564,156 +563,15 @@ for line in fh.readlines():
 
 	rs_row = rs_row + 2
 
-	# HA Context - Column 8
-
-	rs_col = 8
-
-	rs_row = 6
-
-	router_sheet.write('I5', 'HA Context', column_header_format)
-
-	router_sheet.set_column('I:I', 75)
-
-	router_sheet.write(rs_row, rs_col, 'HSRP Commands', column_header_format)
-
-	rs_row = rs_row + 2
-
-	for interface_objs in parse.find_objects("^interface "):
-		if interface_objs.re_search_children(" standby "):
-			config_line = interface_objs.text.strip()
-			router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
-			rs_row = rs_row + 1
-
-			for interface_line in interface_objs.children:
-				interface_line = interface_line.text.strip()
-				router_sheet.write(rs_row, rs_col, interface_line, configs_data_format)
-				rs_row = rs_row + 1
-
-			rs_row = rs_row + 1
-
-	rs_row = rs_row + 2
-
-	router_sheet.write(rs_row, rs_col, 'VRRP Commands', column_header_format)
-
-	rs_row = rs_row + 2
-
-	for interface_objs in parse.find_objects("^interface "):
-		if interface_objs.re_search_children(" vrrp "):
-			config_line = interface_objs.text.strip()
-			router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
-			rs_row = rs_row + 1
-
-			for interface_line in interface_objs.children:
-				interface_line = interface_line.text.strip()
-				router_sheet.write(rs_row, rs_col, interface_line, configs_data_format)
-				rs_row = rs_row + 1
-			
-			rs_row = rs_row + 1
-
-	rs_row = rs_row + 2
-	
-	router_sheet.write(rs_row, rs_col, 'Track Commands', column_header_format)
-
-	rs_row = rs_row + 2
-
-	for routing_objs in parse.find_objects("^track "):
-		config_line = routing_objs.text.strip()
-		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
-		rs_row = rs_row + 1
-
-		for routing_line in routing_objs.children:
-			routing_line = routing_line.text.strip()
-			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
-			rs_row = rs_row + 1
-		rs_row = rs_row + 1
-
-	rs_row = rs_row + 2
-
-	# Traffic Context - Column 9
-
-	rs_col = 9
-
-	rs_row = 6
-
-	router_sheet.write('J5', 'Traffic Context', column_header_format)
-
-	router_sheet.set_column('J:J', 75)
-
-	router_sheet.write(rs_row, rs_col, 'NetFlow - Global Configs', column_header_format)
-
-	rs_row = rs_row + 2
-
-	for routing_objs in parse.find_objects("^flow "):
-		config_line = routing_objs.text.strip()
-		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
-		rs_row = rs_row + 1
-
-		for routing_line in routing_objs.children:
-			routing_line = routing_line.text.strip()
-			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
-			rs_row = rs_row + 1
-
-		rs_row = rs_row + 2
-
-	rs_row = rs_row + 2	
-
-	router_sheet.write(rs_row, rs_col, 'NetFlow - Interface Level Configs' , column_header_format)
-	
-	rs_row = rs_row + 2
-
-	for interface_objs in parse.find_objects("^interface "):
-		if interface_objs.re_search_children(" ip flow "):
-			config_line = interface_objs.text.strip()
-			router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
-			rs_row = rs_row + 1
-
-			for interface_line in interface_objs.children:
-				interface_line = interface_line.text.strip()
-				router_sheet.write(rs_row, rs_col, interface_line, configs_data_format)
-				rs_row = rs_row + 1
-
-			rs_row = rs_row + 1
-
-	rs_row = rs_row + 2
-
-	# Event Manager - Context - Column 10
-
-	rs_col = 10
-
-	rs_row = 6
-
-	router_sheet.write('K5', 'Event Manager Context', column_header_format)
-
-	router_sheet.set_column('K:K', 75)
-
-	router_sheet.write(rs_row, rs_col, 'Event Manager Commands', column_header_format)
-
-	rs_row = rs_row + 2
-
-	for routing_objs in parse.find_objects("^event manager "):
-		config_line = routing_objs.text.strip()
-		router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
-		rs_row = rs_row + 1
-
-		for routing_line in routing_objs.children:
-			routing_line = routing_line.text.strip()
-			router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
-			rs_row = rs_row + 1
-
-		rs_row = rs_row + 2
-
-	rs_row = rs_row + 2
-
-
 	# Unfiltered Other Configurations - Column 7
 
-	rs_col = 11
+	rs_col = 15
 	
 	rs_row = 6
 
-	router_sheet.write('L5', 'Unfiltered Other Configuration', column_header_format)
+	router_sheet.write('K5', 'Unfiltered Other Configuration', column_header_format)
 
-	router_sheet.set_column('L:L', 75)
+	router_sheet.set_column('K:K', 75)
 
 	router_sheet.write(rs_row, rs_col, 'Remaining Configurations', column_header_format)
 
@@ -721,20 +579,10 @@ for line in fh.readlines():
 
 	for routing_objs in parse.find_objects("^[a-z]"):
 		line = routing_objs.text.strip()
-		if not (line.startswith("interface ") or line.startswith("router ospf") or line.startswith("router bgp") or line.startswith("router eigrp") or line.startswith("router rip") or line.startswith("ip route") or line.startswith("route-map") or line.startswith("ip prefix-list") or line.startswith("ip access-list") or line.startswith("access-list") or line.startswith("class-map") or line.startswith("policy-map") or line.startswith("ip sla") or line.startswith("logging") or line.startswith("snmp") or line.startswith("ntp") or line.startswith("line vty") or line.startswith("username") or line.startswith("aaa") or line.startswith("crypto") or line.startswith("vrf definition") or line.startswith("track ") or line.startswith("flow ") or line.startswith("event manager")):
-			config_line = line
-			router_sheet.write(rs_row, rs_col, config_line, configs_data_format)
-			rs_row = rs_row + 1
+		if not (line.startswith("router ospf") or line.startswith("router bgp") or line.startswith("router eigrp") or line.startswith("router rip") or line.startswith("ip route") or line.startswith("route-map") or line.startswith("ip prefix-list") or line.startswith("access-list") or line.startswith("class-map") or line.startswith("policy-map") or line.startswith("ip sla") or line.startswith("logging") or line.startswith("snmp") or line.startswith("ntp") or line.startswith("line vty") or line.startswith("username") or line.startswith("aaa") or line.startswith("crypto")):
+			print (line)
 
-			for routing_line in routing_objs.children:
-				routing_line = routing_line.text.strip()
-				router_sheet.write(rs_row, rs_col, routing_line, configs_data_format)
-				rs_row = rs_row + 1
-
-			rs_row = rs_row + 1
-
-	rs_row = rs_row + 2
-
+	exit()
 fh.close()
 
 workbook.close()

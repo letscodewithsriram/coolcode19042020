@@ -1,0 +1,1011 @@
+﻿in-fap-kochi-co-03#
+in-fap-kochi-co-03#ter len 0
+in-fap-kochi-co-03#
+in-fap-kochi-co-03#
+in-fap-kochi-co-03#show run
+Building configuration...
+
+
+Current configuration : 31785 bytes
+!
+! Last configuration change at 14:08:15 IST Wed May 20 2020 by bosch1@ttsl
+! NVRAM config last updated at 02:42:59 IST Tue May 19 2020
+!
+version 16.9
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime
+service timestamps log datetime msec localtime
+service password-encryption
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform hardware throughput level 100000
+!
+hostname in-fap-kochi-co-03
+!
+boot-start-marker
+boot system flash bootflash:isr4300-universalk9.16.09.03.SPA.bin
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+logging buffered 8192
+enable secret 5 $1$FjT9$dKfdBXA2wpSrk4QHDJ/bZ1
+!
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ local
+aaa authentication enable default group tacacs+ enable
+aaa authorization exec default group tacacs+ local 
+aaa authorization commands 1 default group tacacs+ local 
+aaa authorization commands 15 default group tacacs+ local 
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 1 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+aaa accounting connection default start-stop group tacacs+
+!
+!
+!
+!
+!
+!
+aaa session-id common
+clock timezone IST 5 30
+no ip source-route
+!
+!
+!
+!
+!
+!
+!
+no ip bootp server
+no ip domain lookup
+ip domain name bosch.ttsl.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+flow record NETFLOW
+ match ipv4 source address
+ match ipv4 destination address
+ match transport source-port
+ match transport destination-port
+ match transport tcp source-port
+ match transport tcp destination-port
+ match transport udp source-port
+ match transport udp destination-port
+ match interface input
+ collect interface output
+ collect counter bytes long
+ collect counter packets long
+ collect timestamp sys-uptime first
+ collect timestamp sys-uptime last
+!
+!
+flow exporter FLOWEXPORT
+ description Config for FLOWEXPORT
+ destination 10.0.12.182
+ source Loopback0
+ transport udp 9996
+!
+!
+flow monitor IPFLOWMONITOR
+ exporter FLOWEXPORT
+ cache timeout active 60
+ record netflow ipv4 original-output
+!
+!
+flow monitor NETFLOW
+ exporter FLOWEXPORT
+ cache timeout active 60
+ record NETFLOW
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint GM7_HS_CA1
+ enrollment url http://172.23.33.46:80
+ fqdn GM7_HS_CA1.bosch.ttsl.com
+ subject-name CN=GM7_HS_CA1, O=E107, OU=E108
+ revocation-check none
+ source interface GigabitEthernet0/0/0
+ rsakeypair GM7_HS_CA1
+ auto-enroll 70
+!
+crypto pki trustpoint GM7_HS_CA2
+ enrollment url http://172.23.33.34:80
+ fqdn GM7_HS_CA2.bosch.ttsl.com
+ subject-name CN= GM7_HS_CA2, O=F107, OU=F108
+ revocation-check none
+ source interface GigabitEthernet0/0/0
+ rsakeypair GM7_HS_CA2
+ auto-enroll 70
+!
+!
+crypto pki certificate chain GM7_HS_CA1
+ certificate 008B
+  308203A9 30820291 A0030201 02020200 8B300D06 092A8648 86F70D01 010B0500 
+  3032310E 300C0603 55040A13 05424F53 4348310F 300D0603 55040B13 06474554 
+  56504E31 0F300D06 03550403 13065355 42434131 301E170D 32303035 31383231 
+  31323037 5A170D32 31303531 38323131 3230375A 305D310D 300B0603 55040B13 
+  04453130 38310D30 0B060355 040A1304 45313037 31133011 06035504 030C0A47 
+  4D375F48 535F4341 31312830 2606092A 864886F7 0D010902 1619474D 375F4853 
+  5F434131 2E626F73 63682E74 74736C2E 636F6D30 82012230 0D06092A 864886F7 
+  0D010101 05000382 010F0030 82010A02 82010100 96C19054 29B6DCBE 8146DF8D 
+  27A3D8C8 C97B03AD C67B123E 2DC6A897 57FA840A 8A91767E DD7B28B4 878562C6 
+  26271F8D 3B0648C4 14862D01 E2094C1F 4D653117 4F6BE033 E2EBBE95 6FC9CDEF 
+  19A34746 92516367 2AC0B53D 64EC96B1 C291A101 AAC48957 26A92FC8 45D1FDE3 
+  2C9D4297 471BE4C3 3F68775C A4029AC1 67398FF9 B4B566F9 F66C73FD 91BBA297 
+  D62546AE 6BAE0AC0 B2CA926D BE4B573E ED207FFB 7C83F39D 6B9F2F8C 92087A45 
+  CDAABA79 1EC69888 C01A326A B02B46FB 49954E3A 22375968 7C01BF5A 0F6F4CEB 
+  72BC6FD0 8568A49D B918F61F A1C4F113 A618F854 D1219D60 B5D787FB 1CA1F952 
+  BC424818 5F6F0833 06608474 B050FC4A 1051CA81 02030100 01A3819D 30819A30 
+  4B060355 1D1F0444 30423040 A03EA03C 863A6874 74703A2F 2F313732 2E32332E 
+  33332E34 362F6367 692D6269 6E2F706B 69636C69 656E742E 6578653F 6F706572 
+  6174696F 6E3D4765 7443524C 300B0603 551D0F04 04030205 A0301F06 03551D23 
+  04183016 801417B1 B0593172 40294485 FB759303 88E4DACF 4E91301D 0603551D 
+  0E041604 1455745A 7560AC39 C681312B 8E8659BE 79482717 BD300D06 092A8648 
+  86F70D01 010B0500 03820101 005E0242 208DB943 43ACDADC BC67ECF5 0741437C 
+  1C95746A CF07D7B5 11229C2D 9EC5825E 552E5B55 9F41D1EB 7800627E 7340400C 
+  9F4967C1 BFB5386A 9ECBA2EA E6129FD4 201300FE 38B442A3 8920E187 75ADD6E0 
+  57D6A3F1 3CCD4041 45E00B58 A54D0F2F 9A655B1E 80E22495 76BC1C70 9D8BEA18 
+  E318C9DE 98605442 D952050E D2656C29 E19CF820 9EABCB56 4DD1123C 1EDE3440 
+  22D9C089 6753A892 99A1D858 5F41987B 3C998502 E6BDB561 BFE6E4FA 5D80B74E 
+  3B7043DA 57F27221 789A6DCE 3264E1B7 CFCF9161 7849D90F BD1CCFED 33F846C4 
+  A48C5EE2 0C4AB242 A5EE2369 23B88F8E 1F25B839 A455C209 A42FD0D8 2609F346 
+  2AFA4299 9276A7B1 59ABA0F9 DF
+        quit
+ certificate ca 02
+  3082038E 30820276 A0030201 02020102 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 424F5343 48310F30 0D060355 040B1306 47455456 
+  504E310F 300D0603 55040313 06524F4F 54434130 1E170D31 39303832 39323132 
+  3734355A 170D3232 30383238 32313237 34355A30 32310E30 0C060355 040A1305 
+  424F5343 48310F30 0D060355 040B1306 47455456 504E310F 300D0603 55040313 
+  06535542 43413130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 97ED3C0B C45BFBDF 245E156B 5AA9104B 8C553948 9224AB22 
+  6DAB9030 7AD99EA2 AAF8E297 922DD607 20B0CC31 00FAE2F6 A0251BD6 2E0F917B 
+  0FFC38FA 3989A7D7 904127E6 64C8030D A79E4AD2 DCC7D574 EF0B255D 826542F2 
+  1342AA7C 1665DF77 4FB862CF A6566688 2D8A7768 3828E496 4341BA65 4404A8B2 
+  3BE086DF AABC7C73 0D8D234F C2E31B4D 3F9821B9 D4CA5C6D 877D1901 3EB48996 
+  BD186998 4B8B96FE C4ACD21A 26ACDFE0 830795E5 490491C8 3CD6C888 556890CA 
+  57611DFF 96010B20 CACBE47F B9F68AD5 A2B4E6B5 C5750512 B20E5E70 2E023967 
+  54506986 8943CA01 22EF1D6E E207F168 97D2D2F1 D06D2064 0FED658F F1BFC663 
+  97A86D1B BEDB419F 02030100 01A381AE 3081AB30 4B060355 1D1F0444 30423040 
+  A03EA03C 863A6874 74703A2F 2F313732 2E32332E 33332E34 352F6367 692D6269 
+  6E2F706B 69636C69 656E742E 6578653F 6F706572 6174696F 6E3D4765 7443524C 
+  300F0603 551D1301 01FF0405 30030101 FF300B06 03551D0F 04040302 0186301F 
+  0603551D 23041830 16801415 CF4C75F0 37B4F4A6 3620BA54 235E092D 7914CC30 
+  1D060355 1D0E0416 041417B1 B0593172 40294485 FB759303 88E4DACF 4E91300D 
+  06092A86 4886F70D 01010B05 00038201 0100703C 26D918A2 3D7D4D92 02C58018 
+  C408EB2B 03AD10CA 672C06B4 3727A79F E32E12B7 8ECDBF4C DCBEFBBE 6AF31979 
+  AC144D1C 059D7569 2B84DE2A E05E1471 20AAADA4 6FDBCEA5 6F26B87D 7CA55D6D 
+  AA881B15 9BE4C2D8 F08A76D3 CA02745B B1E52706 99F6E30D 630883A5 154D4A29 
+  BC408025 63A51E9C 609B6796 0EB4A396 0C773B67 D313CFD8 95D5521E 108A9F77 
+  0CC89D3D 3A0F6617 15FDACC1 4400922B 85D6E340 C70FB4A3 7FCA13CC 8337C3AE 
+  4CB38EDD C059168A 656026F6 309A356E 29FC0337 2CC15F22 EA67986B A0B4CDB9 
+  754BF3A3 AD97434D C69FC08F 86F45B8C EFDB48F9 CD1F90B6 36BA3265 5BC6E53D 
+  E7239425 8E2E15A6 CA585D71 063EB5C2 6F6E
+        quit
+crypto pki certificate chain GM7_HS_CA2
+ certificate 008D
+  308203A9 30820291 A0030201 02020200 8D300D06 092A8648 86F70D01 010B0500 
+  3032310E 300C0603 55040A13 05424F53 4348310F 300D0603 55040B13 06474554 
+  56504E31 0F300D06 03550403 13065355 42434132 301E170D 32303035 31383231 
+  31323539 5A170D32 31303531 38323131 3235395A 305D310D 300B0603 55040B13 
+  04463130 38310D30 0B060355 040A1304 46313037 31133011 06035504 030C0A47 
+  4D375F48 535F4341 32312830 2606092A 864886F7 0D010902 1619474D 375F4853 
+  5F434132 2E626F73 63682E74 74736C2E 636F6D30 82012230 0D06092A 864886F7 
+  0D010101 05000382 010F0030 82010A02 82010100 C0D8C59E 6A121F2D 049DEED0 
+  3A3AABCA 1568C647 BACE8B59 89DE931D B1483DF3 89E1273D 522C8B04 3C5EB3DE 
+  96636395 F51CB5A1 CA94C333 3FDAF8AF C488DF11 40563143 8EA0DF0A 4031F2AE 
+  715CA9B4 F015144D 790486CA BE0E7E2A 3CB8961F 5474BFF0 FD76A86B 112FAC01 
+  AB91A0EC 388F1B21 C6E1F414 91EAF887 D48119F1 54FF7428 DEDA54F7 E6588974 
+  A5A57F3A 86D1F15D D1F08FF8 1B6D3F87 B41607EE 074B947F 874E78AC 807904B6 
+  C0F2EADA 17613721 0F54B64F EA997975 59E0C490 75B0F236 390A2840 8586B320 
+  D23BFCCB C267F72A 35C373D5 A03027DD 8A2172D7 C60DE5EC B7F48762 BB5AC1F1 
+  BD8F3292 88DE0D34 B8A97F60 86606601 415BAA4D 02030100 01A3819D 30819A30 
+  4B060355 1D1F0444 30423040 A03EA03C 863A6874 74703A2F 2F313732 2E32332E 
+  33332E33 342F6367 692D6269 6E2F706B 69636C69 656E742E 6578653F 6F706572 
+  6174696F 6E3D4765 7443524C 300B0603 551D0F04 04030205 A0301F06 03551D23 
+  04183016 80142206 9CB92FE6 65F221F9 4BA19BAA B665FDA9 6EBB301D 0603551D 
+  0E041604 14798132 2F6C3FEC 33D8BCC3 152F68D7 CA325B08 D7300D06 092A8648 
+  86F70D01 010B0500 03820101 008827FC 8AD920B0 26D5B298 BC98EAC7 4566A74B 
+  BB24512D 5CDAEFE0 02F7018A 8C1B49D2 F100B286 464B217A 52BFB3C6 922E6C24 
+  62353913 6568F77A 95B894F1 5DCADD85 8D02FC5B 57A55C6E 6F028F7E 4F8F6FB9 
+  85FB70AF D00EB947 80D33A23 186A8C27 E5222CB6 080A3602 A62E4A05 BE1AF3BA 
+  85546BEB 54C76372 E32E25C0 9E3F50B6 9D86EB92 28608BE1 EC96EC52 F9088BBF 
+  1DFC1BCF 6928044F B84A1CE0 DB9FD312 A3F0CE09 5A8F6DA5 59EDA314 8CD8295E 
+  B1387856 52DE3F4F 31BD8A92 3DD5BD60 BB966ECF EBEC960C 975E8DB7 B3A0AFA8 
+  90D5A0EE 8312D18C 75A58154 88B9EA11 1E0E18C1 C1A8431D E720C123 D53F11E0 
+  57A8BC11 5D9D9372 27A496FD 0B
+        quit
+ certificate ca 04
+  3082038E 30820276 A0030201 02020104 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 424F5343 48310F30 0D060355 040B1306 47455456 
+  504E310F 300D0603 55040313 06524F4F 54434130 1E170D31 39303832 39323133 
+  3934395A 170D3232 30383238 32313339 34395A30 32310E30 0C060355 040A1305 
+  424F5343 48310F30 0D060355 040B1306 47455456 504E310F 300D0603 55040313 
+  06535542 43413230 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 BA69307F 99B40BFF 45DEAD46 DFD8F5A7 4F4CA328 0D96B43B 
+  07B9DB34 3FF98511 447C524D EC4FADA1 23DD1D6B F548F0D7 681AA7C6 563FA68E 
+  61580FE2 AAE0F53E 2B2F070B 9DF0BABF DD1E3441 D08DC025 E5ACD0BD F01E48E7 
+  10000B33 C9A1A6C1 E17C3F47 4813E494 850B553B D6787F82 00BAE05D E2ED2E9F 
+  F1EC804E D33670C6 C6B90744 5A6F445E 7B5FB065 7CBB3A2A 008CAF43 980D8DB9 
+  BE261EAA D40BD6E5 07938A7F B37CB70E AB51C5B5 B9E78CBB 41D82FC1 BB43C0BD 
+  CEC49414 2524E708 18CF3360 42988B2C B4007563 B96BDCB0 BF820746 1E64EB22 
+  53A3F45B 913BB4E2 9D98705C D5D2AA66 5120782D F4BD0D48 859D1395 46A40F95 
+  7BE02175 889B8C75 02030100 01A381AE 3081AB30 4B060355 1D1F0444 30423040 
+  A03EA03C 863A6874 74703A2F 2F313732 2E32332E 33332E34 352F6367 692D6269 
+  6E2F706B 69636C69 656E742E 6578653F 6F706572 6174696F 6E3D4765 7443524C 
+  300F0603 551D1301 01FF0405 30030101 FF300B06 03551D0F 04040302 0186301F 
+  0603551D 23041830 16801415 CF4C75F0 37B4F4A6 3620BA54 235E092D 7914CC30 
+  1D060355 1D0E0416 04142206 9CB92FE6 65F221F9 4BA19BAA B665FDA9 6EBB300D 
+  06092A86 4886F70D 01010B05 00038201 0100537F 16E7D042 A9415992 AA4C090F 
+  B41194AB 5D3B607D F690A752 B1CF77CE 00FC8600 758CF585 960DD280 4E7A7F4B 
+  056CA30B E2B3E702 70703E9F E45DFC2D 4B651C84 34BF2449 5DFFF668 B3D7B0AD 
+  A7E51508 073CB473 83F06CAD 7D880D7A 3359DDFC BD18FAFE A8859B02 BBB9C820 
+  964390EC D8C47534 C112FC8E D7B13234 63F0DA96 3228888F BA380460 F555C0B7 
+  47AA8002 A1A232F0 1834E8C9 14DB8284 0B203802 8B8B77E2 CA8F5336 C8EF2BBB 
+  19A22F81 B7996C0E 4AA7F91B 2E972F06 E68363F8 B109D3BB 5D31835B F71CDE22 
+  3D6D3436 CE44AFF5 0B424F4F 61922C74 9595C485 6A52BF39 5CDEC161 FBF7AE73 
+  B118AE7F 5885B32C 1DFA4625 4C60355F 4C60
+        quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid ISR4321/K9 sn FDO23240CGS
+license boot level appxk9
+license boot level uck9
+license boot level securityk9
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+username vsnl password 7 060400326C581A1709
+username emergency privilege 15 secret 5 $1$mGG5$F93x9WluBLysa7WiibPlF.
+!
+redundancy
+ mode none
+!
+crypto ikev2 proposal IKEv2_PROPOSAL 
+ encryption aes-gcm-256
+ prf sha256
+ group 19
+!
+crypto ikev2 policy IKEv2_POLICY 
+ proposal IKEv2_PROPOSAL
+no crypto ikev2 policy default
+!
+!
+crypto ikev2 profile IKEv2_PROFILE
+ match identity remote any
+ identity local dn 
+ authentication remote rsa-sig
+ authentication local rsa-sig
+ pki trustpoint GM7_HS_CA1
+ pki trustpoint GM7_HS_CA2
+!
+!
+!
+!
+track 10 ip sla 10
+!
+track 455 ip sla 455
+ delay down 90
+!
+!
+!
+class-map match-all business-nc3-wan
+ match ip dscp cs3  af31 
+class-map match-all business-nc3-lan
+ match access-group name business-critical
+!
+policy-map nc3-wan
+ class business-nc3-wan
+  priority percent 70
+ class class-default
+  bandwidth percent 30 
+policy-map nc3-lan
+ class business-nc3-lan
+  set dscp cs3
+ class class-default
+  set dscp default
+!
+! 
+!
+!
+!
+!
+!
+crypto ipsec df-bit clear
+!
+!
+crypto gdoi group HUBSPOKE
+ identity number 200
+ server address ipv4 172.23.33.43
+ server address ipv4 172.23.33.37
+ client protocol gikev2 IKEv2_PROFILE
+!
+!
+crypto map CM_HUBSPOKE 1 gdoi 
+ set group HUBSPOKE
+ match address HUBSPOKE_DENY_LOCAL
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback0
+ description ### TCL Management loopback ###
+ ip address 172.23.32.90 255.255.255.255
+!
+interface GigabitEthernet0/0/0
+ description ### WAN Interface ###
+ bandwidth 2048
+ ip flow monitor NETFLOW input
+ ip flow monitor NETFLOW output
+ ip address 10.95.24.58 255.255.255.252
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ load-interval 30
+ speed 100
+ no negotiation auto
+ crypto map CM_HUBSPOKE
+ service-policy output nc3-wan
+ hold-queue 1024 in
+ hold-queue 2048 out
+!
+interface GigabitEthernet0/0/1
+ description *** LAN LINK ***
+ ip flow monitor NETFLOW input
+ ip flow monitor IPFLOWMONITOR input
+ ip flow monitor NETFLOW output
+ ip flow monitor IPFLOWMONITOR output
+ ip address 173.207.44.200 255.255.255.0
+ standby 10 ip 173.207.44.100
+ standby 10 priority 255
+ standby 10 preempt delay minimum 25
+ standby 10 track 10 decrement 200
+ ip tcp adjust-mss 1360
+ load-interval 30
+ negotiation auto
+ arp timeout 900
+ service-policy input nc3-lan
+!
+interface GigabitEthernet0/1/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1/1
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ no ip address
+ shutdown
+ negotiation auto
+!
+router bgp 64982
+ bgp router-id 172.23.32.90
+ bgp log-neighbor-changes
+ network 172.23.32.90 mask 255.255.255.255
+ network 173.207.44.0 mask 255.255.255.0
+ timers bgp 10 30
+ neighbor 10.95.24.57 remote-as 4755
+ neighbor 10.95.24.57 soft-reconfiguration inbound
+ neighbor 10.95.24.57 route-map ROUTES-IN in
+ neighbor 10.95.24.57 route-map ROUTES-OUT out
+ neighbor 173.207.44.199 remote-as 64982
+ neighbor 173.207.44.199 next-hop-self
+ neighbor 173.207.44.199 prefix-list DENY_LOOP in
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+ip tftp source-interface GigabitEthernet0/0/0
+!
+ip as-path access-list 1 permit ^$
+ip ssh version 2
+!
+!
+ip prefix-list DENY_LOOP seq 5 deny 172.23.32.111/32
+ip prefix-list DENY_LOOP seq 10 permit 0.0.0.0/0 le 32
+!
+ip access-list standard TATA-MONITORING-SNMP
+ permit 121.244.180.49
+ permit 121.244.180.47
+ permit 121.244.180.37
+ permit 121.244.227.114
+ permit 121.244.180.36
+ permit 121.244.227.113
+ permit 115.114.226.164
+ permit 115.114.9.67
+ permit 115.114.9.68
+ permit 14.143.102.157
+ permit 14.143.102.156
+ permit 14.143.102.155
+ permit 115.110.215.75
+ permit 10.70.0.202
+ permit 115.110.215.76
+ permit 115.110.215.77
+ permit 10.70.0.199
+ permit 202.54.29.81
+ permit 172.31.6.123
+ permit 115.114.146.71
+ permit 115.114.146.70
+ permit 115.114.146.69
+ permit 202.54.29.25
+ permit 115.114.219.35
+ permit 202.54.29.27
+ permit 10.209.19.0 0.0.0.255
+ permit 115.114.226.160 0.0.0.31
+ permit 115.114.219.32 0.0.0.15
+ deny   any
+ip access-list standard TCL_SNMP
+ permit 121.244.180.49
+ permit 121.244.180.47
+ permit 121.244.180.37
+ permit 121.244.227.114
+ permit 121.244.180.36
+ permit 121.244.227.113
+ permit 115.114.226.164
+ permit 115.114.9.67
+ permit 115.114.9.68
+ permit 10.70.0.201
+ permit 10.70.0.202
+ permit 10.70.0.199
+ permit 202.54.29.81
+ permit 172.31.6.123
+ permit 202.54.29.25
+ permit 115.114.219.35
+ permit 202.54.29.27
+ permit 10.209.19.0 0.0.0.255
+ permit 115.114.226.160 0.0.0.31
+ permit 115.114.219.32 0.0.0.15
+ deny   any
+ip access-list standard snmpaccess
+ permit 10.4.102.106
+ permit 10.25.145.134
+ permit 10.3.194.217
+ permit 10.3.194.216
+ permit 10.224.196.10
+ permit 10.224.196.11
+ permit 10.224.199.29
+ permit 10.224.199.27
+ permit 10.224.199.26
+ permit 10.25.144.186
+ permit 10.25.144.195
+ permit 10.4.4.91
+ permit 10.4.4.94
+ permit 10.4.4.93
+ permit 10.4.4.83
+ permit 10.4.4.84
+ permit 10.35.41.95
+ permit 10.187.51.224
+ permit 10.187.51.225
+ permit 10.3.165.220
+ permit 10.3.188.49
+ permit 10.4.102.238
+ permit 10.3.168.43
+ permit 10.25.144.18
+ permit 10.3.169.52
+ permit 10.4.12.150
+ permit 10.3.4.152
+ permit 10.3.169.53
+ permit 10.3.169.54
+ permit 10.3.165.50
+ permit 10.8.141.47
+ permit 10.0.12.164
+ permit 10.11.132.38
+ permit 10.3.12.166
+ permit 10.0.12.162
+ permit 10.0.12.163
+ permit 10.0.12.161
+ permit 10.3.128.32
+ permit 10.0.12.170
+ permit 10.0.12.182
+ permit 10.187.50.52
+ permit 10.25.144.61
+ permit 10.187.51.67
+ permit 10.187.51.65
+ permit 10.3.6.193
+ permit 10.3.182.106
+ permit 10.4.102.191
+ permit 10.3.149.65
+ permit 10.21.240.48
+ permit 10.187.51.102
+ permit 10.3.169.69
+ permit 10.187.51.101
+ permit 10.187.50.123
+ permit 10.21.240.18
+ permit 10.3.221.0 0.0.0.255
+ permit 10.187.108.0 0.0.0.255
+ permit 10.224.2.0 0.0.0.255
+ deny   any
+!
+ip access-list extended HUBSPOKE_DENY_LOCAL
+ deny   ip 10.95.24.56 0.0.0.3 any
+ deny   ip any 10.95.24.56 0.0.0.3
+ deny   ip host 172.23.32.90 any
+ deny   ip any host 172.23.32.90
+ip access-list extended business-critical
+ permit tcp any any range 3200 3399
+ permit tcp any any range 3600 3699
+ permit tcp any any eq 2065
+ permit tcp any any eq 1996
+ permit tcp any any eq 1494
+ permit tcp any any eq 2598
+ip sla 10
+ icmp-echo 10.95.20.86 source-interface GigabitEthernet0/0/0
+ frequency 120
+ip sla schedule 10 life forever start-time now
+ip sla 50
+ icmp-echo 10.95.24.57 source-interface GigabitEthernet0/0/0
+ tos 192
+ tag WEDA ERROR DETECTION
+ threshold 2000
+ip sla schedule 50 life forever start-time now
+ip sla 51
+ icmp-echo 10.95.24.57 source-interface GigabitEthernet0/0/0
+ tos 192
+ tag WEDA ERROR CORRECTION
+ threshold 2000
+ip sla schedule 51 life forever start-time now
+ip sla 455
+ icmp-echo 10.95.24.57 source-ip 10.95.24.58
+ip sla schedule 455 life forever start-time now
+ip sla responder
+logging trap debugging
+logging facility local5
+logging source-interface Loopback0
+logging host 10.70.0.201
+logging host 10.209.19.200
+logging host 121.240.6.13
+logging host 121.240.5.113
+logging host 121.240.118.90
+logging host 115.114.170.78
+logging host 202.54.29.110
+logging host 121.244.227.114
+logging host 115.114.151.107
+logging host 115.114.151.114
+logging host 121.244.180.50
+logging host 121.244.180.37
+logging host 115.114.85.178
+logging host 115.114.85.175
+access-list 10 permit 121.244.227.113
+access-list 10 permit 172.31.6.123
+access-list 10 permit 202.54.29.25
+access-list 10 permit 10.209.19.0 0.0.0.255
+access-list 10 deny   any
+!
+!
+route-map ROUTES-IN permit 10 
+ set local-preference 1000
+!
+route-map ROUTES-OUT permit 10 
+ match as-path 1
+ set as-path prepend 64982
+!
+snmp-server community t2c2l2com RO TATA-MONITORING-SNMP
+snmp-server community bos#vsnl RO TATA-MONITORING-SNMP
+snmp-server community SNMPBOSCH99 RO snmpaccess
+snmp-server community CISCO RW
+snmp-server community bos@vsnl RO 10
+snmp-server trap-source Loopback0
+snmp-server system-shutdown
+snmp-server enable traps snmp coldstart warmstart
+snmp-server enable traps memory bufferpeak
+snmp-server enable traps event-manager
+snmp-server enable traps cpu threshold
+snmp-server enable traps syslog
+snmp-server enable traps ipsla
+snmp-server enable traps bgp state-changes all
+snmp-server host 10.187.108.44 version 2c rb_netmgmt 
+snmp-server host 10.187.108.45 version 2c rb_netmgmt 
+snmp ifmib ifindex persist
+snmp mib persist cbqos
+tacacs-server host 115.114.151.107
+tacacs-server host 115.114.151.114
+tacacs-server key 7 071965425A0A35550413
+!
+!
+!
+!
+control-plane
+!
+!
+mgcp behavior rsip-range tgcp-only
+mgcp behavior comedia-role none
+mgcp behavior comedia-check-media-src disable
+mgcp behavior comedia-sdp-force disable
+!
+mgcp profile default
+!
+!
+!
+!
+!
+privilege exec level 4 traceroute ip
+privilege exec level 4 traceroute
+privilege exec level 4 ping ip
+privilege exec level 4 ping
+privilege exec level 4 show ip accounting
+privilege exec level 4 show ip interface brief
+privilege exec level 4 show ip interface
+privilege exec level 4 show ip
+privilege exec level 4 show configuration
+privilege exec level 4 show interfaces description
+privilege exec level 4 show interfaces
+privilege exec level 4 show
+privilege exec level 4 clear ip accounting
+privilege exec level 4 clear ip
+privilege exec level 4 clear counters
+privilege exec level 4 clear
+banner login ^CC
+
+This computer system is private and may be accessed only
+by authorised users. Data and programs in this system
+are confidential and proprietary to the system owner and
+may not be accessed, viewed, copied, reproduced, duplicated,
+modified, distributed, or disclosed without authorisation.
+Unauthorised users or users who exceed their authorised
+level of access are subject to prosecution under state or
+federal law as well as Company initiated proceedings
+
+^C
+banner motd ^CC
+
+*---------------------------------------------------------------------*
+*  TATA assets, including this system, should be used only for        *
+*      Tata communications management approved purposes.              *
+*                                                                     *
+*  You should be aware that it may be a criminal offence to secure    *
+*    unauthorised access to any program or data in the system or      *
+*      to make any unauthorised modification to its contents.         *
+*                                                                     *
+*  If you are not authorised by TATA management to access this        *
+*                     system, please LOGOFF now.                      *
+*                                                                     *
+* Tata internal systems business authorised management audit any time *
+*---------------------------------------------------------------------*
+
+^C
+alias exec make-me-primary event manager run make-me-primary
+alias exec make-me-secondary event manager run make-me-secondary
+!
+line con 0
+ transport input none
+ stopbits 1
+line aux 0
+ modem InOut
+ no exec
+ transport input all
+ stopbits 1
+ speed 115200
+ flowcontrol hardware
+line vty 0 4
+ logging synchronous
+ transport input all
+line vty 5 15
+ password 7 030752180500
+ transport input all
+!
+ntp source GigabitEthernet0/0/0
+ntp server 10.95.24.57
+!
+!
+!
+!
+event manager environment q "
+event manager session cli username "bosch1@ttsl"
+event manager applet port_shutdown authorization bypass
+ event syslog pattern "%TRACKING-5-STATE: 455 ip sla 455 state Up->Down"
+ action 1.0 cli command "enable"
+ action 2.0 cli command "config t"
+ action 3.0 cli command "interface GigabitEthernet0/0/0"
+ action 4.0 cli command "shut"
+ action 5.0 syslog msg "Admin Down the Interface GigabitEthernet0/0/0"
+ action 6.0 cli command "event manager applet interface_up authorization bypass"
+ action 7.0 cli command "event timer countdown name SHUT time 10"
+ action 8.0 cli command "action 1.0 cli command  enable "
+ action 9.0 cli command "action 2.0 cli command $q config t $q"
+ action 9.1 cli command "action 3.0 cli command $q interface GigabitEthernet0/0/0$q"
+ action 9.2 cli command "action 4.0 cli command $q no shut$q"
+ action 9.3 cli command "action 5.0 cli command end"
+ action 9.4 syslog msg "Bring UP the Interface GigabitEthernet0/0/0"
+event manager applet interface_up authorization bypass
+ event timer countdown name SHUT time 10
+ action 1.0 cli command "enable"
+ action 2.0 cli command " config t "
+ action 3.0 cli command " interface GigabitEthernet0/0/0"
+ action 4.0 cli command " no shut"
+ action 5.0 cli command "end"
+event manager applet make-me-secondary authorization bypass
+ event none
+ action 1.1 cli command "enable"
+ action 1.2 cli command " conf t"
+ action 1.3 cli command "event manager applet WEDA_UP_55 authorization bypass"
+ action 1.4 cli command "event none"
+ action 2.4 cli command " route-map ROUTES-IN"
+ action 2.5 cli command "set local-preference 40"
+ action 2.6 cli command " route-map ROUTES-OUT"
+ action 2.7 cli command "set as-path prepend 64982 64982 64982"
+ action 3.0 cli command "exit"
+ action 3.1 cli command "exit"
+ action 3.2 syslog msg "*** THIS LINK HAS MANUALLY BEEN SET TO SECONDARY - WEDA FAILOVER NOT ACTIVE ***"
+ action 3.3 syslog msg "*** IN ENABLE MODE RUN THE COMMAND make-me-primary TO SET THIS LINK TO PRIMARY ***"
+ action 3.5 cli command "clear ip bgp * in"
+ action 3.6 cli command "clear ip bgp * out"
+ action 8.5 exit 0
+event manager applet make-me-primary authorization bypass
+ event none
+ action 1.1 cli command "enable"
+ action 1.6 cli command " conf t"
+ action 1.7 cli command "event manager applet WEDA_UP_55 authorization bypass"
+ action 1.8 cli command "event timer watchdog time 1200 maxrun 40"
+ action 2.4 cli command " route-map ROUTES-IN"
+ action 2.5 cli command "set local-preference 1000"
+ action 2.6 cli command " route-map ROUTES-OUT"
+ action 2.7 cli command "set as-path prepend 64982"
+ action 3.0 cli command "exit"
+ action 3.1 cli command "exit"
+ action 3.2 syslog msg "*** THIS LINK HAS MANUALLY BEEN SET TO PRIMARY - WEDA FAILOVER ACTIVATED ***"
+ action 3.5 cli command "clear ip bgp * in"
+ action 3.6 cli command "clear ip bgp * out"
+ action 8.5 exit 0
+event manager applet ORCHESTRATOR_WARNING trap authorization bypass
+ event cli pattern "^[Cc][Oo][Nn][Ff].*" enter
+ action 1.101 puts "*************************************************************"
+ action 1.105 puts "*                     PRIMARY ROUTER                        *"
+ action 1.109 puts "* This router is under the management of the orchestrator.  *"
+ action 1.114 puts "* All configuration changes are monitored and logged.       *"
+ action 1.119 puts "*                                                           *"
+ action 1.124 puts "* Please note that any changes made may be overridden by    *"
+ action 1.125 puts "* the orchestrator.                                         *"
+ action 1.126 puts "* WEDA Failover scripting applied. Please do NOT change     *"
+ action 1.127 puts "* BGP route-maps. For Failover run commands make-me-primary *"
+ action 1.134 puts "* or make-me-secondary in enable mode on THIS router        *"
+ action 1.139 puts "*************************************************************"
+ action 2.0   exit 1
+event manager applet WAN-TEST authorization bypass
+ event timer watchdog time 600 maxrun 40
+ action 1.1  cli command "enable"
+ action 1.2  cli command "sh bgp all summary | i 10.95.24.57"
+ action 1.3  regexp "(Idle|Active)" "$_cli_result"
+ action 1.4  if $_regexp_result eq "1"
+ action 1.46  cli command " conf t"
+ action 1.47  cli command "ip sla restart 50"
+ action 1.48  cli command "exit"
+ action 1.5   exit 0
+ action 1.6  else
+ action 1.7   cli command "show ip sla statistics 50 | i successes"
+ action 1.8   regexp "Number of successes: ([A-Za-z0-9/\.]+)" "$_cli_result" match a
+ action 1.9   cli command "show ip sla statistics 50 | i failures"
+ action 2.0   regexp "Number of failures: ([A-Za-z0-9/\.]+)" "$_cli_result" match b
+ action 2.1   cli command "sh ip  sla configuration 50 | i Operation frequency"
+ action 2.2   regexp "frequency \(seconds\): ([A-Za-z0-9/\.]+)" "$_cli_result" match c
+ action 2.3   add $a $b
+ action 2.4   set totalsla "$_result"
+ action 2.5   multiply $totalsla $c
+ action 2.55  set time "$_result"
+ action 2.6   multiply $b 100
+ action 2.61  divide $_result $totalsla
+ action 2.63  set percent "$_result"
+ action 2.66  if $percent gt "7"
+ action 2.7    cli command "send log 7 Statistics after 600 seconds  = $a successes $b failures: Failure percentage = $percent: error rate too high"
+ action 2.9   else
+ action 3.0   end
+ action 3.05 end
+ action 3.1  cli command " conf t"
+ action 3.2  cli command "ip sla restart 50"
+ action 3.3  cli command "exit"
+ action 9.0  exit 0
+event manager applet AUTO-FAILOVER2 authorization bypass
+ event tag 1 syslog pattern ".*error rate too high" maxrun 40
+ event tag 2 syslog occurs 3 pattern ".*neighbor 10.95.24.57 IPv4 Unicast topology base removed from session" period 180
+ trigger delay 1
+  correlate event 1 or event 2
+ action 1.2  cli command "enable"
+ action 1.3  cli command "sh route-map ROUTES-IN | i local-preference"
+ action 1.4  regexp "(local-preference 40)" "$_cli_result"
+ action 1.41 if $_regexp_result eq "1"
+ action 1.42  exit 0
+ action 1.43 else
+ action 1.44  cli command "enable"
+ action 1.6   cli command " conf t"
+ action 2.4   cli command "route-map ROUTES-IN"
+ action 2.5   cli command "set local-preference 40"
+ action 2.6   cli command "route-map ROUTES-OUT"
+ action 2.8   cli command "set as-path prepend 64982 64982 64982"
+ action 3.4   cli command "exit"
+ action 3.45  cli command "exit"
+ action 3.5   cli command "clear ip bgp * in"
+ action 3.6   cli command "clear ip bgp * out"
+ action 3.7   syslog msg "BOSCH - ERRORS DETECTED ON PRIMARY 091ERNA623014030468 WAN LINK BY WEDA"
+ action 8.5  end
+ action 9.1  exit 0
+event manager applet WEDA_UP_55 authorization bypass
+ event timer watchdog time 1200 maxrun 40
+ action 1.1  cli command "enable"
+ action 1.2  cli command "sh route-map ROUTES-IN | i local-preference"
+ action 1.3  regexp "(local-preference 1000)" "$_cli_result"
+ action 1.4  if $_regexp_result eq "1"
+ action 1.41  cli command " conf t"
+ action 1.42  cli command "ip sla restart 51"
+ action 1.45  cli command "exit"
+ action 1.5   exit 0
+ action 1.6  else
+ action 1.7   cli command "show ip sla statistics 51 | i successes"
+ action 1.8   regexp "Number of successes: ([A-Za-z0-9/\.]+)" "$_cli_result" match a
+ action 1.9   cli command "show ip sla statistics 51 | i failures"
+ action 2.0   regexp "Number of failures: ([A-Za-z0-9/\.]+)" "$_cli_result" match b
+ action 2.1   cli command "sh ip  sla configuration 51 | i Operation frequency"
+ action 2.2   regexp "frequency \(seconds\): ([A-Za-z0-9/\.]+)" "$_cli_result" match c
+ action 2.3   add $a $b
+ action 2.4   set totalsla "$_result"
+ action 2.5   multiply $totalsla $c
+ action 2.6   set time "$_result"
+ action 2.61  multiply $b 100
+ action 2.62  divide $_result $totalsla
+ action 2.63  set percent "$_result"
+ action 3.2   if $percent le "3"
+ action 3.3    cli command "enable"
+ action 3.4    cli command " conf t"
+ action 3.5    cli command "route-map ROUTES-IN"
+ action 3.6    cli command "set local-preference 1000"
+ action 3.7    cli command "route-map ROUTES-OUT"
+ action 3.9    cli command "set as-path prepend 64982"
+ action 8.5    cli command "exit"
+ action 8.55   cli command "exit"
+ action 8.7    cli command "clear ip bgp * in"
+ action 8.75   cli command "clear ip bgp * out"
+ action 8.78   syslog msg "link stable for last 1200 seconds - error count below threshold of 3% - turning/keeping on primary"
+ action 8.83  else
+ action 8.95  end
+ action 9.3  end
+ action 9.4  cli command " conf t"
+ action 9.5  cli command "ip sla restart 51"
+ action 9.6  cli command "exit"
+ action 9.9  exit
+event manager applet SAVE_CERTIFICATE authorization bypass
+ event syslog pattern "to save new certificate"
+ action 1.0 syslog msg "WRITE MEMORY SCRIPT EXECUTED"
+ action 1.1 cli command "enable"
+ action 1.2 cli command "write memory"
+!
+end
+
+in-fap-kochi-co-03#
+in-fap-kochi-co-03#show version
+Cisco IOS XE Software, Version 16.09.03
+Cisco IOS Software [Fuji], ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.9.3, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2019 by Cisco Systems, Inc.
+Compiled Wed 20-Mar-19 08:02 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2019 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+in-fap-kochi-co-03 uptime is 2 days, 5 hours, 0 minutes
+Uptime for this control processor is 2 days, 5 hours, 2 minutes
+System returned to ROM by PowerOn at 20:14:14 IST Thu Aug 22 2019
+System restarted at 09:17:43 IST Mon May 18 2020
+System image file is "bootflash:isr4300-universalk9.16.09.03.SPA.bin"
+Last reload reason: PowerOn
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+
+
+Suite License Information for Module:'esg' 
+
+--------------------------------------------------------------------------------
+Suite                 Suite Current         Type           Suite Next reboot     
+--------------------------------------------------------------------------------
+FoundationSuiteK9     None                  None           None                  
+securityk9
+appxk9
+
+AdvUCSuiteK9          None                  None           None                  
+uck9
+cme-srst
+cube
+
+
+Technology Package License Information: 
+
+-----------------------------------------------------------------
+Technology    Technology-package           Technology-package
+              Current       Type           Next reboot  
+------------------------------------------------------------------
+appxk9           appxk9           Permanent        appxk9
+uck9             uck9             RightToUse       uck9
+securityk9       securityk9       Permanent        securityk9
+ipbase           ipbasek9         Permanent        ipbasek9
+
+The current throughput level is 100000 kbps 
+
+
+Smart Licensing Status: Smart Licensing is DISABLED
+
+cisco ISR4321/K9 (1RU) processor with 1784679K/6147K bytes of memory.
+Processor board ID FDO2326A06G
+4 Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+4194304K bytes of physical memory.
+3125247K bytes of flash memory at bootflash:.
+0K bytes of WebUI ODM Files at webui:.
+
+Configuration register is 0x2102
+
+in-fap-kochi-co-03#
